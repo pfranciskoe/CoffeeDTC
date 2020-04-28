@@ -23,5 +23,5 @@ export const login = formUser => dispatch => logIn(formUser)
 export const createNewUser = formUser => dispatch => signUp(formUser)
     .then(user => dispatch(receiveCurrentUser(user)), errors => dispatch(receiveErrors(errors.responseJSON)));
 
-export const login = formUser => dispatch => logOut(formUser)
+export const logout = () => dispatch => logOut()
     .then( ()=> dispatch(logoutCurrentUser()), errors => dispatch(receiveErrors(errors.responseJSON)));

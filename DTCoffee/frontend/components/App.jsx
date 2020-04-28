@@ -5,7 +5,7 @@ import Footer from './footer'
 const App = () =>(
     <div>
         <NavBar/>
-      {/* <SignupFormContainer/> */}
+        <AuthPage/>
         <Footer/>
     </div>
 );
