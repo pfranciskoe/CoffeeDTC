@@ -1,9 +1,9 @@
 import React from "react";
-import SignupFormContainer from './session/signup_form_container.jsx'
+import AuthPage from './session/auth_page.jsx'
 import NavBar from './nav_bar'
 import Footer from './footer'
 const App = () =>(
-    <div>
+    <div className='app'>
         <NavBar/>
         <AuthPage/>
         <Footer/>

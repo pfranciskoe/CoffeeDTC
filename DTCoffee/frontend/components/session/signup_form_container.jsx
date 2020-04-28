@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state, ownProps) => ({
     errors: state.errors,
-    formType: 'signup'
+    formType: 'Sign up'
 });
 
 const mapDispatchtoProps = (dispatch, ownProps) => ({

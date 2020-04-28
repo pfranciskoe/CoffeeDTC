@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state, ownProps) => ({
     errors: state.errors,
-    formType: 'login'
+    formType: 'Log In'
 });
 
 const mapDispatchtoProps = (dispatch, ownProps) => ({
