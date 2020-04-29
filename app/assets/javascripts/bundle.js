@@ -186,6 +186,69 @@ var logout = function logout() {
 
 /***/ }),
 
+/***/ "./frontend/actions/taste_profile_actions.js":
+/*!***************************************************!*\
+  !*** ./frontend/actions/taste_profile_actions.js ***!
+  \***************************************************/
+/*! exports provided: RECEIVE_TASTE_PROFILE, RECEIVE_TASTE_ERRORS, defineTasteProfile, updateTaste, fetchTaste */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_TASTE_PROFILE", function() { return RECEIVE_TASTE_PROFILE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_TASTE_ERRORS", function() { return RECEIVE_TASTE_ERRORS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "defineTasteProfile", function() { return defineTasteProfile; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateTaste", function() { return updateTaste; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchTaste", function() { return fetchTaste; });
+/* harmony import */ var _util_taste_profile_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/taste_profile_api_util */ "./frontend/util/taste_profile_api_util.js");
+var RECEIVE_TASTE_PROFILE = 'RECEIVE_TASTE_PROFILE';
+
+var RECEIVE_TASTE_ERRORS = 'RECEIVE_TASTE_ERRORS';
+
+var receiveErrors = function receiveErrors(errors) {
+  return {
+    type: RECEIVE_TASTE_ERRORS,
+    errors: errors
+  };
+};
+
+var receiveTasteProfile = function receiveTasteProfile(tasteProfile) {
+  return {
+    type: RECEIVE_TASTE_PROFILE,
+    tasteProfile: tasteProfile
+  };
+};
+
+var defineTasteProfile = function defineTasteProfile(formTaste) {
+  return function (dispatch) {
+    return Object(_util_taste_profile_api_util__WEBPACK_IMPORTED_MODULE_0__["defineTaste"])(formTaste).then(function (tasteProfile) {
+      return dispatch(receiveTasteProfile(tasteProfile));
+    }, function (errors) {
+      return dispatch(receiveErrors(errors.responseJSON));
+    });
+  };
+};
+var updateTaste = function updateTaste(formTaste) {
+  return function (dispatch) {
+    return Object(_util_taste_profile_api_util__WEBPACK_IMPORTED_MODULE_0__["editTaste"])(formTaste).then(function (tasteProfile) {
+      return dispatch(receiveTasteProfile(tasteProfile));
+    }, function (errors) {
+      return dispatch(receiveErrors(errors.responseJSON));
+    });
+  };
+};
+var fetchTaste = function fetchTaste(userid) {
+  return function (dispatch) {
+    return Object(_util_taste_profile_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchTasteProfile"])(userid).then(function (tasteProfile) {
+      return dispatch(receiveTasteProfile(tasteProfile), function (errors) {
+        return dispatch(receiveErrors(errors.responseJSON));
+      });
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/components/App.jsx":
 /*!*************************************!*\
   !*** ./frontend/components/App.jsx ***!
@@ -202,17 +265,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_home__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home/home */ "./frontend/components/home/home.jsx");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./footer */ "./frontend/components/footer.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 
 
 
 
 
 
+ // import OnboardingContainer from './onboarding/onboarding_container'
 
 var App = function App() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "app"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_nav_bar_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_home_home__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_nav_bar_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
+    exact: true,
+    path: "/",
+    component: _home_home__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
     className: "modal-cont"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_footer__WEBPACK_IMPORTED_MODULE_5__["default"], null));
 };
@@ -285,6 +354,7 @@ var Footer = function Footer() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -309,6 +379,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var Home = /*#__PURE__*/function (_React$Component) {
   _inherits(Home, _React$Component);
 
@@ -325,7 +396,11 @@ var Home = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "homepage"
-      }, "HOME");
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/onboarding"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "quiz-button"
+      }, "Get Started")));
     }
   }]);
 
@@ -859,12 +934,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_Root__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Root */ "./frontend/components/Root.jsx");
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
+/* harmony import */ var _util_taste_profile_api_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./util/taste_profile_api_util */ "./frontend/util/taste_profile_api_util.js");
+/* harmony import */ var _actions_taste_profile_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./actions/taste_profile_actions */ "./frontend/actions/taste_profile_actions.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
 
 
+
+
+ // REMOVE THESE
+
+window.fetchTasteProfile = _util_taste_profile_api_util__WEBPACK_IMPORTED_MODULE_4__["fetchTasteProfile"];
+window.receiveTasteProfile = _actions_taste_profile_actions__WEBPACK_IMPORTED_MODULE_5__["receiveTasteProfile"];
+window.fetchTaste = _actions_taste_profile_actions__WEBPACK_IMPORTED_MODULE_5__["fetchTaste"];
 document.addEventListener("DOMContentLoaded", function () {
   var store;
 
@@ -886,7 +970,10 @@ document.addEventListener("DOMContentLoaded", function () {
   var root = document.getElementById("root");
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Root__WEBPACK_IMPORTED_MODULE_2__["default"], {
     store: store
-  }), root);
+  }), root); //REMOVE THESES!!!!!!!!
+
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
 });
 
 /***/ }),
@@ -902,10 +989,13 @@ document.addEventListener("DOMContentLoaded", function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _users_reducer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./users_reducer.js */ "./frontend/reducers/users_reducer.js");
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
+/* harmony import */ var _taste_profile_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./taste_profile_reducer */ "./frontend/reducers/taste_profile_reducer.js");
+
 
 
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_1__["combineReducers"])({
-  users: _users_reducer_js__WEBPACK_IMPORTED_MODULE_0__["default"]
+  users: _users_reducer_js__WEBPACK_IMPORTED_MODULE_0__["default"],
+  tasteProfile: _taste_profile_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -922,10 +1012,13 @@ var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_1__["combineReducers
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _session_errors_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./session_errors_reducer */ "./frontend/reducers/session_errors_reducer.js");
+/* harmony import */ var _taste_profile_errors_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./taste_profile_errors_reducer */ "./frontend/reducers/taste_profile_errors_reducer.js");
+
 
 
 var errorsReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  session: _session_errors_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
+  session: _session_errors_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
+  tasteProfile: _taste_profile_errors_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (errorsReducer);
 
@@ -1058,6 +1151,67 @@ var _null_session = {
 
 /***/ }),
 
+/***/ "./frontend/reducers/taste_profile_errors_reducer.js":
+/*!***********************************************************!*\
+  !*** ./frontend/reducers/taste_profile_errors_reducer.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_taste_profile_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/taste_profile_actions */ "./frontend/actions/taste_profile_actions.js");
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_taste_profile_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_TASTE_ERRORS"]:
+      return Object.assign({}, state, action.errors);
+
+    case _actions_taste_profile_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_TASTE_PROFILE"]:
+      return Object.assign(state, {});
+
+    default:
+      return state;
+  }
+});
+
+/***/ }),
+
+/***/ "./frontend/reducers/taste_profile_reducer.js":
+/*!****************************************************!*\
+  !*** ./frontend/reducers/taste_profile_reducer.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_taste_profile_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/taste_profile_actions */ "./frontend/actions/taste_profile_actions.js");
+
+
+var TasteProfileReducer = function TasteProfileReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_taste_profile_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_TASTE_PROFILE"]:
+      console.log(action.type);
+      return action.tasteProfile;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (TasteProfileReducer);
+
+/***/ }),
+
 /***/ "./frontend/reducers/ui_reducer.js":
 /*!*****************************************!*\
   !*** ./frontend/reducers/ui_reducer.js ***!
@@ -1168,6 +1322,45 @@ var logOut = function logOut() {
   return $.ajax({
     url: '/api/session',
     method: 'DELETE'
+  });
+};
+
+/***/ }),
+
+/***/ "./frontend/util/taste_profile_api_util.js":
+/*!*************************************************!*\
+  !*** ./frontend/util/taste_profile_api_util.js ***!
+  \*************************************************/
+/*! exports provided: defineTaste, editTaste, fetchTasteProfile */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "defineTaste", function() { return defineTaste; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "editTaste", function() { return editTaste; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchTasteProfile", function() { return fetchTasteProfile; });
+var defineTaste = function defineTaste(tasteProfile) {
+  return $.ajax({
+    url: '/api/taste_profiles',
+    method: 'POST',
+    data: {
+      tasteProfile: tasteProfile
+    }
+  });
+};
+var editTaste = function editTaste(tasteProfile) {
+  return $.ajax({
+    url: "/api/taste_profiles/".concat(tasteProfile.userId),
+    method: 'PATCH',
+    data: {
+      tasteProfile: tasteProfile
+    }
+  });
+};
+var fetchTasteProfile = function fetchTasteProfile(userId) {
+  return $.ajax({
+    url: "/api/taste_profiles/".concat(userId),
+    method: 'GET'
   });
 };
 

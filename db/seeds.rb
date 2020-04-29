@@ -6,7 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.delete_all
-User.create!(
+user1 = User.create!(
     email: 'demo@coffee.com',
     password: 'password'
+)
+
+TasteProfile.create!(
+    user_id: user1.id,
+    experience_level: 1,
+    brew_method: 'Moka Pot',
+    additions: 'None',
+    roast: '3',
+    adventure: 'High',
+    ground: false
 )

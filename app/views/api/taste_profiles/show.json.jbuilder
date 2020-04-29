@@ -1,0 +1,1 @@
+json.extract! @taste_profile, :user_id, :experience_level,:brew_method,:additions,:roast,:adventure,:ground

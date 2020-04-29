@@ -251,3 +251,23 @@
         cursor: pointer;
         font-weight: normal;
     }
+    .quiz-button{
+        margin-left: 4px;
+        background-color:transparent;
+        border-radius: 4px;
+        border: solid 1px #000;
+        font-size: 12px;
+        height: 36px;
+        letter-spacing: normal;
+        line-height:  normal;
+        width: 119px;
+        text-align: center;
+        transition-property: background, color;
+        transition-duration: 500ms, 500ms;
+        transition-timing-function: ease, ease;
+        transition-delay: 0s, 0s;
+        transform-origin: center;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-weight: normal;
+    }

@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_28_192902) do
+ActiveRecord::Schema.define(version: 2020_04_29_203347) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "taste_profiles", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "experience_level", null: false
+    t.string "brew_method", null: false
+    t.string "additions", null: false
+    t.integer "roast", null: false
+    t.string "adventure", null: false
+    t.boolean "ground", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_taste_profiles_on_user_id", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
