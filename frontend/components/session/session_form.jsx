@@ -12,11 +12,12 @@ class SessionForm extends React.Component{
     handleSubmit(event){
         event.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        this.props.processForm(user).then(this.props.closeModal)
         this.setState({
             email: '',
-            password: ''})
-        this.props.closeModal();
+            password: ''
+        })
+        
     }
     update(field){
         return (e) => this.setState({

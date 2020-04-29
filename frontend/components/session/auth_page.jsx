@@ -1,9 +1,12 @@
 import React from 'react'
 import SignupFormContainer from './signup_form_container'
 import SigninFormContainer from './signin_form_container'
+const xmark = "\u2715";
 class AuthPage extends React.Component{
+    
     constructor(props){
         super(props);
+        console.log(this)
         this.state={
             selectedTab: 1
         }
@@ -11,10 +14,11 @@ class AuthPage extends React.Component{
     selectTab(tabNumber){
        this.setState({selectedTab:tabNumber})
     }
+    
     render(){
         return (
             <div className='auth-page'>
-                <div className='close-mod' onClick={this.props.closeModul}>x</div>
+                <div className='close-mod' onClick={this.props.closeModal}>{xmark}</div>
                 <div className='auth-tabs'>
                     <button onClick={() =>this.selectTab(1)}
                         className={(this.state.selectedTab === 1) ? 'tab-active' : 'tab-inactive'}>Log In</button>

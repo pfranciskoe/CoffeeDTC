@@ -562,6 +562,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+var xmark = "\u2715";
 
 var AuthPage = /*#__PURE__*/function (_React$Component) {
   _inherits(AuthPage, _React$Component);
@@ -574,6 +575,7 @@ var AuthPage = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, AuthPage);
 
     _this = _super.call(this, props);
+    console.log(_assertThisInitialized(_this));
     _this.state = {
       selectedTab: 1
     };
@@ -596,8 +598,8 @@ var AuthPage = /*#__PURE__*/function (_React$Component) {
         className: "auth-page"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "close-mod",
-        onClick: this.props.closeModul
-      }, "x"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: this.props.closeModal
+      }, xmark), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "auth-tabs"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
@@ -685,12 +687,11 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(event) {
       event.preventDefault();
       var user = Object.assign({}, this.state);
-      this.props.processForm(user);
+      this.props.processForm(user).then(this.props.closeModal);
       this.setState({
         email: '',
         password: ''
       });
-      this.props.closeModal();
     }
   }, {
     key: "update",
