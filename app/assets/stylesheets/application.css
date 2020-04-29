@@ -144,15 +144,19 @@
     .auth-error{
         color: tomato;
         font-size: 12px;
+        font-weight: 100;
         font-family: 'Roboto', sans-serif;
+        margin: 5px; 
+        text-transform: uppercase;
     }
     .error-box{
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        height: 30px;
+        height: 20px;
         width: 100%;
+           
     }
 
     .nav-button{
