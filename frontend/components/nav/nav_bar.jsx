@@ -11,7 +11,13 @@ class NavBar extends React.Component{
                 <div>{this.props.currentUser ? `Hi ${this.props.currentUser.email}` : null} </div>
                 {this.props.currentUser ?
                     <button onClick={this.props.logout} className='nav-button'>Log Out</button> :
-                    <button onClick = { this.props.openModal } className='nav-button'>Log In</button>}
+                    <div>
+                    <button onClick = { this.props.openModal } className='nav-button'>Log In</button>
+                        <button onClick={()=>this.props.processForm({
+                            email: 'demo@coffee.com',
+                            password: 'password'})}className='demo-button'>Demo Log In</button>
+                    </div>
+                    }
             </div>
         )
     }
