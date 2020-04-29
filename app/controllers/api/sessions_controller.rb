@@ -1,6 +1,6 @@
 class Api::SessionsController < ApplicationController
     def create
-        @user = user.find_by_credentials(params[:user][:email], params[:user][:password])
+        @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
         if @user.nil?
             render json: ['Invalid email or password combination.'], status: 401
         else

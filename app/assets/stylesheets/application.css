@@ -14,6 +14,7 @@
  *= require_self
  */
     *{
+        font-family: 'Roboto', sans-serif;
         box-sizing: border-box
     }
     input:focus {
@@ -47,7 +48,12 @@
     }
 
     .navbar {
-        height: 75px;
+        height: 60px;
+        transition-property: background, color;
+        transition-duration: 500ms, 500ms;
+        transition-timing-function: ease, ease;
+        transition-delay: 0s, 0s;
+        padding: 10px;
     }
 
     .auth-tabs {
@@ -123,7 +129,7 @@
     }
 
     .btn{
-         box-sizing: border-box;    
+        box-sizing: border-box;    
         background-color: #1e8ced;
         color: white;
         letter-spacing: 0.75px;
@@ -148,4 +154,36 @@
         flex-direction: column;
         height: 30px;
         width: 100%;
+    }
+
+    .nav-button{
+        background-color:transparent;
+        border-radius: 4px;
+        border: solid 1px #000;
+        font-size: 12px;
+        height: 36px;
+        letter-spacing: normal;
+        line-height:  normal;
+        width: 119px;
+        text-align: center;
+        transition-property: background, color;
+        transition-duration: 500ms, 500ms;
+        transition-timing-function: ease, ease;
+        transition-delay: 0s, 0s;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-weight: normal;
+    }
+    .nav-button:hover{
+        background-color: white;
+        border-color: #1e8ced;
+        color: #1e8ced
+    }
+    .navbar:hover{
+        background-color: white;
+        border-color: #1e8ced;
+    }
+
+    .logo-div{
+        font-size: 24px;
     }

@@ -1,11 +1,13 @@
 import React from 'react'
 
 const NavBar = ({ currentUser, logout })=>{
-
-    return (<div>Hi!{currentUser ? currentUser.email : null}
-                {/* {this.state.currentUser ? 
-                <button onClick={this.logOut()}>Log Out</button> :
-                null}*/}
+    return (
+            <div className='navbar'>
+            <div className='logo-div'>DTCOFFEE</div>
+            <div>{currentUser ? `Hi ${currentUser.email}` : null} </div> 
+                {currentUser ? 
+                <button onClick={logout} className='nav-button'>Log Out</button> :
+                <button onClick={logout} className='nav-button'>Log In</button>}
             </div>
     )
 
