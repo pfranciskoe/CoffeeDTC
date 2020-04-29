@@ -13,6 +13,9 @@ class SessionForm extends React.Component{
         event.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
+        this.setState({
+            email: '',
+            password: ''})
     }
     update(field){
         return (e) => this.setState({
@@ -21,21 +24,27 @@ class SessionForm extends React.Component{
     }
     render(){
         return (
-            <div>
                 <form onSubmit={this.handleSubmit} className='session-form-form'>
                     <label className='session-form-field-name'>Email
+                    <br/>
                         <input onChange={this.update('email')} 
-                        type="text" value={this.state.email}
+                        type="email" placeholder='Email' value={this.state.email}
                         className='session-form-field-input'/>
                     </label>
                     <label className='session-form-field-name'>Password
-                        <input onChange={this.update('email')}
-                        type="password" value={this.state.email}
+                    <br/>
+                        <input onChange={this.update('password')}
+                        placeholder='Password'
+                        type="password" value={this.state.password}
                         className='session-form-field-input' />
                     </label>
-                    <button type='submit'>{this.props.formType}</button>
+                    <button className='btn' type='submit'>{this.props.formType}</button>
+                    <div className='error-box'>
+                    {this.props.errors.session ? Object.values(this.props.errors.session).map((error,idx)=>(
+                        <p className='auth-error' key={`error-${idx}`}>{error}</p>
+                    )) : null }
+                    </div>
                 </form>
-            </div>
         )
     };
 }

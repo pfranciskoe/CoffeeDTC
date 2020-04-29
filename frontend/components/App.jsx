@@ -1,10 +1,10 @@
 import React from "react";
 import AuthPage from './session/auth_page.jsx'
-import NavBar from './nav_bar'
+import NavBarContainer from './nav/nav_bar'
 import Footer from './footer'
 const App = () =>(
     <div className='app'>
-        <NavBar/>
+        <NavBarContainer/>
         <AuthPage/>
         <Footer/>
     </div>

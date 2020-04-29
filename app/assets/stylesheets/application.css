@@ -16,16 +16,26 @@
     *{
         box-sizing: border-box
     }
+    input:focus {
+    outline:none;
+    }   
+    button:focus {
+    outline:none;
+    }  
+    body{
+        margin: 0px;
+    }
     .app{
         display: flex;
         flex-direction: column;
         margin: 0px;
         align-items: center;
+        background-color: #1e8ced;
     }
     .navbar, .foot {
         width: 100%;
         display: flex;
-        background-color: #337ab7;
+        background-color: #1e8ced;
         flex-direction: row;
         justify-content: space-between;
         margin: 0px;
@@ -46,9 +56,9 @@
         flex-direction: row;
         justify-content: center;
     }
+    
     .auth-tabs button{
         display: block;
-        border-bottom: 4px solid #000;
         cursor: pointer;
         font-family: 'Roboto', sans-serif;
         height: 72px;
@@ -59,27 +69,83 @@
         border-style: solid;
         background-color: white;
     }
+    .tab-inactive{
+        border-width: 0px;
+        border-bottom: 4px solid rgb(199, 199, 199);
+        border-style: solid;
+    }
+    .tab-active{
+        border-width: 0px;  
+        border-bottom: 4px solid #000;
+    }
     .auth-page{
-        width: 70%;
+        width: 75%;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-    }
-    .auth-form-container {
-        display: flex;
-        justify-content: center;
-
+        background-color: white;
+        border-radius: 4px;
+        height: 420px;
+        width: 480px;
     }
     .session-form-field-input{
         border: 1px solid #ccc;
+        height: 60px;
+        padding-left: 0;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        font-size: 18px;
+        line-height: 1.3333;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 100;
+        box-shadow: none;
+        width: 100%;
     }
 
-    .session-form-field-label{
-            padding: 10px;
+    .session-form-field-name{
+            box-sizing: border-box;
+            width: 90%;
+            padding: 0px;
+            color: #949494;
+            font-size: 12px;
+            line-height: 2;
+            text-transform: uppercase;
+            font-family: 'Roboto', sans-serif;
         }
     .session-form-form{
+         box-sizing: border-box;
+        width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: left;
+        align-items: center;
+    }
+
+    .btn{
+         box-sizing: border-box;    
+        background-color: #1e8ced;
+        color: white;
+        letter-spacing: 0.75px;
+        border-radius: 4px;
+        font-size: 15px;
+        line-height: 1.3333;
+        width: 90%;
+        margin-bottom: 25px;
+        margin-top: 25px;
+        height: 44px;
+        font-family: 'Roboto', sans-serif;
+    }
+    .auth-error{
+        color: tomato;
+        font-size: 12px;
+        font-family: 'Roboto', sans-serif;
+    }
+    .error-box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 30px;
+        width: 100%;
     }

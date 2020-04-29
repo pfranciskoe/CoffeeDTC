@@ -15,15 +15,14 @@ class AuthPage extends React.Component{
         return (
             <div className='auth-page'>
                 <div className='auth-tabs'>
-                    <button onClick={()=>this.selectTab(1)}>Sign Up</button>
-                    <button onClick={() =>this.selectTab(2)}>Log In</button>
+                    <button onClick={()=>this.selectTab(1)}
+                    className={(this.state.selectedTab === 1) ? 'tab-active' : 'tab-inactive' }>Sign Up</button>
+                    <button onClick={() =>this.selectTab(2)}
+                    className={(this.state.selectedTab === 2) ? 'tab-active' : 'tab-inactive'}>Log In</button>
                 </div>
-                <div className='auth-form-container'>
                     {(this.state.selectedTab === 1) ?
                         <SignupFormContainer className='sign-up-form' /> :
                         <SigninFormContainer className='sign-in-form' />}
-                </div>
-              
             </div>
         )
     }    
