@@ -187,3 +187,34 @@
     .logo-div{
         font-size: 24px;
     }
+
+    .homepage {
+        display: block;
+        height: 500px;
+        width: 100%;
+        font-size: 120px;
+        text-align: center;
+    }
+
+   
+
+.auth-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(77, 77, 77, 0.7);
+  z-index: 10;
+}
+
+.modal-wrapper{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.close-mod{
+    align-content: right;
+}

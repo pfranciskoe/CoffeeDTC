@@ -16,6 +16,7 @@ class SessionForm extends React.Component{
         this.setState({
             email: '',
             password: ''})
+        this.props.closeModal();
     }
     update(field){
         return (e) => this.setState({

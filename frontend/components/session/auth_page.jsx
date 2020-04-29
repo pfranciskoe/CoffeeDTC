@@ -14,15 +14,16 @@ class AuthPage extends React.Component{
     render(){
         return (
             <div className='auth-page'>
+                <div className='close-mod' onClick={this.props.closeModul}>x</div>
                 <div className='auth-tabs'>
-                    <button onClick={()=>this.selectTab(1)}
-                    className={(this.state.selectedTab === 1) ? 'tab-active' : 'tab-inactive' }>Sign Up</button>
-                    <button onClick={() =>this.selectTab(2)}
-                    className={(this.state.selectedTab === 2) ? 'tab-active' : 'tab-inactive'}>Log In</button>
+                    <button onClick={() =>this.selectTab(1)}
+                        className={(this.state.selectedTab === 1) ? 'tab-active' : 'tab-inactive'}>Log In</button>
+                    <button onClick={() => this.selectTab(2)}
+                        className={(this.state.selectedTab === 2) ? 'tab-active' : 'tab-inactive'}>Sign Up</button>
                 </div>
-                    {(this.state.selectedTab === 1) ?
-                        <SignupFormContainer className='sign-up-form' /> :
-                        <SigninFormContainer className='sign-in-form' />}
+                    {(this.state.selectedTab === 2) ?
+                        <SignupFormContainer className='sign-in-form' /> :
+                        <SigninFormContainer className='sign-up-form' />}
             </div>
         )
     }    
