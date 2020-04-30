@@ -9,7 +9,7 @@ class Home extends React.Component{
         return(
             <div className='homepage'>
                 <Link to='/onboarding'>
-                    <button className='quiz-button'>Get Started</button>
+                    <button className='quiz-link-button'>Get Started</button>
                 </Link>
             </div>
         )

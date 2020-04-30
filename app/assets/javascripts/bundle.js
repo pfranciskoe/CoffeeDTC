@@ -288,7 +288,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./footer */ "./frontend/components/footer.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _onboarding_onboarding_container_1__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./onboarding/onboarding_container_1 */ "./frontend/components/onboarding/onboarding_container_1.jsx");
+/* harmony import */ var _onboarding_onboarding_container_6__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./onboarding/onboarding_container_6 */ "./frontend/components/onboarding/onboarding_container_6.jsx");
+/* harmony import */ var _onboarding_onboarding_container_1__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./onboarding/onboarding_container_1 */ "./frontend/components/onboarding/onboarding_container_1.jsx");
+
 
 
 
@@ -308,11 +310,11 @@ var App = function App() {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
     exact: true,
     path: "/onboarding/1",
-    component: _onboarding_onboarding_container_1__WEBPACK_IMPORTED_MODULE_7__["default"]
+    component: _onboarding_onboarding_container_1__WEBPACK_IMPORTED_MODULE_8__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
     exact: true,
     path: "/onboarding/6",
-    component: _onboarding_onboarding_container_1__WEBPACK_IMPORTED_MODULE_7__["default"]
+    component: _onboarding_onboarding_container_6__WEBPACK_IMPORTED_MODULE_7__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
     className: "modal-cont"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_footer__WEBPACK_IMPORTED_MODULE_5__["default"], null));
@@ -431,7 +433,7 @@ var Home = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/onboarding"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "quiz-button"
+        className: "quiz-link-button"
       }, "Get Started")));
     }
   }]);
@@ -649,9 +651,211 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   !*** ./frontend/components/onboarding/onboarding_container_1.jsx ***!
   \*******************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/peterkoe/Desktop/CoffeeDTC/frontend/components/onboarding/onboarding_container_1.jsx: Unexpected token, expected \",\" (11:84)\n\n\u001b[0m \u001b[90m  9 | \u001b[39m    formQuestion\u001b[33m:\u001b[39m \u001b[32m'What is your coffee experience level?'\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 10 | \u001b[39m    formKey\u001b[33m:\u001b[39m \u001b[32m'experienceLevel'\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 11 | \u001b[39m    formOptions\u001b[33m:\u001b[39m [\u001b[32m'I’d like to start with something approachable and easy to love.'\u001b[39m \u001b[32m'I buy premium coffee from the grocery store and I know a little about roast levels'\u001b[39m]\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                                                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 12 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 13 | \u001b[39m})\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 14 | \u001b[39m\u001b[0m\n    at Object._raise (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:742:17)\n    at Object.raiseWithData (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:735:17)\n    at Object.raise (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:729:17)\n    at Object.unexpected (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:8757:16)\n    at Object.expect (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:8743:28)\n    at Object.parseExprList (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:10680:14)\n    at Object.parseExprAtom (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9969:32)\n    at Object.parseExprAtom (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:4614:20)\n    at Object.parseExprSubscripts (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9602:23)\n    at Object.parseMaybeUnary (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9582:21)\n    at Object.parseExprOps (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9452:23)\n    at Object.parseMaybeConditional (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9425:23)\n    at Object.parseMaybeAssign (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9380:21)\n    at Object.parseObjectProperty (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:10512:101)\n    at Object.parseObjPropValue (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:10537:101)\n    at Object.parseObjectMember (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:10461:10)\n    at Object.parseObj (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:10374:25)\n    at Object.parseExprAtom (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9995:28)\n    at Object.parseExprAtom (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:4614:20)\n    at Object.parseExprSubscripts (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9602:23)\n    at Object.parseMaybeUnary (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9582:21)\n    at Object.parseExprOps (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9452:23)\n    at Object.parseMaybeConditional (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9425:23)\n    at Object.parseMaybeAssign (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9380:21)\n    at Object.parseParenAndDistinguishExpression (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:10193:28)\n    at Object.parseExprAtom (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9947:21)\n    at Object.parseExprAtom (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:4614:20)\n    at Object.parseExprSubscripts (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9602:23)\n    at Object.parseMaybeUnary (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9582:21)\n    at Object.parseExprOps (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9452:23)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _actions_onboarding_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/onboarding_actions */ "./frontend/actions/onboarding_actions.js");
+/* harmony import */ var _onboarding_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./onboarding_form */ "./frontend/components/onboarding/onboarding_form.jsx");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+
+
+
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  return {
+    formQuestion: 'What is your coffee experience level?',
+    formKey: 'experienceLevel',
+    formBodys: {
+      1: 'I’d like to start with something approachable and easy to love.',
+      2: 'I buy premium coffee from the grocery store and I know a little about roast levels',
+      3: 'I buy coffee from specialty roasters and I know the difference between blends and single origins.',
+      4: 'I know my Caturra from my Bourbon and cupping is my favorite hobby.'
+    },
+    formHeads: {
+      1: 'I’m pretty new to all of this',
+      2: 'I’m at an intermediate stage',
+      3: 'I’m pretty advanced',
+      4: 'I’m a total coffee nerd'
+    },
+    questionNumber: 1,
+    nextquesitonNumber: 2
+  };
+};
+
+var mapDispatchtoProps = function mapDispatchtoProps(dispatch, ownProps) {
+  return {
+    updateAnswer: function updateAnswer(formKey, formAnswer) {
+      return dispatch(Object(_actions_onboarding_actions__WEBPACK_IMPORTED_MODULE_1__["updateAnswer"])(formKey, formAnswer));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, mapDispatchtoProps)(_onboarding_form__WEBPACK_IMPORTED_MODULE_2__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/onboarding/onboarding_container_6.jsx":
+/*!*******************************************************************!*\
+  !*** ./frontend/components/onboarding/onboarding_container_6.jsx ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _actions_onboarding_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/onboarding_actions */ "./frontend/actions/onboarding_actions.js");
+/* harmony import */ var _actions_taste_profile_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/taste_profile_actions */ "./frontend/actions/taste_profile_actions.js");
+/* harmony import */ var _onboarding_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./onboarding_form */ "./frontend/components/onboarding/onboarding_form.jsx");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+
+
+
+
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  return {
+    formQuestion: 'Do you buy ground coffee or whole bean coffee?',
+    formKey: 'ground',
+    formBodys: {
+      1: 'Grind it up!',
+      2: "I'll take care of the grinding!",
+      3: "I don't have a preference either way"
+    },
+    formHeads: {
+      1: 'Ground',
+      2: 'Whole Bean',
+      3: 'Both'
+    },
+    questionNumber: 6,
+    nextquesitonNumber: null,
+    imageLink: window.question6
+  };
+};
+
+var mapDispatchtoProps = function mapDispatchtoProps(dispatch, ownProps) {
+  return {
+    updateAnswer: function updateAnswer(key, answer) {
+      return dispatch(Object(_actions_onboarding_actions__WEBPACK_IMPORTED_MODULE_1__["updateAnswer"])(key, answer));
+    },
+    defineTasteProfile: function defineTasteProfile(tasteProfile) {
+      return dispatch(Object(_actions_taste_profile_actions__WEBPACK_IMPORTED_MODULE_2__["defineTasteProfile"])(tasteProfile));
+    },
+    editTaste: function editTaste(tasteProfile) {
+      return dispatch(Object(_actions_taste_profile_actions__WEBPACK_IMPORTED_MODULE_2__["editTaste"])(tasteProfile));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["connect"])(mapStateToProps, mapDispatchtoProps)(_onboarding_form__WEBPACK_IMPORTED_MODULE_3__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/onboarding/onboarding_form.jsx":
+/*!************************************************************!*\
+  !*** ./frontend/components/onboarding/onboarding_form.jsx ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+var OnboardingForm = /*#__PURE__*/function (_React$Component) {
+  _inherits(OnboardingForm, _React$Component);
+
+  var _super = _createSuper(OnboardingForm);
+
+  function OnboardingForm(props) {
+    _classCallCheck(this, OnboardingForm);
+
+    return _super.call(this, props);
+  }
+
+  _createClass(OnboardingForm, [{
+    key: "handleSubmit",
+    value: function handleSubmit(key) {}
+  }, {
+    key: "render",
+    value: function render() {
+      var _this = this;
+
+      console.log(this.props.questionNumber);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "question-form"
+      }, this.props.questionNumber === 6 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "quiz-image",
+        src: window.question6
+      }) : null, this.props.questionNumber === 5 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "quiz-image",
+        src: window.question5
+      }) : null, this.props.questionNumber === 4 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "quiz-image",
+        src: window.question4
+      }) : null, this.props.questionNumber === 3 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "quiz-image",
+        src: window.question3
+      }) : null, this.props.questionNumber === 2 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "quiz-image",
+        src: window.question2
+      }) : null, this.props.questionNumber === 1 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "quiz-image",
+        src: window.question1
+      }) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "quiz-header-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
+        className: "quiz-header"
+      }, "".concat(this.props.questionNumber, " of 6")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "quiz-header"
+      }, this.props.formQuestion)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "questions-container"
+      }, Object.values(this.props.formBodys).map(function (body, idx) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "quiz-button"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "quiz-head"
+        }, _this.props.formHeads[idx + 1]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "quiz-body"
+        }, _this.props.formBodys[idx + 1]));
+      })));
+    }
+  }]);
+
+  return OnboardingForm;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (OnboardingForm);
 
 /***/ }),
 
