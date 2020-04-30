@@ -115,6 +115,28 @@ var closeModal = function closeModal() {
 
 /***/ }),
 
+/***/ "./frontend/actions/onboarding_actions.js":
+/*!************************************************!*\
+  !*** ./frontend/actions/onboarding_actions.js ***!
+  \************************************************/
+/*! exports provided: UPDATE_ANSWER, updateAnswer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPDATE_ANSWER", function() { return UPDATE_ANSWER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateAnswer", function() { return updateAnswer; });
+var UPDATE_ANSWER = 'UPDATE_ANSWER';
+var updateAnswer = function updateAnswer(question, answer) {
+  return {
+    type: UPDATE_ANSWER,
+    question: question,
+    answer: answer
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/session.js":
 /*!*************************************!*\
   !*** ./frontend/actions/session.js ***!
@@ -266,6 +288,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./footer */ "./frontend/components/footer.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _onboarding_onboarding_container_1__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./onboarding/onboarding_container_1 */ "./frontend/components/onboarding/onboarding_container_1.jsx");
+
 
 
 
@@ -281,6 +305,14 @@ var App = function App() {
     exact: true,
     path: "/",
     component: _home_home__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
+    exact: true,
+    path: "/onboarding/1",
+    component: _onboarding_onboarding_container_1__WEBPACK_IMPORTED_MODULE_7__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
+    exact: true,
+    path: "/onboarding/6",
+    component: _onboarding_onboarding_container_1__WEBPACK_IMPORTED_MODULE_7__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
     className: "modal-cont"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_footer__WEBPACK_IMPORTED_MODULE_5__["default"], null));
@@ -609,6 +641,17 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_nav_bar__WEBPACK_IMPORTED_MODULE_3__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/onboarding/onboarding_container_1.jsx":
+/*!*******************************************************************!*\
+  !*** ./frontend/components/onboarding/onboarding_container_1.jsx ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/peterkoe/Desktop/CoffeeDTC/frontend/components/onboarding/onboarding_container_1.jsx: Unexpected token, expected \",\" (11:84)\n\n\u001b[0m \u001b[90m  9 | \u001b[39m    formQuestion\u001b[33m:\u001b[39m \u001b[32m'What is your coffee experience level?'\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 10 | \u001b[39m    formKey\u001b[33m:\u001b[39m \u001b[32m'experienceLevel'\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 11 | \u001b[39m    formOptions\u001b[33m:\u001b[39m [\u001b[32m'I’d like to start with something approachable and easy to love.'\u001b[39m \u001b[32m'I buy premium coffee from the grocery store and I know a little about roast levels'\u001b[39m]\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                                                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 12 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 13 | \u001b[39m})\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 14 | \u001b[39m\u001b[0m\n    at Object._raise (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:742:17)\n    at Object.raiseWithData (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:735:17)\n    at Object.raise (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:729:17)\n    at Object.unexpected (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:8757:16)\n    at Object.expect (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:8743:28)\n    at Object.parseExprList (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:10680:14)\n    at Object.parseExprAtom (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9969:32)\n    at Object.parseExprAtom (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:4614:20)\n    at Object.parseExprSubscripts (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9602:23)\n    at Object.parseMaybeUnary (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9582:21)\n    at Object.parseExprOps (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9452:23)\n    at Object.parseMaybeConditional (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9425:23)\n    at Object.parseMaybeAssign (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9380:21)\n    at Object.parseObjectProperty (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:10512:101)\n    at Object.parseObjPropValue (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:10537:101)\n    at Object.parseObjectMember (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:10461:10)\n    at Object.parseObj (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:10374:25)\n    at Object.parseExprAtom (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9995:28)\n    at Object.parseExprAtom (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:4614:20)\n    at Object.parseExprSubscripts (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9602:23)\n    at Object.parseMaybeUnary (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9582:21)\n    at Object.parseExprOps (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9452:23)\n    at Object.parseMaybeConditional (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9425:23)\n    at Object.parseMaybeAssign (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9380:21)\n    at Object.parseParenAndDistinguishExpression (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:10193:28)\n    at Object.parseExprAtom (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9947:21)\n    at Object.parseExprAtom (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:4614:20)\n    at Object.parseExprSubscripts (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9602:23)\n    at Object.parseMaybeUnary (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9582:21)\n    at Object.parseExprOps (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:9452:23)");
 
 /***/ }),
 
@@ -990,12 +1033,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _users_reducer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./users_reducer.js */ "./frontend/reducers/users_reducer.js");
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _taste_profile_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./taste_profile_reducer */ "./frontend/reducers/taste_profile_reducer.js");
+/* harmony import */ var _onboarding_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./onboarding_reducer */ "./frontend/reducers/onboarding_reducer.js");
+
 
 
 
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_1__["combineReducers"])({
   users: _users_reducer_js__WEBPACK_IMPORTED_MODULE_0__["default"],
-  tasteProfile: _taste_profile_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
+  tasteProfile: _taste_profile_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
+  onboarding: _onboarding_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -1054,6 +1100,38 @@ var modalReducer = function modalReducer() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (modalReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/onboarding_reducer.js":
+/*!*************************************************!*\
+  !*** ./frontend/reducers/onboarding_reducer.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_onboarding_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/onboarding_actions */ "./frontend/actions/onboarding_actions.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var OnboardingReducer = function OnboardingReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_onboarding_actions__WEBPACK_IMPORTED_MODULE_0__["UPDATE_ANSWER"]:
+      return Object.assign({}, state, _defineProperty({}, action.question, action.answer));
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (OnboardingReducer);
 
 /***/ }),
 
@@ -1200,7 +1278,6 @@ var TasteProfileReducer = function TasteProfileReducer() {
 
   switch (action.type) {
     case _actions_taste_profile_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_TASTE_PROFILE"]:
-      console.log(action.type);
       return action.tasteProfile;
 
     default:
