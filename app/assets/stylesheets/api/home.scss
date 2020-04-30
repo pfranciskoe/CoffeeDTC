@@ -23,6 +23,15 @@
         text-align: center;
         text-transform: uppercase;
         cursor: pointer;
+        transition-property: background, color, border-color;
+        transition-duration: 250ms, 250ms;
+        transition-timing-function: ease, ease;
+        transition-delay: 0s, 0s;
+    }
+    .quiz-link-button:hover{
+        color: #1e8ced ;
+        border-color: #1e8ced;
+        background-color: white;
     }
     .homepage-header{
         font-size: 100px;

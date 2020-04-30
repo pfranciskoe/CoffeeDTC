@@ -13686,3 +13686,184 @@ Processing by Api::SessionsController#destroy as JSON
 Completed 200 OK in 53ms (Views: 1.0ms | ActiveRecord: 42.0ms)
 
 
+Started GET "/" for ::1 at 2020-04-30 00:41:09 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 690ms (Views: 686.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 00:41:46 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 1276ms (Views: 1273.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 00:41:49 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 492ms (Views: 490.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 00:42:07 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 888ms (Views: 885.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 00:42:44 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 146ms (Views: 144.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 00:42:46 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 73ms (Views: 70.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 01:00:24 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 154ms (Views: 150.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2020-04-30 01:00:36 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@coffee.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@coffee.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.9ms)
+Completed 200 OK in 357ms (Views: 16.2ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/api/taste_profiles/undefined" for ::1 at 2020-04-30 01:00:41 -0700
+Processing by Api::TasteProfilesController#update as JSON
+  Parameters: {"taste_profile"=>{"experience_level"=>"1", "brew_method"=>"French Press", "additions"=>"Sugar or sweetener", "roast"=>"2", "adventure"=>"hard", "user_id"=>"27", "ground"=>"false"}, "id"=>"undefined"}
+  [1m[36mTasteProfile Load (16.1ms)[0m  [1m[34mSELECT  "taste_profiles".* FROM "taste_profiles" WHERE "taste_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/api/taste_profiles_controller.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/taste_profiles_controller.rb:20
+  [1m[36mTasteProfile Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "taste_profiles" WHERE "taste_profiles"."user_id" = $1 AND "taste_profiles"."id" != $2 LIMIT $3[0m  [["user_id", 27], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/taste_profiles_controller.rb:20
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/api/taste_profiles_controller.rb:20
+  [1m[36mTasteProfile Update (0.8ms)[0m  [1m[33mUPDATE "taste_profiles" SET "experience_level" = $1, "brew_method" = $2, "additions" = $3, "roast" = $4, "adventure" = $5, "ground" = $6, "updated_at" = $7 WHERE "taste_profiles"."id" = $8[0m  [["experience_level", 1], ["brew_method", "French Press"], ["additions", "Sugar or sweetener"], ["roast", 2], ["adventure", "hard"], ["ground", false], ["updated_at", "2020-04-30 08:00:41.365852"], ["id", 1]]
+  ↳ app/controllers/api/taste_profiles_controller.rb:20
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/taste_profiles_controller.rb:20
+  Rendering api/taste_profiles/show.json.jbuilder
+  Rendered api/taste_profiles/show.json.jbuilder (0.7ms)
+Completed 200 OK in 55ms (Views: 7.7ms | ActiveRecord: 20.5ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 09:15:46 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FD0fgXZUBLrpQ20DadGEZg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered api/users/_user.json.jbuilder (4.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (49.6ms)
+Completed 200 OK in 364ms (Views: 359.3ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-04-30 09:15:50 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FD0fgXZUBLrpQ20DadGEZg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:45
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@coffee.com"], ["id", 27], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "NxbyIlFiQ2P0f370RsRTTg"], ["updated_at", "2020-04-30 16:15:50.838540"], ["id", 27]]
+  ↳ app/models/user.rb:45
+  [1m[35m (41.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:45
+Completed 200 OK in 75ms (Views: 1.7ms | ActiveRecord: 44.2ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 09:56:17 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 274ms (Views: 253.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 09:56:23 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 105ms (Views: 102.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 09:56:45 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 258ms (Views: 255.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 09:57:03 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 137ms (Views: 132.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 09:57:31 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 216ms (Views: 213.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 09:59:48 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 149ms (Views: 146.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 09:59:49 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 72ms (Views: 69.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 10:01:55 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 187ms (Views: 182.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 10:02:28 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 136ms (Views: 132.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 10:02:50 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 371ms (Views: 366.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 10:03:27 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 231ms (Views: 228.6ms | ActiveRecord: 0.0ms)
+
+
