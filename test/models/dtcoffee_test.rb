@@ -14,6 +14,7 @@
 #  image_link    :string           not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  flavors       :string           not null
 #
 require 'test_helper'
 

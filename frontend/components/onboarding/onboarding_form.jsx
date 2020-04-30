@@ -39,7 +39,7 @@ class OnboardingForm extends React.Component{
                             className='quiz-button'
                             key={`button-${idx}`}
                         >
-                            <p className='quiz-head'>{this.props.formHeads[idx+1]}</p> 
+                            <p className='quiz-head'>{this.props.formHeads[idx+1]}</p>  
                             <p className='quiz-body'>{this.props.formBodys[idx+1]}</p> 
                         </button>
                     ))}

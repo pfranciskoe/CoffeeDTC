@@ -14043,3 +14043,85 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 71ms (Views: 65.6ms | ActiveRecord: 2.0ms)
 
 
+Started GET "/" for ::1 at 2020-04-30 11:41:42 -0700
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/peterkoe/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (9.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NxbyIlFiQ2P0f370RsRTTg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered api/users/_user.json.jbuilder (1.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (232.8ms)
+Completed 200 OK in 3571ms (Views: 3528.0ms | ActiveRecord: 32.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-04-30 11:41:54 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (59.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NxbyIlFiQ2P0f370RsRTTg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  [1m[35m (54.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:45
+  [1m[36mUser Exists (77.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@coffee.com"], ["id", 27], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[36mUser Update (5.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["updated_at", "2020-04-30 18:41:54.819877"], ["id", 27]]
+  ↳ app/models/user.rb:45
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:45
+Completed 200 OK in 232ms (Views: 1.2ms | ActiveRecord: 198.5ms)
+
+
+Started POST "/api/session" for ::1 at 2020-04-30 11:42:02 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@coffee.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (10.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@coffee.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.7ms)
+Completed 200 OK in 964ms (Views: 15.1ms | ActiveRecord: 10.0ms)
+
+
+Started PATCH "/api/taste_profiles/undefined" for ::1 at 2020-04-30 11:43:15 -0700
+Processing by Api::TasteProfilesController#update as JSON
+  Parameters: {"taste_profile"=>{"experience_level"=>"1", "brew_method"=>"Coffee Maker", "additions"=>"Flavored Creamer or Syrups", "roast"=>"1", "adventure"=>"easy", "user_id"=>"27", "ground"=>"true"}, "id"=>"undefined"}
+  [1m[36mTasteProfile Load (8.7ms)[0m  [1m[34mSELECT  "taste_profiles".* FROM "taste_profiles" WHERE "taste_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/api/taste_profiles_controller.rb:18
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/taste_profiles_controller.rb:20
+  [1m[36mTasteProfile Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "taste_profiles" WHERE "taste_profiles"."user_id" = $1 AND "taste_profiles"."id" != $2 LIMIT $3[0m  [["user_id", 27], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/taste_profiles_controller.rb:20
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/api/taste_profiles_controller.rb:20
+  [1m[36mTasteProfile Update (24.1ms)[0m  [1m[33mUPDATE "taste_profiles" SET "brew_method" = $1, "roast" = $2, "ground" = $3, "updated_at" = $4 WHERE "taste_profiles"."id" = $5[0m  [["brew_method", "Coffee Maker"], ["roast", 1], ["ground", true], ["updated_at", "2020-04-30 18:43:15.627861"], ["id", 1]]
+  ↳ app/controllers/api/taste_profiles_controller.rb:20
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/taste_profiles_controller.rb:20
+  Rendering api/taste_profiles/show.json.jbuilder
+  Rendered api/taste_profiles/show.json.jbuilder (1.1ms)
+Completed 200 OK in 472ms (Views: 21.4ms | ActiveRecord: 164.0ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7252881289886375535)[0m
+  ↳ /Users/peterkoe/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/peterkoe/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to AddFlavorsToDtcoffees (20200430202516)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/peterkoe/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (40.9ms)[0m  [1m[35mALTER TABLE "dtcoffees" ADD "flavors" character varying NOT NULL[0m
+  ↳ db/migrate/20200430202516_add_flavors_to_dtcoffees.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200430202516"]]
+  ↳ /Users/peterkoe/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/peterkoe/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/peterkoe/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (4.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/peterkoe/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/peterkoe/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7252881289886375535)[0m
+  ↳ /Users/peterkoe/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/peterkoe/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/peterkoe/.rbenv/versions/2.5.1/bin/annotate:23

@@ -15,7 +15,7 @@
 #
 class Roaster < ApplicationRecord
     validates :name, presence:true, uniqueness: true
-    validate :location, :logo_url, :description, :fun_fact, presence:true
+    validates :location, :logo_url, :description, :fun_fact, presence:true
     has_many :coffees,
     foreign_key: :roaster_id,
     class_name: :Dtcoffee

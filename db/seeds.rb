@@ -21,14 +21,257 @@ TasteProfile.create!(
     ground: false
 )
 
-Roaster.create([
-    {name: Stumptown,       
-        location: , 
+roaster1 = Roaster.create(name: 'Stumptown',       
+        location:'Portland, Oregon', 
         logo_url: ,    
-        description: , 
-        fun_fact: ,
-    } 
+        description: 'This titan roaster had its modest beginnings in a closed-down 
+        Portland beauty salon named Hair Bender (hence Stumptown’s popular blend). Duane Sorenson’s 
+        brand has come a long way since then, setting the standard for sourcing, 
+        roasting, and (of course) cold brew with skill and a little luck from its talisman horseshoe.', 
+        fun_fact: "This roaster takes the coffee house music scene seriously and releases employee-based *Worker's Comp* vinyls.",
+)
+roaster2 = Roaster.create(name: 'Equator',       
+        location:'San Rafael, California', 
+        logo_url: ,    
+        description: "In 1995, when partners Brooke McDonnell, Maureen McHugh, and Helen Russell 
+        began roasting coffee from a garage, they set out to build a high-impact company focused 
+        on quality, sustainability, and social responsibility. As a Certified B Corporation, 
+        Equator supports quality of life initiatives in coffee-growing regions, including its 
+        founding of Panama’s Finca Sophia farm and partnering with World Bicycle Relief.", 
+        fun_fact: "Equator's chain of well-being philosophy ensures everyone with a hand in making its coffee benefits from it.",
+)
+roaster3 = Roaster.create(name: 'Passenger',       
+        location:'Lancaster, Pennsylvania', 
+        logo_url: ,    
+        description: "Passenger loves coffee and wants to take its drinkers 
+        along for the ride. Once operating from a retrofitted 1955 Airstream 
+        trailer — capturing a mix of wonder and familiarity — this Lancaster,
+         Pennsylvania roaster is focused on the future. In that spirit, 
+         forward-thinking Passenger keeps their entire inventory of unroasted
+          coffee in deep-freeze storage, allowing them to roast a large and 
+          diverse offering at peak freshness year round.", 
+        fun_fact: "This roaster first opened to the public through the window of its vintage Airstream mobile cafe.",
+)
+roaster4 = Roaster.create(name: 'AKA',       
+        location:'Oakland, California', 
+        logo_url: ,    
+        description: "Co-founders Brian W. Jones, Björg Brend Laird, and 
+        John Laird's AKA Coffee won't let anything stand between them and 
+        the joy of a great cup. Bouncing back from an initial 2013 launch, the
+         Oakland, California brand focuses on diverse flavors, including the 
+         nuanced taste of Nordic roasting, a field in which Björg is a pioneer.", 
+        fun_fact: "Also known as family, AKA's roaster Rosie Laird grew up around 
+        coffee as the daughter of co-founder and roastmaster John Laird.",
+)
 
 
-])
 
+coffee1= Dtcoffee.create(
+        name:'Hair Bender',
+        description:'The one that started it all and still the most popular for Stumptown. 
+            Sweet, complex, & balanced, this dynamic coffee is great no matter how your brew it.',
+        roast: 4,
+        roaster_id: roaster1.id,
+        weight: 12,
+        price: 17.65,
+        single_origin: false,
+        fair_trade: false,
+        image_link:,
+        flavors: 'Comforting & Rich'
+)
+coffee2= Dtcoffee.create(
+        name:"Founder's Blend",
+        description:"Everything you love about a classic, nostalgic cup of 
+            comfort shine in this sweet, easy to love blend - 
+            it's just elevated beyond your wildest dreams.",
+        roast: 2,
+        roaster_id: roaster1.id,
+        weight: 12,
+        price: 17.65,
+        single_origin: false,
+        fair_trade: false,
+        image_link:,
+        flavors: 'Sweet & Smooth'
+)
+coffee3= Dtcoffee.create(
+        name:"French Roast",
+        description:"Rich and smoky, with a bold chocolaty body 
+            and a spiciness that sticks around. This coffee takes milk 
+            like a champ, but won't take 'no' for an answer.",
+        roast: 4,
+        roaster_id: roaster1.id,
+        weight: 12,
+        price: 17.65,
+        single_origin: false,
+        fair_trade: false,
+        image_link:,
+        flavors: 'Roasty & Smoky'     
+)
+coffee4= Dtcoffee.create(
+        name:"Holler Mountain",
+        description:"This full-bodied & versatile hometown favorite layers 
+            crisp bright flavors on top of comforting richness.",
+        roast: 3,
+        roaster_id: roaster1.id,
+        weight: 12,
+        price: 18.85,
+        single_origin: false,
+        fair_trade: false,
+        image_link:,
+        flavors: 'Comforting & Rich'
+)
+
+coffee5= Dtcoffee.create(
+        name:"El Salvador Los Pirineos Pacamara",
+        description:"A big-bodied coffee that tastes like a candy bar, 
+        this chocolaty cup should please most any coffee drinker.",
+        roast: 3,
+        roaster_id: roaster2.id,
+        weight: 12,
+        price: 22.95,
+        single_origin: true,
+        fair_trade: false,
+        image_link:,
+        flavors: 'Chocolaty & Sweet'
+)
+coffee6= Dtcoffee.create(
+        name:"Eye Of The Tiger Espresso",
+        description:"Juicy citrus acidity paired with incredible chocolaty 
+        depth and fruity sweetness will have you running up and down 
+        flights of stairs in the blink of an eye.",
+        roast: 4,
+        roaster_id: roaster2.id,
+        weight: 12,
+        price: 20.60,
+        single_origin: false,
+        fair_trade: false,
+        image_link:,
+        flavors: 'Syrupy & Smooth'
+)
+coffee7= Dtcoffee.create(
+        name:"Rwanda Nyampinga",
+        description:"Refreshingly juicy lime acidity carries a cherry-vanilla 
+        sweetness that lingers long after that last sip.",
+        roast: 2,
+        roaster_id: roaster2.id,
+        weight: 12,
+        price: 21.20,
+        single_origin: true,
+        fair_trade: false,
+        image_link:,
+        flavors: 'Sweet & Tart'
+)
+coffee8= Dtcoffee.create(
+        name:"Ethiopia Sidama Ardi",
+        description:"Smooth, fruity and sweet, with notes of vanilla, 
+        lavender and meyer lemon. This naturally processed coffee may 
+        change your whole perception of what coffee can be.",
+        roast: 3,
+        roaster_id: roaster2.id,
+        weight: 12,
+        price: 21.80,
+        single_origin: true,
+        fair_trade: false,
+        image_link:,
+        flavors: 'Funky & Fruity'
+)
+
+
+
+coffee9= Dtcoffee.create(
+        name:"Hacienda La Esmeralda 2019 Dry Processed",
+        description:"Breaking news: when you masterfully roast some 
+        of the best, most painstakingly processed coffee in the world, 
+        you get a wildly delicious and intensely sweet and fruity cup.",
+        roast: 1,
+        roaster_id: roaster3.id,
+        weight: 10,
+        price: 104.15,
+        single_origin: true,
+        fair_trade: true,
+        image_link:,
+        flavors: 'Funky & Fruity'
+)
+coffee10= Dtcoffee.create(
+        name:"Ecuador La Tortuga",
+        description:"Positively buzzing with honey sweetness, 
+        this tropical cup brings a bright berry juiciness to round out this super sweet treat.",
+        roast: 1,
+        roaster_id: roaster3.id,
+        weight: 10,
+        price: 39.75,
+        single_origin: true,
+        fair_trade: true,
+        image_link:,
+        flavors: 'Subtle & Delicate'
+)
+
+coffee11= Dtcoffee.create(
+        name:"Kanzu, Rwanda",
+        description:"Dried apricot, raisin, panela, citrus, and even slight
+         jasmine on the nose introduce a very attractive cup full of flavors 
+         ranging from baked apple and pear to raspberry.",
+        roast: 2,
+        roaster_id: roaster3.id,
+        weight: 10,
+        price: 22.95,
+        single_origin: true,
+        fair_trade: false,
+        image_link:,
+        flavors: 'Subtle & Delicate'
+)
+coffee12= Dtcoffee.create(
+        name:"German Córdoba",
+        description:"Gentle but super sweet and complex, this 
+        competition-winning coffee is as gorgeous as they come.",
+        roast: 1,
+        roaster_id: roaster3.id,
+        weight: 10,
+        price: 32.10,
+        single_origin: true,
+        fair_trade: false,
+        image_link:,
+        flavors: 'Subtle & Delicate'
+)
+coffee13= Dtcoffee.create(
+        name:"OMG (Oh My God)",
+        description:"Oh my Guatemala, this is a good blend 
+        (the other half comes from Ethiopia). Sip its balanced 
+        richness and try not to shout it out loud (or post it on social).",
+        roast: 3,
+        roaster_id: roaster4.id,
+        weight: 12,
+        price: 20.00,
+        single_origin: false,
+        fair_trade: false,
+        image_link:,
+        flavors: 'Sweet & Smooth'
+)
+coffee14= Dtcoffee.create(
+        name:"OMG (Oh My God)",
+        description:"Oh my Guatemala, this is a good blend 
+        (the other half comes from Ethiopia). Sip its balanced 
+        richness and try not to shout it out loud (or post it on social).",
+        roast: 3,
+        roaster_id: roaster4.id,
+        weight: 12,
+        price: 20.00,
+        single_origin: false,
+        fair_trade: false,
+        image_link:,
+        flavors: 'Sweet & Smooth'
+)
+coffee15= Dtcoffee.create(
+        name:"OMG (Oh My God)",
+        description:"Oh my Guatemala, this is a good blend 
+        (the other half comes from Ethiopia). Sip its balanced 
+        richness and try not to shout it out loud (or post it on social).",
+        roast: 3,
+        roaster_id: roaster4.id,
+        weight: 12,
+        price: 20.00,
+        single_origin: false,
+        fair_trade: false,
+        image_link:,
+        flavors: 'Sweet & Smooth'
+)

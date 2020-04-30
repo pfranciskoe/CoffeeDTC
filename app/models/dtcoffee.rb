@@ -14,14 +14,15 @@
 #  image_link    :string           not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  flavors       :string           not null
 #
 class Dtcoffee < ApplicationRecord
     validates :name, presence: true, uniqueness: true
     validates :description, :roast, :roaster_id, :weight, :price,  presence: true
-    validates :fair_trade, :image_link, :single_origin, presence: true
+    validates :fair_trade, :image_link, :single_origin, :flavors, presence: true
 
-    # belongs_to :roaster,
-    # foreign_key: :roaster_id,
-    # class_name: :Roaster,
-    # dependent: :destroy
+    belongs_to :roaster,
+    foreign_key: :roaster_id,
+    class_name: :Roaster,
+    dependent: :destroy
 end
