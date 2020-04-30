@@ -681,8 +681,9 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
       3: 'I’m pretty advanced',
       4: 'I’m a total coffee nerd'
     },
+    formAnswers: [1, 2, 3, 4],
     questionNumber: 1,
-    nextquesitonNumber: 2
+    nextQuesitonNumber: 2
   };
 };
 
@@ -721,18 +722,18 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
+    state: state,
     formQuestion: 'Do you buy ground coffee or whole bean coffee?',
     formKey: 'ground',
     formBodys: {
       1: 'Grind it up!',
-      2: "I'll take care of the grinding!",
-      3: "I don't have a preference either way"
+      2: "I'll take care of the grinding!"
     },
     formHeads: {
       1: 'Ground',
-      2: 'Whole Bean',
-      3: 'Both'
+      2: 'Whole Bean'
     },
+    formAnswers: [true, false],
     questionNumber: 6,
     nextquesitonNumber: null,
     imageLink: window.question6
@@ -798,20 +799,27 @@ var OnboardingForm = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(OnboardingForm);
 
   function OnboardingForm(props) {
+    var _this;
+
     _classCallCheck(this, OnboardingForm);
 
-    return _super.call(this, props);
+    _this = _super.call(this, props);
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(OnboardingForm, [{
     key: "handleSubmit",
-    value: function handleSubmit(key) {}
+    value: function handleSubmit(idx) {
+      this.props.updateAnswer(this.props.formKey, this.props.formAnswers[idx + 1]);
+      this.props.nextQuesitonNumber !== null ? this.props.history.push("/onboarding/".concat(this.props.nextQuesitonNumber)) : null; // this.props.editTaste(this)
+    }
   }, {
     key: "render",
     value: function render() {
-      var _this = this;
+      var _this2 = this;
 
-      console.log(this.props.questionNumber);
+      console.log(this.props);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "question-form"
       }, this.props.questionNumber === 6 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -835,19 +843,22 @@ var OnboardingForm = /*#__PURE__*/function (_React$Component) {
       }) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "quiz-header-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
-        className: "quiz-header"
+        className: "quiz-number"
       }, "".concat(this.props.questionNumber, " of 6")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "quiz-header"
       }, this.props.formQuestion)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "questions-container"
       }, Object.values(this.props.formBodys).map(function (body, idx) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: function onClick() {
+            return _this2.handleSubmit(idx);
+          },
           className: "quiz-button"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "quiz-head"
-        }, _this.props.formHeads[idx + 1]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        }, _this2.props.formHeads[idx + 1]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "quiz-body"
-        }, _this.props.formBodys[idx + 1]));
+        }, _this2.props.formBodys[idx + 1]));
       })));
     }
   }]);

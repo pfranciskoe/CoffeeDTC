@@ -15,8 +15,9 @@ const mapStateToProps = (state, ownProps) => ({
                 2: 'I’m at an intermediate stage',
                 3: 'I’m pretty advanced',
                 4:'I’m a total coffee nerd'},
+    formAnswers: [1,2,3,4],
     questionNumber: 1,
-    nextquesitonNumber:2
+    nextQuesitonNumber:2
 });
 
 const mapDispatchtoProps = (dispatch, ownProps) => ({

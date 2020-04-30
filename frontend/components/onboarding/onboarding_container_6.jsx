@@ -5,18 +5,18 @@ import OnboardingForm from './onboarding_form'
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state, ownProps) => ({
+    state: state,
     formQuestion: 'Do you buy ground coffee or whole bean coffee?',
     formKey: 'ground',
     formBodys: {
         1: 'Grind it up!',
-        2: "I'll take care of the grinding!",
-        3: "I don't have a preference either way"
+        2: "I'll take care of the grinding!"
     },
     formHeads: {
         1: 'Ground',
-        2: 'Whole Bean',
-        3: 'Both'
+        2: 'Whole Bean'
     },
+    formAnswers: [true,false],
     questionNumber: 6,
     nextquesitonNumber: null,
     imageLink: window.question6
