@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state, ownProps) => ({
     formQuestion: 'What is your coffee experience level?',
-    formKey: 'experienceLevel',
+    formKey: 'experience_level',
     formBodys: {1:'I’d like to start with something approachable and easy to love.',
                 2:'I buy premium coffee from the grocery store and I know a little about roast levels',
                 3:'I buy coffee from specialty roasters and I know the difference between blends and single origins.',

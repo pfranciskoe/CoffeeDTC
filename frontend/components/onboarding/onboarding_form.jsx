@@ -3,7 +3,6 @@ class OnboardingForm extends React.Component{
     constructor(props){
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this)
-        console.log(this.props.profile)
     };
 
     handleSubmit(idx){
@@ -12,12 +11,14 @@ class OnboardingForm extends React.Component{
             this.props.updateAnswer(this.props.formKey, this.props.formAnswers[idx])
             this.props.history.push(`/onboarding/${this.props.nextQuesitonNumber}`)
         } else {
-            this.props.updateAnswer(this.props.formKey, this.props.formAnswers[idx])
-            this.props.updateAnswer('userId', this.props.currentId)
-            this.props.updateTaste({ userId: 27, ground: false, adventure: 'easy', roast: 1, additions: 'Milk or Cream', brewMethod: 'Coffee Maker', experienceLevel:1})
+            // this.props.updateAnswer(this.props.formKey, this.props.formAnswers[idx])
+            // this.props.updateAnswer('user_id', this.props.currentId)
+            const params = Object.assign(this.props.profile, { 'user_id': this.props.currentId, 
+                                                            [this.props.formKey]: this.props.formAnswers[idx] })
+            this.props.updateTaste(params)  
+            this.props.history.push(`/`)
         }
     };
-
     render(){
         return ( 
             <div className='question-form'>

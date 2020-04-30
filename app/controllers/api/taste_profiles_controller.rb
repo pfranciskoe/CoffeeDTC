@@ -14,11 +14,13 @@ class Api::TasteProfilesController < ApplicationController
     end
 
     def update
-        @taste_profile = TasteProfile.find_by(user_id: params[:id])
-        if @taste_profile.update_attributes(profile_params)
+
+        @taste_profile = TasteProfile.find_by(user_id: profile_params['user_id'])
+        if @taste_profile
+            @taste_profile.update_attributes(profile_params)
             render :show
         else
-            render json: @taste_profile.errors.full_messages, status: 400
+            render json: ["#{params}"], status: 400
         end
     end
     private

@@ -692,7 +692,7 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
     formQuestion: 'What is your coffee experience level?',
-    formKey: 'experienceLevel',
+    formKey: 'experience_level',
     formBodys: {
       1: 'I’d like to start with something approachable and easy to love.',
       2: 'I buy premium coffee from the grocery store and I know a little about roast levels',
@@ -746,7 +746,7 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
     formQuestion: 'How do you usually make coffee at home?',
-    formKey: 'brewMethod',
+    formKey: 'brew_method',
     formBodys: {
       1: null,
       2: null,
@@ -1030,6 +1030,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1064,7 +1066,6 @@ var OnboardingForm = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    console.log(_this.props.profile);
     return _this;
   }
 
@@ -1075,17 +1076,13 @@ var OnboardingForm = /*#__PURE__*/function (_React$Component) {
         this.props.updateAnswer(this.props.formKey, this.props.formAnswers[idx]);
         this.props.history.push("/onboarding/".concat(this.props.nextQuesitonNumber));
       } else {
-        this.props.updateAnswer(this.props.formKey, this.props.formAnswers[idx]);
-        this.props.updateAnswer('userId', this.props.currentId);
-        this.props.updateTaste({
-          userId: 27,
-          ground: false,
-          adventure: 'easy',
-          roast: 1,
-          additions: 'Milk or Cream',
-          brewMethod: 'Coffee Maker',
-          experienceLevel: 1
-        });
+        // this.props.updateAnswer(this.props.formKey, this.props.formAnswers[idx])
+        // this.props.updateAnswer('user_id', this.props.currentId)
+        var params = Object.assign(this.props.profile, _defineProperty({
+          'user_id': this.props.currentId
+        }, this.props.formKey, this.props.formAnswers[idx]));
+        this.props.updateTaste(params);
+        this.props.history.push("/");
       }
     }
   }, {

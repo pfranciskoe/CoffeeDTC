@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state, ownProps) => ({
     formQuestion: 'How do you usually make coffee at home?',
-    formKey: 'brewMethod',
+    formKey: 'brew_method',
     formBodys: {
         1: null,
         2: null,
