@@ -21,3 +21,14 @@ TasteProfile.create!(
     ground: false
 )
 
+Roaster.create([
+    {name: Stumptown,       
+        location: , 
+        logo_url: ,    
+        description: , 
+        fun_fact: ,
+    } 
+
+
+])
+

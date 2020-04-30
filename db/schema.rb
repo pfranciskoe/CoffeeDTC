@@ -10,10 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_29_203347) do
+ActiveRecord::Schema.define(version: 2020_04_30_175516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "dtcoffees", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description", null: false
+    t.integer "roast", null: false
+    t.integer "roaster_id", null: false
+    t.integer "weight", null: false
+    t.float "price", null: false
+    t.boolean "single_origin", null: false
+    t.boolean "fair_trade", null: false
+    t.string "image_link", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_dtcoffees_on_name", unique: true
+    t.index ["roaster_id"], name: "index_dtcoffees_on_roaster_id"
+  end
+
+  create_table "roasters", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "location", null: false
+    t.string "logo_url", null: false
+    t.float "lat"
+    t.float "lng"
+    t.string "description", null: false
+    t.string "fun_fact", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_roasters_on_name", unique: true
+  end
 
   create_table "taste_profiles", force: :cascade do |t|
     t.integer "user_id", null: false

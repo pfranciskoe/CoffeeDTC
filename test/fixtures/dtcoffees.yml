@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: dtcoffees
+#
+#  id            :bigint           not null, primary key
+#  name          :string           not null
+#  description   :text             not null
+#  roast         :integer          not null
+#  roaster_id    :integer          not null
+#  weight        :integer          not null
+#  price         :float            not null
+#  single_origin :boolean          not null
+#  fair_trade    :boolean          not null
+#  image_link    :string           not null
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: {}
+# column: value
+#
+two: {}
+# column: value
