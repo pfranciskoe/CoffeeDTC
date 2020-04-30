@@ -1,0 +1,52 @@
+    .homepage {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 500px;
+        width: 100%;
+        font-size: 120px;
+        text-align: center;
+    }
+
+    .quiz-link-button{
+        display: block;
+        font-weight: 900;
+        background-color:transparent;
+        border-radius: 4px;
+        border: solid 1px #000;
+        font-size: 12px;
+        height: 36px;
+        letter-spacing: normal;
+        line-height:  normal;
+        width: 119px;
+        text-align: center;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+    .homepage-header{
+        font-size: 100px;
+        width: 50%;
+
+    }
+
+    .home-img-top-left{
+        position: absolute;
+        left: -3%;
+        top: 50px;
+        width: 20%;
+        height: auto;
+    }
+    .home-img-top-right{
+        position: absolute;
+        right: -3%;
+        top: 50px;
+        width: 20%;
+        height: auto;
+    }
+    .quiz-link-button-link{
+        height: 50px;
+        display: block;
+        z-index: 1;
+        text-decoration: none;
+    }
