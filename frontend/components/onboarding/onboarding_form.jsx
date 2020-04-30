@@ -3,15 +3,19 @@ class OnboardingForm extends React.Component{
     constructor(props){
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this)
+        console.log(this.props.profile)
     };
 
     handleSubmit(idx){
-        (this.props.nextQuesitonNumber !== null) 
-        ?
-            this.props.updateAnswer(this.props.formKey, this.props.formAnswers[idx + 1])
-                .then(() => this.props.history.push(`/onboarding/${this.props.nextQuesitonNumber}`))
-        :   this.props.updateAnswer(this.props.formKey, this.props.formAnswers[idx + 1])
-            .then(() => this.props.editTaste(Object.assign(this.props.profile, { user_id: this.props.currentId })))
+        
+        if (this.props.nextquesitonNumber !== null) {
+            this.props.updateAnswer(this.props.formKey, this.props.formAnswers[idx])
+            this.props.history.push(`/onboarding/${this.props.nextQuesitonNumber}`)
+        } else {
+            this.props.updateAnswer(this.props.formKey, this.props.formAnswers[idx])
+            this.props.updateAnswer('userId', this.props.currentId)
+            this.props.updateTaste({ userId: 27, ground: false, adventure: 'easy', roast: 1, additions: 'Milk or Cream', brewMethod: 'Coffee Maker', experienceLevel:1})
+        }
     };
 
     render(){
@@ -31,7 +35,8 @@ class OnboardingForm extends React.Component{
                     {Object.values(this.props.formBodys).map((body,idx)=>(
                         <button 
                             onClick={()=>this.handleSubmit(idx)} 
-                        className='quiz-button'
+                            className='quiz-button'
+                            key={`button-${idx}`}
                         >
                             <p className='quiz-head'>{this.props.formHeads[idx+1]}</p> 
                             <p className='quiz-body'>{this.props.formBodys[idx+1]}</p> 

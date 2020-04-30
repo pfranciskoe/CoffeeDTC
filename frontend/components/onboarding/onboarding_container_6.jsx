@@ -1,10 +1,10 @@
 import React from 'react';
 import { updateAnswer } from '../../actions/onboarding_actions';
-import { defineTasteProfile, editTaste } from '../../actions/taste_profile_actions'
+import { defineTasteProfile, updateTaste } from '../../actions/taste_profile_actions'
 import OnboardingForm from './onboarding_form'
 import { connect } from 'react-redux';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
     profile: state.entities.onboarding,
     currentId: state.session.id,
     formQuestion: 'Do you buy ground coffee or whole bean coffee?',
@@ -24,10 +24,10 @@ const mapStateToProps = (state, ownProps) => ({
     whyItMatters: 'We try to offer ground to order coffee from as many roasters as possible.If ground is your thing we’ll make sure we don’t recommend a coffee that’s only available as whole bean.'
 });
 
-const mapDispatchtoProps = (dispatch, ownProps) => ({
+const mapDispatchtoProps = (dispatch) => ({
     updateAnswer: (key, answer) => dispatch(updateAnswer(key, answer)),
     defineTasteProfile: (tasteProfile) => dispatch(defineTasteProfile(tasteProfile)),
-    editTaste: (tasteProfile) => dispatch(editTaste(tasteProfile))
+    updateTaste: (tasteProfile) => dispatch(updateTaste(tasteProfile))
 });
 
 export default connect(mapStateToProps, mapDispatchtoProps)(OnboardingForm);

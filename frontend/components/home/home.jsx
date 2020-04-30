@@ -8,7 +8,7 @@ class Home extends React.Component{
 
         return(
             <div className='homepage'>
-                <Link to='/onboarding'>
+                <Link to='/onboarding/1'>
                     <button className='quiz-link-button'>Get Started</button>
                 </Link>
             </div>

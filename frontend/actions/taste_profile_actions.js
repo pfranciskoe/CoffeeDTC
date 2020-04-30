@@ -18,4 +18,4 @@ export const updateTaste = formTaste => dispatch => editTaste(formTaste)
     .then(tasteProfile => dispatch(receiveTasteProfile(tasteProfile)), errors => dispatch(receiveErrors(errors.responseJSON)));
 
 export const fetchTaste = userid => dispatch => fetchTasteProfile(userid)
-    .then((tasteProfile) => dispatch(receiveTasteProfile(tasteProfile), errors => dispatch(receiveErrors(errors.responseJSON))));
+    .then(tasteProfile => dispatch(receiveTasteProfile(tasteProfile), errors => dispatch(receiveErrors(errors.responseJSON))));

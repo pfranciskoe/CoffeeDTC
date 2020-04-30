@@ -455,7 +455,7 @@ var Home = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "homepage"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/onboarding"
+        to: "/onboarding/1"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "quiz-link-button"
       }, "Get Started")));
@@ -977,7 +977,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var mapStateToProps = function mapStateToProps(state, ownProps) {
+var mapStateToProps = function mapStateToProps(state) {
   return {
     profile: state.entities.onboarding,
     currentId: state.session.id,
@@ -999,7 +999,7 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
   };
 };
 
-var mapDispatchtoProps = function mapDispatchtoProps(dispatch, ownProps) {
+var mapDispatchtoProps = function mapDispatchtoProps(dispatch) {
   return {
     updateAnswer: function updateAnswer(key, answer) {
       return dispatch(Object(_actions_onboarding_actions__WEBPACK_IMPORTED_MODULE_1__["updateAnswer"])(key, answer));
@@ -1007,8 +1007,8 @@ var mapDispatchtoProps = function mapDispatchtoProps(dispatch, ownProps) {
     defineTasteProfile: function defineTasteProfile(tasteProfile) {
       return dispatch(Object(_actions_taste_profile_actions__WEBPACK_IMPORTED_MODULE_2__["defineTasteProfile"])(tasteProfile));
     },
-    editTaste: function editTaste(tasteProfile) {
-      return dispatch(Object(_actions_taste_profile_actions__WEBPACK_IMPORTED_MODULE_2__["editTaste"])(tasteProfile));
+    updateTaste: function updateTaste(tasteProfile) {
+      return dispatch(Object(_actions_taste_profile_actions__WEBPACK_IMPORTED_MODULE_2__["updateTaste"])(tasteProfile));
     }
   };
 };
@@ -1064,26 +1064,34 @@ var OnboardingForm = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    console.log(_this.props.profile);
     return _this;
   }
 
   _createClass(OnboardingForm, [{
     key: "handleSubmit",
     value: function handleSubmit(idx) {
-      var _this2 = this;
-
-      this.props.nextQuesitonNumber !== null ? this.props.updateAnswer(this.props.formKey, this.props.formAnswers[idx + 1]).then(function () {
-        return _this2.props.history.push("/onboarding/".concat(_this2.props.nextQuesitonNumber));
-      }) : this.props.updateAnswer(this.props.formKey, this.props.formAnswers[idx + 1]).then(function () {
-        return _this2.props.editTaste(Object.assign(_this2.props.profile, {
-          user_id: _this2.props.currentId
-        }));
-      });
+      if (this.props.nextquesitonNumber !== null) {
+        this.props.updateAnswer(this.props.formKey, this.props.formAnswers[idx]);
+        this.props.history.push("/onboarding/".concat(this.props.nextQuesitonNumber));
+      } else {
+        this.props.updateAnswer(this.props.formKey, this.props.formAnswers[idx]);
+        this.props.updateAnswer('userId', this.props.currentId);
+        this.props.updateTaste({
+          userId: 27,
+          ground: false,
+          adventure: 'easy',
+          roast: 1,
+          additions: 'Milk or Cream',
+          brewMethod: 'Coffee Maker',
+          experienceLevel: 1
+        });
+      }
     }
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this2 = this;
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "question-form"
@@ -1116,14 +1124,15 @@ var OnboardingForm = /*#__PURE__*/function (_React$Component) {
       }, Object.values(this.props.formBodys).map(function (body, idx) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: function onClick() {
-            return _this3.handleSubmit(idx);
+            return _this2.handleSubmit(idx);
           },
-          className: "quiz-button"
+          className: "quiz-button",
+          key: "button-".concat(idx)
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "quiz-head"
-        }, _this3.props.formHeads[idx + 1]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        }, _this2.props.formHeads[idx + 1]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "quiz-body"
-        }, _this3.props.formBodys[idx + 1]));
+        }, _this2.props.formBodys[idx + 1]));
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "why-it-matters-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
@@ -1916,7 +1925,7 @@ var editTaste = function editTaste(tasteProfile) {
     url: "/api/taste_profiles/".concat(tasteProfile.userId),
     method: 'PATCH',
     data: {
-      tasteProfile: tasteProfile
+      taste_profile: tasteProfile
     }
   });
 };

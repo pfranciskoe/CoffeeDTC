@@ -9,7 +9,7 @@ export const editTaste = (tasteProfile) => (
     $.ajax({
         url: `/api/taste_profiles/${tasteProfile.userId}`,
         method: 'PATCH',
-        data: { tasteProfile }
+        data: { taste_profile: tasteProfile }
     })
 )
 
