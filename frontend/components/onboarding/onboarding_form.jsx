@@ -6,14 +6,15 @@ class OnboardingForm extends React.Component{
     };
 
     handleSubmit(idx){
-        this.props.updateAnswer(this.props.formKey, this.props.formAnswers[idx + 1])
-        this.props.nextQuesitonNumber !== null ?
-        this.props.history.push(`/onboarding/${this.props.nextQuesitonNumber}`) : null
-        // this.props.editTaste(this)
-
+        (this.props.nextQuesitonNumber !== null) 
+        ?
+            this.props.updateAnswer(this.props.formKey, this.props.formAnswers[idx + 1])
+                .then(() => this.props.history.push(`/onboarding/${this.props.nextQuesitonNumber}`))
+        :   this.props.updateAnswer(this.props.formKey, this.props.formAnswers[idx + 1])
+            .then(() => this.props.editTaste(Object.assign(this.props.profile, { user_id: this.props.currentId })))
     };
+
     render(){
-        console.log(this.props)
         return ( 
             <div className='question-form'>
                     {this.props.questionNumber === 6 ? <img className='quiz-image' src={window.question6}/> : null}
@@ -36,6 +37,10 @@ class OnboardingForm extends React.Component{
                             <p className='quiz-body'>{this.props.formBodys[idx+1]}</p> 
                         </button>
                     ))}
+                </div>
+                <div className='why-it-matters-container'>
+                    <h2 className='why-it-matters-head'>Why It Matters</h2>
+                    <p className='why-it-matters-head'>{this.props.whyItMatters}</p>
                 </div>
             </div>
         )

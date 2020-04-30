@@ -17,7 +17,8 @@ const mapStateToProps = (state, ownProps) => ({
                 4:'I’m a total coffee nerd'},
     formAnswers: [1,2,3,4],
     questionNumber: 1,
-    nextQuesitonNumber:2
+    nextQuesitonNumber:2,
+    whyItMatters: 'Great coffee is a(delicious) journey and we want to make suggestions that are best suited to wherever you are on yours.We ask for your experience level first because your following answers can be interpreted very differently depending on how you identify.'
 });
 
 const mapDispatchtoProps = (dispatch, ownProps) => ({

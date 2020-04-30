@@ -289,7 +289,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./footer */ "./frontend/components/footer.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _onboarding_onboarding_container_6__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./onboarding/onboarding_container_6 */ "./frontend/components/onboarding/onboarding_container_6.jsx");
-/* harmony import */ var _onboarding_onboarding_container_1__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./onboarding/onboarding_container_1 */ "./frontend/components/onboarding/onboarding_container_1.jsx");
+/* harmony import */ var _onboarding_onboarding_container_5__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./onboarding/onboarding_container_5 */ "./frontend/components/onboarding/onboarding_container_5.jsx");
+/* harmony import */ var _onboarding_onboarding_container_4__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./onboarding/onboarding_container_4 */ "./frontend/components/onboarding/onboarding_container_4.jsx");
+/* harmony import */ var _onboarding_onboarding_container_3__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./onboarding/onboarding_container_3 */ "./frontend/components/onboarding/onboarding_container_3.jsx");
+/* harmony import */ var _onboarding_onboarding_container_2__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./onboarding/onboarding_container_2 */ "./frontend/components/onboarding/onboarding_container_2.jsx");
+/* harmony import */ var _onboarding_onboarding_container_1__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./onboarding/onboarding_container_1 */ "./frontend/components/onboarding/onboarding_container_1.jsx");
+
+
+
+
 
 
 
@@ -310,7 +318,23 @@ var App = function App() {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
     exact: true,
     path: "/onboarding/1",
-    component: _onboarding_onboarding_container_1__WEBPACK_IMPORTED_MODULE_8__["default"]
+    component: _onboarding_onboarding_container_1__WEBPACK_IMPORTED_MODULE_12__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
+    exact: true,
+    path: "/onboarding/2",
+    component: _onboarding_onboarding_container_2__WEBPACK_IMPORTED_MODULE_11__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
+    exact: true,
+    path: "/onboarding/3",
+    component: _onboarding_onboarding_container_3__WEBPACK_IMPORTED_MODULE_10__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
+    exact: true,
+    path: "/onboarding/4",
+    component: _onboarding_onboarding_container_4__WEBPACK_IMPORTED_MODULE_9__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
+    exact: true,
+    path: "/onboarding/5",
+    component: _onboarding_onboarding_container_5__WEBPACK_IMPORTED_MODULE_8__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
     exact: true,
     path: "/onboarding/6",
@@ -683,7 +707,240 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
     },
     formAnswers: [1, 2, 3, 4],
     questionNumber: 1,
-    nextQuesitonNumber: 2
+    nextQuesitonNumber: 2,
+    whyItMatters: 'Great coffee is a(delicious) journey and we want to make suggestions that are best suited to wherever you are on yours.We ask for your experience level first because your following answers can be interpreted very differently depending on how you identify.'
+  };
+};
+
+var mapDispatchtoProps = function mapDispatchtoProps(dispatch, ownProps) {
+  return {
+    updateAnswer: function updateAnswer(formKey, formAnswer) {
+      return dispatch(Object(_actions_onboarding_actions__WEBPACK_IMPORTED_MODULE_1__["updateAnswer"])(formKey, formAnswer));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, mapDispatchtoProps)(_onboarding_form__WEBPACK_IMPORTED_MODULE_2__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/onboarding/onboarding_container_2.jsx":
+/*!*******************************************************************!*\
+  !*** ./frontend/components/onboarding/onboarding_container_2.jsx ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _actions_onboarding_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/onboarding_actions */ "./frontend/actions/onboarding_actions.js");
+/* harmony import */ var _onboarding_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./onboarding_form */ "./frontend/components/onboarding/onboarding_form.jsx");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+
+
+
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  return {
+    formQuestion: 'How do you usually make coffee at home?',
+    formKey: 'brewMethod',
+    formBodys: {
+      1: null,
+      2: null,
+      3: null,
+      4: null,
+      5: null,
+      6: null,
+      7: null,
+      8: null,
+      9: null,
+      10: null
+    },
+    formHeads: {
+      1: 'Coffee Maker',
+      2: 'French Press',
+      3: 'Pour Over',
+      4: 'Chemex',
+      5: 'AeroPress',
+      6: 'Percolator',
+      7: 'Cold Brew',
+      8: 'Espresso Machine',
+      9: 'Moka Pot',
+      10: 'Refillable Pods'
+    },
+    formAnswers: ['Coffee Maker', 'French Press', 'Pour Over', 'Chemex', 'AeroPress', 'Percolator', 'Cold Brew', 'Espresso Machine', 'Moka Pot', 'Refillable Pods'],
+    questionNumber: 2,
+    nextQuesitonNumber: 3,
+    whyItMatters: 'Certain coffee-making methods are especially good for certain coffees. We start with this question to make sure the coffee we recommend will taste great with your current coffee routine.'
+  };
+};
+
+var mapDispatchtoProps = function mapDispatchtoProps(dispatch, ownProps) {
+  return {
+    updateAnswer: function updateAnswer(formKey, formAnswer) {
+      return dispatch(Object(_actions_onboarding_actions__WEBPACK_IMPORTED_MODULE_1__["updateAnswer"])(formKey, formAnswer));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, mapDispatchtoProps)(_onboarding_form__WEBPACK_IMPORTED_MODULE_2__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/onboarding/onboarding_container_3.jsx":
+/*!*******************************************************************!*\
+  !*** ./frontend/components/onboarding/onboarding_container_3.jsx ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _actions_onboarding_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/onboarding_actions */ "./frontend/actions/onboarding_actions.js");
+/* harmony import */ var _onboarding_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./onboarding_form */ "./frontend/components/onboarding/onboarding_form.jsx");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+
+
+
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  return {
+    formQuestion: 'Do you add anything to your coffee?',
+    formKey: 'additions',
+    formBodys: {
+      1: null,
+      2: null,
+      3: null,
+      4: null,
+      5: null,
+      6: null
+    },
+    formHeads: {
+      1: 'Milk or Cream',
+      2: 'Flavored Creamer or Syrups',
+      3: 'Non-Dairy Milk',
+      4: 'Sugar or sweetener',
+      5: 'Nope, I take it black',
+      6: 'A mix of these choices'
+    },
+    formAnswers: ['Milk or Cream', 'Flavored Creamer or Syrups', 'Non-Dairy Milk', 'Sugar or sweetener', 'Nope, I take it black', 'A mix of these choices'],
+    questionNumber: 3,
+    nextQuesitonNumber: 4,
+    whyItMatters: 'Some coffees can be enhanced by milk, but others may react negatively and result in an unpleasant taste. A little sugar, sweetener or added flavorings can bring out the natural sweetness of some coffees, but overpower others. We’ll recommend coffee that works best with what you like.'
+  };
+};
+
+var mapDispatchtoProps = function mapDispatchtoProps(dispatch, ownProps) {
+  return {
+    updateAnswer: function updateAnswer(formKey, formAnswer) {
+      return dispatch(Object(_actions_onboarding_actions__WEBPACK_IMPORTED_MODULE_1__["updateAnswer"])(formKey, formAnswer));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, mapDispatchtoProps)(_onboarding_form__WEBPACK_IMPORTED_MODULE_2__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/onboarding/onboarding_container_4.jsx":
+/*!*******************************************************************!*\
+  !*** ./frontend/components/onboarding/onboarding_container_4.jsx ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _actions_onboarding_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/onboarding_actions */ "./frontend/actions/onboarding_actions.js");
+/* harmony import */ var _onboarding_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./onboarding_form */ "./frontend/components/onboarding/onboarding_form.jsx");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+
+
+
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  return {
+    formQuestion: 'What roast level do you typically enjoy?',
+    formKey: 'roast',
+    formBodys: {
+      1: 'More acidic & expressive of the coffee’s original flavors',
+      2: 'Just a hint of roasty flavor beginning to come through',
+      3: 'Some oil on the bean with deep, caramelized smokiness',
+      4: 'We’ll make a pick based on your other responses'
+    },
+    formHeads: {
+      1: 'Light roast',
+      2: 'Medium roast',
+      3: 'Dark roast',
+      4: 'I defer to you'
+    },
+    formAnswers: [1, 2, 3, 4],
+    questionNumber: 4,
+    nextQuesitonNumber: 5,
+    whyItMatters: 'Each roaster uses their own “scale” to define light, medium and dark roasts; this means “medium” for one roaster may actually be “dark” for another. To make sure you get what you’re expecting, we score all coffees on Trade on our own scale, so keep in mind that the roast level on your bag may be different from what we describe on site.'
+  };
+};
+
+var mapDispatchtoProps = function mapDispatchtoProps(dispatch, ownProps) {
+  return {
+    updateAnswer: function updateAnswer(formKey, formAnswer) {
+      return dispatch(Object(_actions_onboarding_actions__WEBPACK_IMPORTED_MODULE_1__["updateAnswer"])(formKey, formAnswer));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, mapDispatchtoProps)(_onboarding_form__WEBPACK_IMPORTED_MODULE_2__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/onboarding/onboarding_container_5.jsx":
+/*!*******************************************************************!*\
+  !*** ./frontend/components/onboarding/onboarding_container_5.jsx ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _actions_onboarding_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/onboarding_actions */ "./frontend/actions/onboarding_actions.js");
+/* harmony import */ var _onboarding_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./onboarding_form */ "./frontend/components/onboarding/onboarding_form.jsx");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+
+
+
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  return {
+    formQuestion: 'How do you like your coffee to taste?',
+    formKey: 'adventure',
+    formBodys: {
+      1: 'I like coffee that tastes like coffee',
+      2: 'But nothing too crazy',
+      3: 'Take me on an adventure',
+      4: 'We’ll make a pick based on your other responses'
+    },
+    formHeads: {
+      1: 'Classic and traditional',
+      2: 'Hints of something different',
+      3: 'Surprising and unconventional',
+      4: 'I defer to you'
+    },
+    formAnswers: ['easy', 'medium', 'hard', 'none'],
+    questionNumber: 5,
+    nextQuesitonNumber: 6,
+    whyItMatters: 'Taste is a subjective thing. And while none of the coffees on Trade contain any added flavors or ingredients (just 100% coffee!) they can taste totally different based on where they’re from, how they’re processed and how they’re roasted.'
   };
 };
 
@@ -722,7 +979,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
-    state: state,
+    profile: state.entities.onboarding,
+    currentId: state.session.id,
     formQuestion: 'Do you buy ground coffee or whole bean coffee?',
     formKey: 'ground',
     formBodys: {
@@ -736,7 +994,8 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
     formAnswers: [true, false],
     questionNumber: 6,
     nextquesitonNumber: null,
-    imageLink: window.question6
+    imageLink: window.question6,
+    whyItMatters: 'We try to offer ground to order coffee from as many roasters as possible.If ground is your thing we’ll make sure we don’t recommend a coffee that’s only available as whole bean.'
   };
 };
 
@@ -811,15 +1070,21 @@ var OnboardingForm = /*#__PURE__*/function (_React$Component) {
   _createClass(OnboardingForm, [{
     key: "handleSubmit",
     value: function handleSubmit(idx) {
-      this.props.updateAnswer(this.props.formKey, this.props.formAnswers[idx + 1]);
-      this.props.nextQuesitonNumber !== null ? this.props.history.push("/onboarding/".concat(this.props.nextQuesitonNumber)) : null; // this.props.editTaste(this)
+      var _this2 = this;
+
+      this.props.nextQuesitonNumber !== null ? this.props.updateAnswer(this.props.formKey, this.props.formAnswers[idx + 1]).then(function () {
+        return _this2.props.history.push("/onboarding/".concat(_this2.props.nextQuesitonNumber));
+      }) : this.props.updateAnswer(this.props.formKey, this.props.formAnswers[idx + 1]).then(function () {
+        return _this2.props.editTaste(Object.assign(_this2.props.profile, {
+          user_id: _this2.props.currentId
+        }));
+      });
     }
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
-      console.log(this.props);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "question-form"
       }, this.props.questionNumber === 6 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -851,15 +1116,21 @@ var OnboardingForm = /*#__PURE__*/function (_React$Component) {
       }, Object.values(this.props.formBodys).map(function (body, idx) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: function onClick() {
-            return _this2.handleSubmit(idx);
+            return _this3.handleSubmit(idx);
           },
           className: "quiz-button"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "quiz-head"
-        }, _this2.props.formHeads[idx + 1]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        }, _this3.props.formHeads[idx + 1]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "quiz-body"
-        }, _this2.props.formBodys[idx + 1]));
-      })));
+        }, _this3.props.formBodys[idx + 1]));
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "why-it-matters-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "why-it-matters-head"
+      }, "Why It Matters"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "why-it-matters-head"
+      }, this.props.whyItMatters)));
     }
   }]);
 

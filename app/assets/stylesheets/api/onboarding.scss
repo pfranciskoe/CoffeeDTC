@@ -6,15 +6,23 @@
     width: 49%;
     background-color: transparent;
     border-radius: 4px;
-    border: solid 1px #000;
+    border: solid 1px rgb(160, 160, 160);
     margin: 0.5%;
     padding: 20px;
+}
+.quiz-button:hover{
+    height: 132px;
+    width: 49%;
+    background-color: transparent;
+    border-radius: 4px;
+    border: solid 1px black;
 }
 .questions-container{
     margin: 5%;
     display: flex;
-    width: 100%;
+    width: 100%;    
     flex-wrap: wrap;
+    margin-bottom:2.5%;
 }
 .question-form{
     width: 100%;
@@ -42,6 +50,7 @@
 }
 .quiz-number{
     margin: 0px;
+    font-size: 13px;
 }
 .quiz-header{
     font-size: 62px;
@@ -66,4 +75,9 @@
     margin-top: 2px;
     margin-left: 10px;
     margin-bottom: 10px;
+}
+.why-it-matters-container{
+    margin:5%;
+    padding-left:4px;
+    margin-top: 0%;
 }

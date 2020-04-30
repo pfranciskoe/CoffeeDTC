@@ -5,7 +5,8 @@ import OnboardingForm from './onboarding_form'
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state, ownProps) => ({
-    state: state,
+    profile: state.entities.onboarding,
+    currentId: state.session.id,
     formQuestion: 'Do you buy ground coffee or whole bean coffee?',
     formKey: 'ground',
     formBodys: {
@@ -19,7 +20,8 @@ const mapStateToProps = (state, ownProps) => ({
     formAnswers: [true,false],
     questionNumber: 6,
     nextquesitonNumber: null,
-    imageLink: window.question6
+    imageLink: window.question6,
+    whyItMatters: 'We try to offer ground to order coffee from as many roasters as possible.If ground is your thing we’ll make sure we don’t recommend a coffee that’s only available as whole bean.'
 });
 
 const mapDispatchtoProps = (dispatch, ownProps) => ({
