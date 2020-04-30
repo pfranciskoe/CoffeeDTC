@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 class NavBar extends React.Component{
     constructor(props){
         super(props);
@@ -7,7 +7,7 @@ class NavBar extends React.Component{
     render(){
         return (
             <div className='navbar'>
-                <div className='logo-div'>DTCOFFEE</div>
+                <Link to='/' className='logo-link'><div className='logo-div'>DTCOFFEE</div></Link>
                 <div>{this.props.currentUser ? `Hi ${this.props.currentUser.email}` : null} </div>
                 {this.props.currentUser ?
                     <button onClick={this.props.logout} className='nav-button'>Log Out</button> :

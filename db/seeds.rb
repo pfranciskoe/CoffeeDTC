@@ -20,3 +20,4 @@ TasteProfile.create!(
     adventure: 'High',
     ground: false
 )
+
