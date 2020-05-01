@@ -22,12 +22,30 @@ class TasteProfile < ApplicationRecord
     class_name: :User,
     dependent: :destroy
 
-    def get_matches(taste)
-        roast = taste.roast
-        adventure = taste.adventure
-        exp_level = taste.experience_level
+     def get_match_params
+        if self.roast == 1
+            roast = [1,2]
+        elsif self.roast == 2
+            roast = [2,4]
+        elsif self.roast == 3
+            roast = [4,5]
+        end
+        if self.experience_level == 1
+            price_range = [10,15]
+        elsif self.experience_level == 2
+            price_range = [15,18]
+        elsif self.experience_level == 3
+            price_range = [18,22]
+        elsif self.experience_level == 4
+            price_range = [20,150]
+        end
+
+        if self.adventure == 'High'
+            adventure 
+        
+        adventure = self.adventure
+        
+        return[roast,adventure,exp_level]
     end
-
-
     
 end

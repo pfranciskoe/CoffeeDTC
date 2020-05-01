@@ -15486,3 +15486,235 @@ Processing by Api::SessionsController#create as JSON
 Completed 200 OK in 713ms (Views: 38.0ms | ActiveRecord: 0.9ms)
 
 
+  [1m[36mRoaster Load (12.4ms)[0m  [1m[34mSELECT "roasters".* FROM "roasters"[0m
+  [1m[36mTasteProfile Load (27.5ms)[0m  [1m[34mSELECT "taste_profiles".* FROM "taste_profiles"[0m
+  [1m[36mTasteProfile Load (1.1ms)[0m  [1m[34mSELECT "taste_profiles".* FROM "taste_profiles"[0m
+  [1m[36mTasteProfile Load (1.1ms)[0m  [1m[34mSELECT "taste_profiles".* FROM "taste_profiles"[0m
+  [1m[36mTasteProfile Load (1.2ms)[0m  [1m[34mSELECT "taste_profiles".* FROM "taste_profiles"[0m
+  [1m[36mTasteProfile Load (1.2ms)[0m  [1m[34mSELECT "taste_profiles".* FROM "taste_profiles"[0m
+  [1m[35m (8.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Destroy (55.9ms)[0m  [1m[31mDELETE FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Destroy (1.0ms)[0m  [1m[31mDELETE FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mTasteProfile Destroy (41.2ms)[0m  [1m[31mDELETE FROM "taste_profiles"[0m
+  ↳ db/seeds.rb:10
+  [1m[36mRoaster Destroy (40.9ms)[0m  [1m[31mDELETE FROM "roasters"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mDtcoffee Destroy (43.7ms)[0m  [1m[31mDELETE FROM "dtcoffees"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (43.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@coffee.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (10.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "demo@coffee.com"], ["password_digest", "$2a$12$upXkq3WujzgC29g8N7zHIeGVHKbWxNe7c9Zr4f3cz2Pyxm/oPjUVm"], ["session_token", "Ye1MUBdHPjgB1hNC_qpoxQ"], ["created_at", "2020-05-01 17:55:53.573340"], ["updated_at", "2020-05-01 17:55:53.573340"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTasteProfile Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "taste_profiles" WHERE "taste_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mTasteProfile Create (34.9ms)[0m  [1m[32mINSERT INTO "taste_profiles" ("user_id", "experience_level", "brew_method", "additions", "roast", "adventure", "ground", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["user_id", 6], ["experience_level", 1], ["brew_method", "Moka Pot"], ["additions", "None"], ["roast", 3], ["adventure", "High"], ["ground", false], ["created_at", "2020-05-01 17:55:53.657751"], ["updated_at", "2020-05-01 17:55:53.657751"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mRoaster Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "roasters" WHERE "roasters"."name" = $1 LIMIT $2[0m  [["name", "Stumptown"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mRoaster Create (2.0ms)[0m  [1m[32mINSERT INTO "roasters" ("name", "location", "description", "fun_fact", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Stumptown"], ["location", "Portland, Oregon"], ["description", "This titan roaster had its modest beginnings in a closed-down \n        Portland beauty salon named Hair Bender (hence Stumptown’s popular blend). Duane Sorenson’s \n        brand has come a long way since then, setting the standard for sourcing, \n        roasting, and (of course) cold brew with skill and a little luck from its talisman horseshoe."], ["fun_fact", "This roaster takes the coffee house music scene seriously and releases employee-based *Worker's Comp* vinyls."], ["created_at", "2020-05-01 17:55:53.720417"], ["updated_at", "2020-05-01 17:55:53.720417"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:40
+  [1m[36mRoaster Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "roasters" WHERE "roasters"."name" = $1 LIMIT $2[0m  [["name", "Equator"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:40
+  [1m[36mRoaster Create (0.6ms)[0m  [1m[32mINSERT INTO "roasters" ("name", "location", "description", "fun_fact", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Equator"], ["location", "San Rafael, California"], ["description", "In 1995, when partners Brooke McDonnell, Maureen McHugh, and Helen Russell \n        began roasting coffee from a garage, they set out to build a high-impact company focused \n        on quality, sustainability, and social responsibility. As a Certified B Corporation, \n        Equator supports quality of life initiatives in coffee-growing regions, including its \n        founding of Panama’s Finca Sophia farm and partnering with World Bicycle Relief."], ["fun_fact", "Equator's chain of well-being philosophy ensures everyone with a hand in making its coffee benefits from it."], ["created_at", "2020-05-01 17:55:53.728002"], ["updated_at", "2020-05-01 17:55:53.728002"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:49
+  [1m[36mRoaster Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "roasters" WHERE "roasters"."name" = $1 LIMIT $2[0m  [["name", "Passenger"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:49
+  [1m[36mRoaster Create (0.5ms)[0m  [1m[32mINSERT INTO "roasters" ("name", "location", "description", "fun_fact", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Passenger"], ["location", "Lancaster, Pennsylvania"], ["description", "Passenger loves coffee and wants to take its drinkers \n        along for the ride. Once operating from a retrofitted 1955 Airstream \n        trailer — capturing a mix of wonder and familiarity — this Lancaster,\n         Pennsylvania roaster is focused on the future. In that spirit, \n         forward-thinking Passenger keeps their entire inventory of unroasted\n          coffee in deep-freeze storage, allowing them to roast a large and \n          diverse offering at peak freshness year round."], ["fun_fact", "This roaster first opened to the public through the window of its vintage Airstream mobile cafe."], ["created_at", "2020-05-01 17:55:53.733035"], ["updated_at", "2020-05-01 17:55:53.733035"]]
+  ↳ db/seeds.rb:49
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:60
+  [1m[36mRoaster Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "roasters" WHERE "roasters"."name" = $1 LIMIT $2[0m  [["name", "AKA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[36mRoaster Create (0.4ms)[0m  [1m[32mINSERT INTO "roasters" ("name", "location", "description", "fun_fact", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "AKA"], ["location", "Oakland, California"], ["description", "Co-founders Brian W. Jones, Björg Brend Laird, and \n        John Laird's AKA Coffee won't let anything stand between them and \n        the joy of a great cup. Bouncing back from an initial 2013 launch, the\n         Oakland, California brand focuses on diverse flavors, including the \n         nuanced taste of Nordic roasting, a field in which Björg is a pioneer."], ["fun_fact", "Also known as family, AKA's roaster Rosie Laird grew up around \n        coffee as the daughter of co-founder and roastmaster John Laird."], ["created_at", "2020-05-01 17:55:53.737529"], ["updated_at", "2020-05-01 17:55:53.737529"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:60
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:73
+  [1m[36mDtcoffee Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "dtcoffees" WHERE "dtcoffees"."name" = $1 LIMIT $2[0m  [["name", "Hair Bender"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:73
+  [1m[36mRoaster Load (0.6ms)[0m  [1m[34mSELECT  "roasters".* FROM "roasters" WHERE "roasters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:73
+  [1m[36mDtcoffee Create (2.6ms)[0m  [1m[32mINSERT INTO "dtcoffees" ("name", "description", "roast", "roaster_id", "weight", "price", "single_origin", "fair_trade", "created_at", "updated_at", "flavors") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "Hair Bender"], ["description", "The one that started it all and still the most popular for Stumptown. \n            Sweet, complex, & balanced, this dynamic coffee is great no matter how your brew it."], ["roast", 4], ["roaster_id", 4], ["weight", 12], ["price", 17.65], ["single_origin", false], ["fair_trade", false], ["created_at", "2020-05-01 17:55:53.781265"], ["updated_at", "2020-05-01 17:55:53.781265"], ["flavors", "Comforting & Rich"]]
+  ↳ db/seeds.rb:73
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:87
+  [1m[36mDtcoffee Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "dtcoffees" WHERE "dtcoffees"."name" = $1 LIMIT $2[0m  [["name", "Founder's Blend"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:87
+  [1m[36mRoaster Load (0.4ms)[0m  [1m[34mSELECT  "roasters".* FROM "roasters" WHERE "roasters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:87
+  [1m[36mDtcoffee Create (0.6ms)[0m  [1m[32mINSERT INTO "dtcoffees" ("name", "description", "roast", "roaster_id", "weight", "price", "single_origin", "fair_trade", "created_at", "updated_at", "flavors") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "Founder's Blend"], ["description", "Everything you love about a classic, nostalgic cup of \n            comfort shine in this sweet, easy to love blend - \n            it's just elevated beyond your wildest dreams."], ["roast", 2], ["roaster_id", 4], ["weight", 12], ["price", 17.65], ["single_origin", false], ["fair_trade", false], ["created_at", "2020-05-01 17:55:53.790842"], ["updated_at", "2020-05-01 17:55:53.790842"], ["flavors", "Sweet & Smooth"]]
+  ↳ db/seeds.rb:87
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:87
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:100
+  [1m[36mDtcoffee Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "dtcoffees" WHERE "dtcoffees"."name" = $1 LIMIT $2[0m  [["name", "French Roast"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:100
+  [1m[36mRoaster Load (0.3ms)[0m  [1m[34mSELECT  "roasters".* FROM "roasters" WHERE "roasters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:100
+  [1m[36mDtcoffee Create (0.6ms)[0m  [1m[32mINSERT INTO "dtcoffees" ("name", "description", "roast", "roaster_id", "weight", "price", "single_origin", "fair_trade", "created_at", "updated_at", "flavors") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "French Roast"], ["description", "Rich and smoky, with a bold chocolaty body \n            and a spiciness that sticks around. This coffee takes milk \n            like a champ, but won't take 'no' for an answer."], ["roast", 4], ["roaster_id", 4], ["weight", 12], ["price", 17.65], ["single_origin", false], ["fair_trade", false], ["created_at", "2020-05-01 17:55:53.797061"], ["updated_at", "2020-05-01 17:55:53.797061"], ["flavors", "Roasty & Smoky"]]
+  ↳ db/seeds.rb:100
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:100
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:113
+  [1m[36mDtcoffee Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "dtcoffees" WHERE "dtcoffees"."name" = $1 LIMIT $2[0m  [["name", "Holler Mountain"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:113
+  [1m[36mRoaster Load (0.4ms)[0m  [1m[34mSELECT  "roasters".* FROM "roasters" WHERE "roasters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:113
+  [1m[36mDtcoffee Create (1.0ms)[0m  [1m[32mINSERT INTO "dtcoffees" ("name", "description", "roast", "roaster_id", "weight", "price", "single_origin", "fair_trade", "created_at", "updated_at", "flavors") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "Holler Mountain"], ["description", "This full-bodied & versatile hometown favorite layers \n            crisp bright flavors on top of comforting richness."], ["roast", 3], ["roaster_id", 4], ["weight", 12], ["price", 18.85], ["single_origin", false], ["fair_trade", false], ["created_at", "2020-05-01 17:55:53.803858"], ["updated_at", "2020-05-01 17:55:53.803858"], ["flavors", "Comforting & Rich"]]
+  ↳ db/seeds.rb:113
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:113
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mDtcoffee Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "dtcoffees" WHERE "dtcoffees"."name" = $1 LIMIT $2[0m  [["name", "El Salvador Los Pirineos Pacamara"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:126
+  [1m[36mRoaster Load (0.4ms)[0m  [1m[34mSELECT  "roasters".* FROM "roasters" WHERE "roasters"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:126
+  [1m[36mDtcoffee Create (0.6ms)[0m  [1m[32mINSERT INTO "dtcoffees" ("name", "description", "roast", "roaster_id", "weight", "price", "single_origin", "fair_trade", "created_at", "updated_at", "flavors") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "El Salvador Los Pirineos Pacamara"], ["description", "A big-bodied coffee that tastes like a candy bar, \n        this chocolaty cup should please most any coffee drinker."], ["roast", 3], ["roaster_id", 5], ["weight", 12], ["price", 22.95], ["single_origin", true], ["fair_trade", false], ["created_at", "2020-05-01 17:55:53.811150"], ["updated_at", "2020-05-01 17:55:53.811150"], ["flavors", "Chocolaty & Sweet"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:138
+  [1m[36mDtcoffee Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "dtcoffees" WHERE "dtcoffees"."name" = $1 LIMIT $2[0m  [["name", "Eye Of The Tiger Espresso"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:138
+  [1m[36mRoaster Load (0.4ms)[0m  [1m[34mSELECT  "roasters".* FROM "roasters" WHERE "roasters"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:138
+  [1m[36mDtcoffee Create (0.5ms)[0m  [1m[32mINSERT INTO "dtcoffees" ("name", "description", "roast", "roaster_id", "weight", "price", "single_origin", "fair_trade", "created_at", "updated_at", "flavors") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "Eye Of The Tiger Espresso"], ["description", "Juicy citrus acidity paired with incredible chocolaty \n        depth and fruity sweetness will have you running up and down \n        flights of stairs in the blink of an eye."], ["roast", 4], ["roaster_id", 5], ["weight", 12], ["price", 20.6], ["single_origin", false], ["fair_trade", false], ["created_at", "2020-05-01 17:55:53.817664"], ["updated_at", "2020-05-01 17:55:53.817664"], ["flavors", "Syrupy & Smooth"]]
+  ↳ db/seeds.rb:138
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:138
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:151
+  [1m[36mDtcoffee Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "dtcoffees" WHERE "dtcoffees"."name" = $1 LIMIT $2[0m  [["name", "Rwanda Nyampinga"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:151
+  [1m[36mRoaster Load (0.2ms)[0m  [1m[34mSELECT  "roasters".* FROM "roasters" WHERE "roasters"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:151
+  [1m[36mDtcoffee Create (0.5ms)[0m  [1m[32mINSERT INTO "dtcoffees" ("name", "description", "roast", "roaster_id", "weight", "price", "single_origin", "fair_trade", "created_at", "updated_at", "flavors") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "Rwanda Nyampinga"], ["description", "Refreshingly juicy lime acidity carries a cherry-vanilla \n        sweetness that lingers long after that last sip."], ["roast", 2], ["roaster_id", 5], ["weight", 12], ["price", 21.2], ["single_origin", true], ["fair_trade", false], ["created_at", "2020-05-01 17:55:53.823932"], ["updated_at", "2020-05-01 17:55:53.823932"], ["flavors", "Sweet & Tart"]]
+  ↳ db/seeds.rb:151
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:151
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:163
+  [1m[36mDtcoffee Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "dtcoffees" WHERE "dtcoffees"."name" = $1 LIMIT $2[0m  [["name", "Ethiopia Sidama Ardi"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:163
+  [1m[36mRoaster Load (0.3ms)[0m  [1m[34mSELECT  "roasters".* FROM "roasters" WHERE "roasters"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:163
+  [1m[36mDtcoffee Create (0.6ms)[0m  [1m[32mINSERT INTO "dtcoffees" ("name", "description", "roast", "roaster_id", "weight", "price", "single_origin", "fair_trade", "created_at", "updated_at", "flavors") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "Ethiopia Sidama Ardi"], ["description", "Smooth, fruity and sweet, with notes of vanilla, \n        lavender and meyer lemon. This naturally processed coffee may \n        change your whole perception of what coffee can be."], ["roast", 3], ["roaster_id", 5], ["weight", 12], ["price", 21.8], ["single_origin", true], ["fair_trade", false], ["created_at", "2020-05-01 17:55:53.829967"], ["updated_at", "2020-05-01 17:55:53.829967"], ["flavors", "Funky & Fruity"]]
+  ↳ db/seeds.rb:163
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:163
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:179
+  [1m[36mDtcoffee Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "dtcoffees" WHERE "dtcoffees"."name" = $1 LIMIT $2[0m  [["name", "Hacienda La Esmeralda 2019 Dry Processed"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:179
+  [1m[36mRoaster Load (0.3ms)[0m  [1m[34mSELECT  "roasters".* FROM "roasters" WHERE "roasters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:179
+  [1m[36mDtcoffee Create (0.7ms)[0m  [1m[32mINSERT INTO "dtcoffees" ("name", "description", "roast", "roaster_id", "weight", "price", "single_origin", "fair_trade", "created_at", "updated_at", "flavors") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "Hacienda La Esmeralda 2019 Dry Processed"], ["description", "Breaking news: when you masterfully roast some \n        of the best, most painstakingly processed coffee in the world, \n        you get a wildly delicious and intensely sweet and fruity cup."], ["roast", 1], ["roaster_id", 6], ["weight", 10], ["price", 104.15], ["single_origin", true], ["fair_trade", true], ["created_at", "2020-05-01 17:55:53.835709"], ["updated_at", "2020-05-01 17:55:53.835709"], ["flavors", "Funky & Fruity"]]
+  ↳ db/seeds.rb:179
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:179
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:192
+  [1m[36mDtcoffee Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "dtcoffees" WHERE "dtcoffees"."name" = $1 LIMIT $2[0m  [["name", "Ecuador La Tortuga"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:192
+  [1m[36mRoaster Load (0.3ms)[0m  [1m[34mSELECT  "roasters".* FROM "roasters" WHERE "roasters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:192
+  [1m[36mDtcoffee Create (0.6ms)[0m  [1m[32mINSERT INTO "dtcoffees" ("name", "description", "roast", "roaster_id", "weight", "price", "single_origin", "fair_trade", "created_at", "updated_at", "flavors") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "Ecuador La Tortuga"], ["description", "Positively buzzing with honey sweetness, \n        this tropical cup brings a bright berry juiciness to round out this super sweet treat."], ["roast", 1], ["roaster_id", 6], ["weight", 10], ["price", 39.75], ["single_origin", true], ["fair_trade", true], ["created_at", "2020-05-01 17:55:53.842883"], ["updated_at", "2020-05-01 17:55:53.842883"], ["flavors", "Subtle & Delicate"]]
+  ↳ db/seeds.rb:192
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:192
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:205
+  [1m[36mDtcoffee Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "dtcoffees" WHERE "dtcoffees"."name" = $1 LIMIT $2[0m  [["name", "Kanzu, Rwanda"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:205
+  [1m[36mRoaster Load (0.3ms)[0m  [1m[34mSELECT  "roasters".* FROM "roasters" WHERE "roasters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:205
+  [1m[36mDtcoffee Create (0.7ms)[0m  [1m[32mINSERT INTO "dtcoffees" ("name", "description", "roast", "roaster_id", "weight", "price", "single_origin", "fair_trade", "created_at", "updated_at", "flavors") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "Kanzu, Rwanda"], ["description", "Dried apricot, raisin, panela, citrus, and even slight\n         jasmine on the nose introduce a very attractive cup full of flavors \n         ranging from baked apple and pear to raspberry."], ["roast", 2], ["roaster_id", 6], ["weight", 10], ["price", 22.95], ["single_origin", true], ["fair_trade", false], ["created_at", "2020-05-01 17:55:53.849237"], ["updated_at", "2020-05-01 17:55:53.849237"], ["flavors", "Subtle & Delicate"]]
+  ↳ db/seeds.rb:205
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:205
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:218
+  [1m[36mDtcoffee Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "dtcoffees" WHERE "dtcoffees"."name" = $1 LIMIT $2[0m  [["name", "German Córdoba"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:218
+  [1m[36mRoaster Load (0.4ms)[0m  [1m[34mSELECT  "roasters".* FROM "roasters" WHERE "roasters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:218
+  [1m[36mDtcoffee Create (0.6ms)[0m  [1m[32mINSERT INTO "dtcoffees" ("name", "description", "roast", "roaster_id", "weight", "price", "single_origin", "fair_trade", "created_at", "updated_at", "flavors") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "German Córdoba"], ["description", "Gentle but super sweet and complex, this \n        competition-winning coffee is as gorgeous as they come."], ["roast", 1], ["roaster_id", 6], ["weight", 10], ["price", 32.1], ["single_origin", true], ["fair_trade", false], ["created_at", "2020-05-01 17:55:53.856281"], ["updated_at", "2020-05-01 17:55:53.856281"], ["flavors", "Subtle & Delicate"]]
+  ↳ db/seeds.rb:218
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:218
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:230
+  [1m[36mDtcoffee Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "dtcoffees" WHERE "dtcoffees"."name" = $1 LIMIT $2[0m  [["name", "OMG (Oh My God)"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:230
+  [1m[36mRoaster Load (0.2ms)[0m  [1m[34mSELECT  "roasters".* FROM "roasters" WHERE "roasters"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:230
+  [1m[36mDtcoffee Create (0.5ms)[0m  [1m[32mINSERT INTO "dtcoffees" ("name", "description", "roast", "roaster_id", "weight", "price", "single_origin", "fair_trade", "created_at", "updated_at", "flavors") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "OMG (Oh My God)"], ["description", "Oh my Guatemala, this is a good blend \n        (the other half comes from Ethiopia). Sip its balanced \n        richness and try not to shout it out loud (or post it on social)."], ["roast", 3], ["roaster_id", 7], ["weight", 12], ["price", 20.0], ["single_origin", false], ["fair_trade", false], ["created_at", "2020-05-01 17:55:53.863634"], ["updated_at", "2020-05-01 17:55:53.863634"], ["flavors", "Sweet & Smooth"]]
+  ↳ db/seeds.rb:230
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:230
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:243
+  [1m[36mDtcoffee Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "dtcoffees" WHERE "dtcoffees"."name" = $1 LIMIT $2[0m  [["name", "Kindred Blend"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:243
+  [1m[36mRoaster Load (0.3ms)[0m  [1m[34mSELECT  "roasters".* FROM "roasters" WHERE "roasters"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:243
+  [1m[36mDtcoffee Create (0.5ms)[0m  [1m[32mINSERT INTO "dtcoffees" ("name", "description", "roast", "roaster_id", "weight", "price", "single_origin", "fair_trade", "created_at", "updated_at", "flavors") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "Kindred Blend"], ["description", "An elegant blend of Colombian and Guatemalan \n        coffees, this one reminds us of cedar and chocolate with a hint of orange."], ["roast", 3], ["roaster_id", 7], ["weight", 12], ["price", 21.8], ["single_origin", false], ["fair_trade", false], ["created_at", "2020-05-01 17:55:53.870207"], ["updated_at", "2020-05-01 17:55:53.870207"], ["flavors", "Balanced & Fruity"]]
+  ↳ db/seeds.rb:243
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:243
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:255
+  [1m[36mDtcoffee Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "dtcoffees" WHERE "dtcoffees"."name" = $1 LIMIT $2[0m  [["name", "FTW (For The Win)"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:255
+  [1m[36mRoaster Load (0.2ms)[0m  [1m[34mSELECT  "roasters".* FROM "roasters" WHERE "roasters"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:255
+  [1m[36mDtcoffee Create (0.5ms)[0m  [1m[32mINSERT INTO "dtcoffees" ("name", "description", "roast", "roaster_id", "weight", "price", "single_origin", "fair_trade", "created_at", "updated_at", "flavors") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "FTW (For The Win)"], ["description", "As espresso, as cold brew, as filter drip—this is \n        straightforward, clean, balanced coffee that pleases a crowd,\n         any time of day. AKA: Winning."], ["roast", 2], ["roaster_id", 7], ["weight", 12], ["price", 18.25], ["single_origin", false], ["fair_trade", false], ["created_at", "2020-05-01 17:55:53.876178"], ["updated_at", "2020-05-01 17:55:53.876178"], ["flavors", "Sweet & Smooth"]]
+  ↳ db/seeds.rb:255
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:255
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:268
+  [1m[36mDtcoffee Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "dtcoffees" WHERE "dtcoffees"."name" = $1 LIMIT $2[0m  [["name", "Decaf Inza"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:268
+  [1m[36mRoaster Load (0.3ms)[0m  [1m[34mSELECT  "roasters".* FROM "roasters" WHERE "roasters"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:268
+  [1m[36mDtcoffee Create (0.6ms)[0m  [1m[32mINSERT INTO "dtcoffees" ("name", "description", "roast", "roaster_id", "weight", "price", "single_origin", "fair_trade", "created_at", "updated_at", "flavors") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "Decaf Inza"], ["description", "With gently tart notes of red grape and plenty of brown \n        sugar sweetness, we bet you couldn't pick this decaf out of coffee lineup."], ["roast", 3], ["roaster_id", 7], ["weight", 12], ["price", 21.8], ["single_origin", true], ["fair_trade", false], ["created_at", "2020-05-01 17:55:53.882657"], ["updated_at", "2020-05-01 17:55:53.882657"], ["flavors", "Sweet & Smooth"]]
+  ↳ db/seeds.rb:268
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:268
+  [1m[36mDtcoffee Load (10.0ms)[0m  [1m[34mSELECT "dtcoffees".* FROM "dtcoffees" WHERE (price > 20.00)[0m
+  [1m[36mDtcoffee Load (41.5ms)[0m  [1m[34mSELECT "dtcoffees".* FROM "dtcoffees" WHERE (price = 21.8)[0m
