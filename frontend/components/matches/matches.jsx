@@ -14,9 +14,9 @@ class Matches extends React.Component{
     render(){   
         return(
         <div className='matches-page'>
-            <div>
-                <img src="" alt=""/>
-            </div>
+    
+                    <img className='match-header-img' src={window.matches_head}/>
+
             <div className='match-header-box'>
                 <h2 className='match-header'>Your Matches</h2>
             </div>
