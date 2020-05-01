@@ -86,6 +86,38 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./frontend/actions/dtcoffee_actions.js":
+/*!**********************************************!*\
+  !*** ./frontend/actions/dtcoffee_actions.js ***!
+  \**********************************************/
+/*! exports provided: RECEIVE_COFFEE, fetchDTCoffee */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_COFFEE", function() { return RECEIVE_COFFEE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchDTCoffee", function() { return fetchDTCoffee; });
+/* harmony import */ var _util_dtcoffee_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/dtcoffee_api_util */ "./frontend/util/dtcoffee_api_util.js");
+
+var RECEIVE_COFFEE = 'RECEIVE_COFFEE';
+
+var receiveTasteProfile = function receiveTasteProfile(coffee) {
+  return {
+    type: RECEIVE_COFFEE,
+    coffee: coffee
+  };
+};
+
+var fetchDTCoffee = function fetchDTCoffee(coffeeId) {
+  return function (dispatch) {
+    return Object(_util_dtcoffee_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchCoffee"])(coffeeId).then(function (coffee) {
+      return dispatch(receiveTasteProfile(coffee));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/modal_actions.js":
 /*!*******************************************!*\
   !*** ./frontend/actions/modal_actions.js ***!
@@ -294,6 +326,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _onboarding_onboarding_container_3__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./onboarding/onboarding_container_3 */ "./frontend/components/onboarding/onboarding_container_3.jsx");
 /* harmony import */ var _onboarding_onboarding_container_2__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./onboarding/onboarding_container_2 */ "./frontend/components/onboarding/onboarding_container_2.jsx");
 /* harmony import */ var _onboarding_onboarding_container_1__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./onboarding/onboarding_container_1 */ "./frontend/components/onboarding/onboarding_container_1.jsx");
+/* harmony import */ var _coffees_coffee_show_container__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./coffees/coffee_show_container */ "./frontend/components/coffees/coffee_show_container.jsx");
+
 
 
 
@@ -312,6 +346,10 @@ var App = function App() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "app"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_nav_bar_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
+    exact: true,
+    path: "/coffees/1",
+    component: _coffees_coffee_show_container__WEBPACK_IMPORTED_MODULE_13__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
     exact: true,
     path: "/",
     component: _home_home__WEBPACK_IMPORTED_MODULE_3__["default"]
@@ -375,6 +413,115 @@ var Root = function Root(_ref) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Root);
+
+/***/ }),
+
+/***/ "./frontend/components/coffees/coffee_show.jsx":
+/*!*****************************************************!*\
+  !*** ./frontend/components/coffees/coffee_show.jsx ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+var CoffeeShow = /*#__PURE__*/function (_React$Component) {
+  _inherits(CoffeeShow, _React$Component);
+
+  var _super = _createSuper(CoffeeShow);
+
+  function CoffeeShow(props) {
+    var _this;
+
+    _classCallCheck(this, CoffeeShow);
+
+    _this = _super.call(this, props);
+    _this.getCoffee = _this.getCoffee.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(CoffeeShow, [{
+    key: "getCoffee",
+    value: function getCoffee() {
+      this.props.fetchDTCoffee(1);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      console.log(this.props.coffees);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.getCoffee
+      }, "GET COFFEE"), this.props.coffees[1] ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: this.props.coffees[1].photoUrl
+      }) : null);
+    }
+  }]);
+
+  return CoffeeShow;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (CoffeeShow);
+
+/***/ }),
+
+/***/ "./frontend/components/coffees/coffee_show_container.jsx":
+/*!***************************************************************!*\
+  !*** ./frontend/components/coffees/coffee_show_container.jsx ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_dtcoffee_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/dtcoffee_actions */ "./frontend/actions/dtcoffee_actions.js");
+/* harmony import */ var _coffee_show__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./coffee_show */ "./frontend/components/coffees/coffee_show.jsx");
+
+
+
+
+var mapStateToProps = function mapStateToProps(_ref) {
+  var coffees = _ref.entities.coffees;
+  return {
+    coffees: coffees
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    fetchDTCoffee: function fetchDTCoffee(coffeeId) {
+      return dispatch(Object(_actions_dtcoffee_actions__WEBPACK_IMPORTED_MODULE_1__["fetchDTCoffee"])(coffeeId));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_coffee_show__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
@@ -461,7 +608,7 @@ var Home = /*#__PURE__*/function (_React$Component) {
         to: "/onboarding/1"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "quiz-link-button"
-      }, "Get Started")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }, "Get Started")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "home-img-top-left",
         src: window.home1
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1483,21 +1630,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_Root__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Root */ "./frontend/components/Root.jsx");
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
-/* harmony import */ var _util_taste_profile_api_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./util/taste_profile_api_util */ "./frontend/util/taste_profile_api_util.js");
-/* harmony import */ var _actions_taste_profile_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./actions/taste_profile_actions */ "./frontend/actions/taste_profile_actions.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
 
 
-
-
- // REMOVE THESE
-
-window.fetchTasteProfile = _util_taste_profile_api_util__WEBPACK_IMPORTED_MODULE_4__["fetchTasteProfile"];
-window.receiveTasteProfile = _actions_taste_profile_actions__WEBPACK_IMPORTED_MODULE_5__["receiveTasteProfile"];
-window.fetchTaste = _actions_taste_profile_actions__WEBPACK_IMPORTED_MODULE_5__["fetchTaste"];
 document.addEventListener("DOMContentLoaded", function () {
   var store;
 
@@ -1527,6 +1665,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /***/ }),
 
+/***/ "./frontend/reducers/coffees_reducer.js":
+/*!**********************************************!*\
+  !*** ./frontend/reducers/coffees_reducer.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_dtcoffee_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/dtcoffee_actions */ "./frontend/actions/dtcoffee_actions.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var CoffeesReducer = function CoffeesReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_dtcoffee_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_COFFEE"]:
+      return Object.assign({}, state, _defineProperty({}, action.coffee.id, action.coffee));
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (CoffeesReducer);
+
+/***/ }),
+
 /***/ "./frontend/reducers/entities_reducer.js":
 /*!***********************************************!*\
   !*** ./frontend/reducers/entities_reducer.js ***!
@@ -1540,6 +1710,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _taste_profile_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./taste_profile_reducer */ "./frontend/reducers/taste_profile_reducer.js");
 /* harmony import */ var _onboarding_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./onboarding_reducer */ "./frontend/reducers/onboarding_reducer.js");
+/* harmony import */ var _coffees_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./coffees_reducer */ "./frontend/reducers/coffees_reducer.js");
+
 
 
 
@@ -1547,7 +1719,8 @@ __webpack_require__.r(__webpack_exports__);
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_1__["combineReducers"])({
   users: _users_reducer_js__WEBPACK_IMPORTED_MODULE_0__["default"],
   tasteProfile: _taste_profile_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
-  onboarding: _onboarding_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
+  onboarding: _onboarding_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
+  coffees: _coffees_reducer__WEBPACK_IMPORTED_MODULE_4__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -1868,6 +2041,25 @@ var configureStore = function configureStore() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
+
+/***/ }),
+
+/***/ "./frontend/util/dtcoffee_api_util.js":
+/*!********************************************!*\
+  !*** ./frontend/util/dtcoffee_api_util.js ***!
+  \********************************************/
+/*! exports provided: fetchCoffee */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCoffee", function() { return fetchCoffee; });
+var fetchCoffee = function fetchCoffee(dtcoffeeId) {
+  return $.ajax({
+    url: "/api/dtcoffees/".concat(dtcoffeeId),
+    method: 'GET'
+  });
+};
 
 /***/ }),
 

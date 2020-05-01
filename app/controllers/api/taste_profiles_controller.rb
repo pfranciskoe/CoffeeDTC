@@ -22,7 +22,13 @@ class Api::TasteProfilesController < ApplicationController
         else
             render json: ["#{params}"], status: 400
         end
+
     end
+
+    
+
+
+
     private
     def profile_params
         params.require(:taste_profile).permit(

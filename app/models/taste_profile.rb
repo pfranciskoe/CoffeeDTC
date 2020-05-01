@@ -21,4 +21,13 @@ class TasteProfile < ApplicationRecord
     foreign_key: :user_id,
     class_name: :User,
     dependent: :destroy
+
+    def get_matches(taste)
+        roast = taste.roast
+        adventure = taste.adventure
+        exp_level = taste.experience_level
+    end
+
+
+    
 end

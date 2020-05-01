@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     resources :users, only: [:create,:show]
     resource :session, only: [:create, :destroy]
     resources :taste_profiles, only:[:create,:show,:update]
+    resources :roasters, only:[:show]
+    resources :dtcoffees, only:[:show]
   end
   root to: 'static_pages#root'
 end

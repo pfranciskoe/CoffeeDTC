@@ -14125,3 +14125,1364 @@ Migrating to AddFlavorsToDtcoffees (20200430202516)
   ↳ /Users/peterkoe/.rbenv/versions/2.5.1/bin/rake:23
   [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/peterkoe/.rbenv/versions/2.5.1/bin/annotate:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7252881289886375535)[0m
+  ↳ bin/rails:9
+  [1m[35m (7.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DropImageUrl (20200430234041)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200430234041"]]
+  ↳ bin/rails:9
+  [1m[35m (46.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (41.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7252881289886375535)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7252881289886375535)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7252881289886375535)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/peterkoe/.rbenv/versions/2.5.1/bin/annotate:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7252881289886375535)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(7252881289886375535)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7252881289886375535)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Droplinks (20200430235501)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (54.0ms)[0m  [1m[35mALTER TABLE "dtcoffees" DROP COLUMN "image_link"[0m
+  ↳ db/migrate/20200430235501_droplinks.rb:3
+  [1m[35m (6.7ms)[0m  [1m[35mALTER TABLE "roasters" DROP COLUMN "logo_url"[0m
+  ↳ db/migrate/20200430235501_droplinks.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200430235501"]]
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (2.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(7252881289886375535)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Destroy (45.7ms)[0m  [1m[31mDELETE FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@coffee.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (42.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "demo@coffee.com"], ["password_digest", "$2a$12$b9EH/jcHKbef2r4G0HYkvO1eRd9DcPK0UzTqf38ab7wBwrEB6dzM6"], ["session_token", "4ptd5zCjUzLs9NIgW2yeww"], ["created_at", "2020-05-01 00:14:07.215819"], ["updated_at", "2020-05-01 00:14:07.215819"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTasteProfile Exists (42.6ms)[0m  [1m[34mSELECT  1 AS one FROM "taste_profiles" WHERE "taste_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 28], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTasteProfile Create (0.8ms)[0m  [1m[32mINSERT INTO "taste_profiles" ("user_id", "experience_level", "brew_method", "additions", "roast", "adventure", "ground", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["user_id", 28], ["experience_level", 1], ["brew_method", "Moka Pot"], ["additions", "None"], ["roast", 3], ["adventure", "High"], ["ground", false], ["created_at", "2020-05-01 00:14:07.352559"], ["updated_at", "2020-05-01 00:14:07.352559"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (40.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Destroy (19.8ms)[0m  [1m[31mDELETE FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@coffee.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "demo@coffee.com"], ["password_digest", "$2a$12$LEI38syrHLgHciEmRoxRYO4xW.XgqtBaBpyhf5inEEnN6c3pLS/mi"], ["session_token", "TRkznx_jrc14uai6xbGDng"], ["created_at", "2020-05-01 00:14:35.202749"], ["updated_at", "2020-05-01 00:14:35.202749"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (40.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTasteProfile Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "taste_profiles" WHERE "taste_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 29], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTasteProfile Create (0.9ms)[0m  [1m[32mINSERT INTO "taste_profiles" ("user_id", "experience_level", "brew_method", "additions", "roast", "adventure", "ground", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["user_id", 29], ["experience_level", 1], ["brew_method", "Moka Pot"], ["additions", "None"], ["roast", 3], ["adventure", "High"], ["ground", false], ["created_at", "2020-05-01 00:14:35.300815"], ["updated_at", "2020-05-01 00:14:35.300815"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (30.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mRoaster Exists (5.6ms)[0m  [1m[34mSELECT  1 AS one FROM "roasters" WHERE "roasters"."name" = $1 LIMIT $2[0m  [["name", "Stumptown"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mRoaster Create (1.7ms)[0m  [1m[32mINSERT INTO "roasters" ("name", "location", "description", "fun_fact", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Stumptown"], ["location", "Portland, Oregon"], ["description", "This titan roaster had its modest beginnings in a closed-down \n        Portland beauty salon named Hair Bender (hence Stumptown’s popular blend). Duane Sorenson’s \n        brand has come a long way since then, setting the standard for sourcing, \n        roasting, and (of course) cold brew with skill and a little luck from its talisman horseshoe."], ["fun_fact", "This roaster takes the coffee house music scene seriously and releases employee-based *Worker's Comp* vinyls."], ["created_at", "2020-05-01 00:14:35.371708"], ["updated_at", "2020-05-01 00:14:35.371708"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (25.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7252881289886375535)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateActiveStorageTables (20200501001741)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (63.5ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200501001741_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  ↳ db/migrate/20200501001741_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (23.7ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  ↳ db/migrate/20200501001741_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  ↳ db/migrate/20200501001741_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/migrate/20200501001741_create_active_storage_tables.active_storage.rb:16
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200501001741"]]
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(7252881289886375535)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Destroy (42.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@coffee.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "demo@coffee.com"], ["password_digest", "$2a$12$lOXffu1JJYvugvJoR4szROPXOnqbuTQ.x8D/6Gj4iwjuduCVCVFoy"], ["session_token", "wUz7NGe4EL4_oDf05BFDDQ"], ["created_at", "2020-05-01 00:18:07.518255"], ["updated_at", "2020-05-01 00:18:07.518255"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (40.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTasteProfile Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "taste_profiles" WHERE "taste_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 30], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTasteProfile Create (0.8ms)[0m  [1m[32mINSERT INTO "taste_profiles" ("user_id", "experience_level", "brew_method", "additions", "roast", "adventure", "ground", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["user_id", 30], ["experience_level", 1], ["brew_method", "Moka Pot"], ["additions", "None"], ["roast", 3], ["adventure", "High"], ["ground", false], ["created_at", "2020-05-01 00:18:07.612169"], ["updated_at", "2020-05-01 00:18:07.612169"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (41.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mRoaster Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "roasters" WHERE "roasters"."name" = $1 LIMIT $2[0m  [["name", "Stumptown"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:25
+[36m  S3 Storage (781.2ms) [0m[32mUploaded file to key: VXBNeyYm7sBX5chYtg98Ug8T (checksum: Tgy2Kfx/R7Msd68rPxETWQ==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mActiveStorage::Blob Create (3.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "VXBNeyYm7sBX5chYtg98Ug8T"], ["filename", "Stumptownl_logo.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["byte_size", 147860], ["checksum", "Tgy2Kfx/R7Msd68rPxETWQ=="], ["created_at", "2020-05-01 00:18:09.259950"]]
+  ↳ db/seeds.rb:34
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:73
+  [1m[36mDtcoffee Exists (3.0ms)[0m  [1m[34mSELECT  1 AS one FROM "dtcoffees" WHERE "dtcoffees"."name" = $1 LIMIT $2[0m  [["name", "Hair Bender"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:73
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:73
+[36m  S3 Storage (226.7ms) [0m[32mUploaded file to key: 1uDWb5Sj1PYeWdkoPZys1W9g (checksum: wXJQXjqoC/prG+6vkyT0jg==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:86
+  [1m[36mActiveStorage::Blob Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "1uDWb5Sj1PYeWdkoPZys1W9g"], ["filename", "stump_hair.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["byte_size", 107630], ["checksum", "wXJQXjqoC/prG+6vkyT0jg=="], ["created_at", "2020-05-01 00:18:09.834618"]]
+  ↳ db/seeds.rb:86
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:86
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:86
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:86
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE DATABASE "DTCoffee_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE DATABASE "DTCoffee_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35mSQL (8.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (36.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (15.5ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (7.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  ↳ db/schema.rb:28
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  ↳ db/schema.rb:28
+  [1m[35m (21.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "dtcoffees" CASCADE[0m
+  ↳ db/schema.rb:39
+  [1m[35m (24.7ms)[0m  [1m[35mCREATE TABLE "dtcoffees" ("id" bigserial primary key, "name" character varying NOT NULL, "description" text NOT NULL, "roast" integer NOT NULL, "roaster_id" integer NOT NULL, "weight" integer NOT NULL, "price" float NOT NULL, "single_origin" boolean NOT NULL, "fair_trade" boolean NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "flavors" character varying NOT NULL)[0m
+  ↳ db/schema.rb:39
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_dtcoffees_on_name" ON "dtcoffees"  ("name")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE  INDEX  "index_dtcoffees_on_roaster_id" ON "dtcoffees"  ("roaster_id")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (7.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "roasters" CASCADE[0m
+  ↳ db/schema.rb:55
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "roasters" ("id" bigserial primary key, "name" character varying NOT NULL, "location" character varying NOT NULL, "lat" float, "lng" float, "description" character varying NOT NULL, "fun_fact" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:55
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_roasters_on_name" ON "roasters"  ("name")[0m
+  ↳ db/schema.rb:55
+  [1m[35m (22.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "taste_profiles" CASCADE[0m
+  ↳ db/schema.rb:67
+  [1m[35m (29.8ms)[0m  [1m[35mCREATE TABLE "taste_profiles" ("id" bigserial primary key, "user_id" integer NOT NULL, "experience_level" integer NOT NULL, "brew_method" character varying NOT NULL, "additions" character varying NOT NULL, "roast" integer NOT NULL, "adventure" character varying NOT NULL, "ground" boolean NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:67
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_taste_profiles_on_user_id" ON "taste_profiles"  ("user_id")[0m
+  ↳ db/schema.rb:67
+  [1m[35m (24.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:80
+  [1m[35m (13.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:80
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:80
+  [1m[35m (43.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:80
+  [1m[35m (21.2ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  ↳ db/schema.rb:90
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (4.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (69.5ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  ↳ db/schema.rb:28
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  ↳ db/schema.rb:28
+  [1m[35m (4.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "dtcoffees" CASCADE[0m
+  ↳ db/schema.rb:39
+  [1m[35m (15.4ms)[0m  [1m[35mCREATE TABLE "dtcoffees" ("id" bigserial primary key, "name" character varying NOT NULL, "description" text NOT NULL, "roast" integer NOT NULL, "roaster_id" integer NOT NULL, "weight" integer NOT NULL, "price" float NOT NULL, "single_origin" boolean NOT NULL, "fair_trade" boolean NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "flavors" character varying NOT NULL)[0m
+  ↳ db/schema.rb:39
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_dtcoffees_on_name" ON "dtcoffees"  ("name")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX  "index_dtcoffees_on_roaster_id" ON "dtcoffees"  ("roaster_id")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (3.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "roasters" CASCADE[0m
+  ↳ db/schema.rb:55
+  [1m[35m (72.0ms)[0m  [1m[35mCREATE TABLE "roasters" ("id" bigserial primary key, "name" character varying NOT NULL, "location" character varying NOT NULL, "lat" float, "lng" float, "description" character varying NOT NULL, "fun_fact" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:55
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_roasters_on_name" ON "roasters"  ("name")[0m
+  ↳ db/schema.rb:55
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "taste_profiles" CASCADE[0m
+  ↳ db/schema.rb:67
+  [1m[35m (30.6ms)[0m  [1m[35mCREATE TABLE "taste_profiles" ("id" bigserial primary key, "user_id" integer NOT NULL, "experience_level" integer NOT NULL, "brew_method" character varying NOT NULL, "additions" character varying NOT NULL, "roast" integer NOT NULL, "adventure" character varying NOT NULL, "ground" boolean NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:67
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_taste_profiles_on_user_id" ON "taste_profiles"  ("user_id")[0m
+  ↳ db/schema.rb:67
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:80
+  [1m[35m (15.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:80
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:80
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:80
+  [1m[35m (20.5ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  ↳ db/schema.rb:90
+  [1m[35m (13.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (8.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200501001741)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200430202516),
+(20200430235501),
+(20200430172703),
+(20200430234041),
+(20200428192902),
+(20200430175516),
+(20200427215431),
+(20200429203347);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (24.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-05-01 00:20:38.735073"], ["updated_at", "2020-05-01 00:20:38.735073"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-05-01 00:20:38.744083"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Destroy (1.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@coffee.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "demo@coffee.com"], ["password_digest", "$2a$12$dAwYPxSjybuXkUvHvPaE6.wNFYcCEvpGgO57SUcibew5/ZHUV9z8."], ["session_token", "_qzrsfRDaSTMrcRk_nPL5g"], ["created_at", "2020-05-01 00:20:39.207631"], ["updated_at", "2020-05-01 00:20:39.207631"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (112.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTasteProfile Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "taste_profiles" WHERE "taste_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTasteProfile Create (1.1ms)[0m  [1m[32mINSERT INTO "taste_profiles" ("user_id", "experience_level", "brew_method", "additions", "roast", "adventure", "ground", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["user_id", 1], ["experience_level", 1], ["brew_method", "Moka Pot"], ["additions", "None"], ["roast", 3], ["adventure", "High"], ["ground", false], ["created_at", "2020-05-01 00:20:39.380147"], ["updated_at", "2020-05-01 00:20:39.380147"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (39.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mRoaster Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "roasters" WHERE "roasters"."name" = $1 LIMIT $2[0m  [["name", "Stumptown"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mRoaster Create (1.5ms)[0m  [1m[32mINSERT INTO "roasters" ("name", "location", "description", "fun_fact", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Stumptown"], ["location", "Portland, Oregon"], ["description", "This titan roaster had its modest beginnings in a closed-down \n        Portland beauty salon named Hair Bender (hence Stumptown’s popular blend). Duane Sorenson’s \n        brand has come a long way since then, setting the standard for sourcing, \n        roasting, and (of course) cold brew with skill and a little luck from its talisman horseshoe."], ["fun_fact", "This roaster takes the coffee house music scene seriously and releases employee-based *Worker's Comp* vinyls."], ["created_at", "2020-05-01 00:20:39.466356"], ["updated_at", "2020-05-01 00:20:39.466356"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Roaster"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+[36m  S3 Storage (358.0ms) [0m[32mUploaded file to key: 1j8gqnapkC2hh2psDWtCLGPp (checksum: Tgy2Kfx/R7Msd68rPxETWQ==)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mActiveStorage::Blob Create (1.9ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "1j8gqnapkC2hh2psDWtCLGPp"], ["filename", "Stumptownl_logo.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["byte_size", 147860], ["checksum", "Tgy2Kfx/R7Msd68rPxETWQ=="], ["created_at", "2020-05-01 00:20:40.204197"]]
+  ↳ db/seeds.rb:34
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mActiveStorage::Attachment Create (23.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Roaster"], ["record_id", 1], ["blob_id", 1], ["created_at", "2020-05-01 00:20:40.240630"]]
+  ↳ db/seeds.rb:34
+  [1m[36mRoaster Update (1.0ms)[0m  [1m[33mUPDATE "roasters" SET "updated_at" = $1 WHERE "roasters"."id" = $2[0m  [["updated_at", "2020-05-01 00:20:40.266135"], ["id", 1]]
+  ↳ db/seeds.rb:34
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:34
+[ActiveJob] [ActiveStorage::AnalyzeJob] [04d1ae89-364a-43f8-a673-09f62459b69e] Performing ActiveStorage::AnalyzeJob (Job ID: 04d1ae89-364a-43f8-a673-09f62459b69e) from Inline(default) with arguments: #<GlobalID:0x00007fa878ad8798 @uri=#<URI::GID gid://dt-coffee/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [04d1ae89-364a-43f8-a673-09f62459b69e] [36m  S3 Storage (104.0ms) [0m[34mDownloaded file from key: 1j8gqnapkC2hh2psDWtCLGPp[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [04d1ae89-364a-43f8-a673-09f62459b69e] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [04d1ae89-364a-43f8-a673-09f62459b69e]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [04d1ae89-364a-43f8-a673-09f62459b69e]   ↳ db/seeds.rb:34
+[ActiveJob] [ActiveStorage::AnalyzeJob] [04d1ae89-364a-43f8-a673-09f62459b69e]   [1m[36mActiveStorage::Blob Update (0.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [04d1ae89-364a-43f8-a673-09f62459b69e]   ↳ db/seeds.rb:34
+[ActiveJob] [ActiveStorage::AnalyzeJob] [04d1ae89-364a-43f8-a673-09f62459b69e]   [1m[35m (20.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [04d1ae89-364a-43f8-a673-09f62459b69e]   ↳ db/seeds.rb:34
+[ActiveJob] [ActiveStorage::AnalyzeJob] [04d1ae89-364a-43f8-a673-09f62459b69e] Performed ActiveStorage::AnalyzeJob (Job ID: 04d1ae89-364a-43f8-a673-09f62459b69e) from Inline(default) in 171.52ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 04d1ae89-364a-43f8-a673-09f62459b69e) to Inline(default) with arguments: #<GlobalID:0x00007fa8753987d8 @uri=#<URI::GID gid://dt-coffee/ActiveStorage::Blob/1>>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:73
+  [1m[36mDtcoffee Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "dtcoffees" WHERE "dtcoffees"."name" = $1 LIMIT $2[0m  [["name", "Hair Bender"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:73
+  [1m[36mRoaster Load (0.5ms)[0m  [1m[34mSELECT  "roasters".* FROM "roasters" WHERE "roasters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:73
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:73
+[36m  S3 Storage (90.8ms) [0m[32mUploaded file to key: zehf7UUPpxCce4gVipE6LNpr (checksum: wXJQXjqoC/prG+6vkyT0jg==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:86
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "zehf7UUPpxCce4gVipE6LNpr"], ["filename", "stump_hair.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["byte_size", 107630], ["checksum", "wXJQXjqoC/prG+6vkyT0jg=="], ["created_at", "2020-05-01 00:20:40.898821"]]
+  ↳ db/seeds.rb:86
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:86
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:86
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:86
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Destroy (41.0ms)[0m  [1m[31mDELETE FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@coffee.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "demo@coffee.com"], ["password_digest", "$2a$12$83BCABdTGSZ791EGTMbLf.AtU.7C8zaqwWplvszfnEiyTV2wXnSVq"], ["session_token", "SI9oJajIjMzP5iE3Pq1HTw"], ["created_at", "2020-05-01 00:20:53.559549"], ["updated_at", "2020-05-01 00:20:53.559549"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (40.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTasteProfile Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "taste_profiles" WHERE "taste_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTasteProfile Create (0.7ms)[0m  [1m[32mINSERT INTO "taste_profiles" ("user_id", "experience_level", "brew_method", "additions", "roast", "adventure", "ground", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["user_id", 2], ["experience_level", 1], ["brew_method", "Moka Pot"], ["additions", "None"], ["roast", 3], ["adventure", "High"], ["ground", false], ["created_at", "2020-05-01 00:20:53.654020"], ["updated_at", "2020-05-01 00:20:53.654020"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mRoaster Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "roasters" WHERE "roasters"."name" = $1 LIMIT $2[0m  [["name", "Stumptown"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:25
+[36m  S3 Storage (290.6ms) [0m[32mUploaded file to key: WbjKYi2VBmcMp7GmprdunvPT (checksum: Tgy2Kfx/R7Msd68rPxETWQ==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mActiveStorage::Blob Create (1.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "WbjKYi2VBmcMp7GmprdunvPT"], ["filename", "Stumptownl_logo.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["byte_size", 147860], ["checksum", "Tgy2Kfx/R7Msd68rPxETWQ=="], ["created_at", "2020-05-01 00:20:54.390827"]]
+  ↳ db/seeds.rb:34
+  [1m[35m (62.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:73
+  [1m[36mDtcoffee Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "dtcoffees" WHERE "dtcoffees"."name" = $1 LIMIT $2[0m  [["name", "Hair Bender"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:73
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:73
+[36m  S3 Storage (90.0ms) [0m[32mUploaded file to key: hg8F9nWwo6NWqDXiEevHd5eT (checksum: wXJQXjqoC/prG+6vkyT0jg==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:86
+  [1m[36mActiveStorage::Blob Create (0.7ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "hg8F9nWwo6NWqDXiEevHd5eT"], ["filename", "stump_hair.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["byte_size", 107630], ["checksum", "wXJQXjqoC/prG+6vkyT0jg=="], ["created_at", "2020-05-01 00:20:54.830010"]]
+  ↳ db/seeds.rb:86
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:86
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:86
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:86
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Destroy (20.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@coffee.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "demo@coffee.com"], ["password_digest", "$2a$12$qYUpOWdI0anpAX6ee0ff3ObzsurIEFepY2YmBgtfZjalrcHpE7CLS"], ["session_token", "osEO2_OyGGBV1EFpxg__rg"], ["created_at", "2020-05-01 00:24:27.765938"], ["updated_at", "2020-05-01 00:24:27.765938"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (40.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mTasteProfile Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "taste_profiles" WHERE "taste_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mTasteProfile Create (1.2ms)[0m  [1m[32mINSERT INTO "taste_profiles" ("user_id", "experience_level", "brew_method", "additions", "roast", "adventure", "ground", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["user_id", 3], ["experience_level", 1], ["brew_method", "Moka Pot"], ["additions", "None"], ["roast", 3], ["adventure", "High"], ["ground", false], ["created_at", "2020-05-01 00:24:27.906312"], ["updated_at", "2020-05-01 00:24:27.906312"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (33.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mRoaster Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "roasters" WHERE "roasters"."name" = $1 LIMIT $2[0m  [["name", "Stumptown"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Destroy (37.0ms)[0m  [1m[31mDELETE FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mTasteProfile Destroy (40.9ms)[0m  [1m[31mDELETE FROM "taste_profiles"[0m
+  ↳ db/seeds.rb:10
+  [1m[36mRoaster Destroy (20.6ms)[0m  [1m[31mDELETE FROM "roasters"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mDtcoffee Destroy (1.3ms)[0m  [1m[31mDELETE FROM "dtcoffees"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@coffee.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "demo@coffee.com"], ["password_digest", "$2a$12$7tXJV6ajIkj/vds/imnyYOglHLe1EQlF4MmZ.Z082OqVKy42DypR6"], ["session_token", "c6kO6H71moeT4IFF47BMJQ"], ["created_at", "2020-05-01 00:25:11.168127"], ["updated_at", "2020-05-01 00:25:11.168127"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (20.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTasteProfile Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "taste_profiles" WHERE "taste_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mTasteProfile Create (0.7ms)[0m  [1m[32mINSERT INTO "taste_profiles" ("user_id", "experience_level", "brew_method", "additions", "roast", "adventure", "ground", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["user_id", 4], ["experience_level", 1], ["brew_method", "Moka Pot"], ["additions", "None"], ["roast", 3], ["adventure", "High"], ["ground", false], ["created_at", "2020-05-01 00:25:11.235388"], ["updated_at", "2020-05-01 00:25:11.235388"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (39.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mRoaster Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "roasters" WHERE "roasters"."name" = $1 LIMIT $2[0m  [["name", "Stumptown"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mRoaster Create (1.0ms)[0m  [1m[32mINSERT INTO "roasters" ("name", "location", "description", "fun_fact", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Stumptown"], ["location", "Portland, Oregon"], ["description", "This titan roaster had its modest beginnings in a closed-down \n        Portland beauty salon named Hair Bender (hence Stumptown’s popular blend). Duane Sorenson’s \n        brand has come a long way since then, setting the standard for sourcing, \n        roasting, and (of course) cold brew with skill and a little luck from its talisman horseshoe."], ["fun_fact", "This roaster takes the coffee house music scene seriously and releases employee-based *Worker's Comp* vinyls."], ["created_at", "2020-05-01 00:25:11.299739"], ["updated_at", "2020-05-01 00:25:11.299739"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Roaster"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+[36m  S3 Storage (883.8ms) [0m[32mUploaded file to key: VEAZYZfhKh6bbAfFQuxUQ6hy (checksum: Tgy2Kfx/R7Msd68rPxETWQ==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mActiveStorage::Blob Create (1.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "VEAZYZfhKh6bbAfFQuxUQ6hy"], ["filename", "Stumptownl_logo.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["byte_size", 147860], ["checksum", "Tgy2Kfx/R7Msd68rPxETWQ=="], ["created_at", "2020-05-01 00:25:12.525898"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mActiveStorage::Attachment Create (1.4ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Roaster"], ["record_id", 2], ["blob_id", 5], ["created_at", "2020-05-01 00:25:12.547334"]]
+  ↳ db/seeds.rb:37
+  [1m[36mRoaster Update (0.6ms)[0m  [1m[33mUPDATE "roasters" SET "updated_at" = $1 WHERE "roasters"."id" = $2[0m  [["updated_at", "2020-05-01 00:25:12.550144"], ["id", 2]]
+  ↳ db/seeds.rb:37
+  [1m[35m (39.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:37
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b92ef0bc-e6ca-42b4-9605-b9da186022cd] Performing ActiveStorage::AnalyzeJob (Job ID: b92ef0bc-e6ca-42b4-9605-b9da186022cd) from Inline(default) with arguments: #<GlobalID:0x00007f800eb4f970 @uri=#<URI::GID gid://dt-coffee/ActiveStorage::Blob/5>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b92ef0bc-e6ca-42b4-9605-b9da186022cd] [36m  S3 Storage (98.3ms) [0m[34mDownloaded file from key: VEAZYZfhKh6bbAfFQuxUQ6hy[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b92ef0bc-e6ca-42b4-9605-b9da186022cd] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b92ef0bc-e6ca-42b4-9605-b9da186022cd]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b92ef0bc-e6ca-42b4-9605-b9da186022cd]   ↳ db/seeds.rb:37
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b92ef0bc-e6ca-42b4-9605-b9da186022cd]   [1m[36mActiveStorage::Blob Update (0.8ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 5]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b92ef0bc-e6ca-42b4-9605-b9da186022cd]   ↳ db/seeds.rb:37
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b92ef0bc-e6ca-42b4-9605-b9da186022cd]   [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b92ef0bc-e6ca-42b4-9605-b9da186022cd]   ↳ db/seeds.rb:37
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b92ef0bc-e6ca-42b4-9605-b9da186022cd] Performed ActiveStorage::AnalyzeJob (Job ID: b92ef0bc-e6ca-42b4-9605-b9da186022cd) from Inline(default) in 154.38ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: b92ef0bc-e6ca-42b4-9605-b9da186022cd) to Inline(default) with arguments: #<GlobalID:0x00007f8013b40150 @uri=#<URI::GID gid://dt-coffee/ActiveStorage::Blob/5>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:76
+  [1m[36mDtcoffee Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "dtcoffees" WHERE "dtcoffees"."name" = $1 LIMIT $2[0m  [["name", "Hair Bender"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:76
+  [1m[36mRoaster Load (0.5ms)[0m  [1m[34mSELECT  "roasters".* FROM "roasters" WHERE "roasters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:76
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:76
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Destroy (1.6ms)[0m  [1m[31mDELETE FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mTasteProfile Destroy (1.8ms)[0m  [1m[31mDELETE FROM "taste_profiles"[0m
+  ↳ db/seeds.rb:10
+  [1m[36mRoaster Destroy (1.3ms)[0m  [1m[31mDELETE FROM "roasters"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mDtcoffee Destroy (0.9ms)[0m  [1m[31mDELETE FROM "dtcoffees"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@coffee.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "demo@coffee.com"], ["password_digest", "$2a$12$b1xCUrJwJRpjsAvFnkNypu0PjJNfmiQdEYjNlSWJq.HIHH1kDhk7O"], ["session_token", "Z4NTWKMIaRGx9tD6kapefg"], ["created_at", "2020-05-01 00:25:53.074162"], ["updated_at", "2020-05-01 00:25:53.074162"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (40.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mTasteProfile Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "taste_profiles" WHERE "taste_profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mTasteProfile Create (0.8ms)[0m  [1m[32mINSERT INTO "taste_profiles" ("user_id", "experience_level", "brew_method", "additions", "roast", "adventure", "ground", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["user_id", 5], ["experience_level", 1], ["brew_method", "Moka Pot"], ["additions", "None"], ["roast", 3], ["adventure", "High"], ["ground", false], ["created_at", "2020-05-01 00:25:53.168384"], ["updated_at", "2020-05-01 00:25:53.168384"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (22.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mRoaster Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "roasters" WHERE "roasters"."name" = $1 LIMIT $2[0m  [["name", "Stumptown"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mRoaster Create (1.0ms)[0m  [1m[32mINSERT INTO "roasters" ("name", "location", "description", "fun_fact", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Stumptown"], ["location", "Portland, Oregon"], ["description", "This titan roaster had its modest beginnings in a closed-down \n        Portland beauty salon named Hair Bender (hence Stumptown’s popular blend). Duane Sorenson’s \n        brand has come a long way since then, setting the standard for sourcing, \n        roasting, and (of course) cold brew with skill and a little luck from its talisman horseshoe."], ["fun_fact", "This roaster takes the coffee house music scene seriously and releases employee-based *Worker's Comp* vinyls."], ["created_at", "2020-05-01 00:25:53.219878"], ["updated_at", "2020-05-01 00:25:53.219878"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Roaster"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+[36m  S3 Storage (294.7ms) [0m[32mUploaded file to key: uVAYFwcNAXhXy77m3j2g4cpa (checksum: Tgy2Kfx/R7Msd68rPxETWQ==)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mActiveStorage::Blob Create (1.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "uVAYFwcNAXhXy77m3j2g4cpa"], ["filename", "Stumptownl_logo.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["byte_size", 147860], ["checksum", "Tgy2Kfx/R7Msd68rPxETWQ=="], ["created_at", "2020-05-01 00:25:53.860607"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mActiveStorage::Attachment Create (1.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Roaster"], ["record_id", 3], ["blob_id", 6], ["created_at", "2020-05-01 00:25:53.882673"]]
+  ↳ db/seeds.rb:37
+  [1m[36mRoaster Update (0.7ms)[0m  [1m[33mUPDATE "roasters" SET "updated_at" = $1 WHERE "roasters"."id" = $2[0m  [["updated_at", "2020-05-01 00:25:53.886183"], ["id", 3]]
+  ↳ db/seeds.rb:37
+  [1m[35m (40.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:37
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0b85ad0-009c-4d56-aeaf-a44c41f4345e] Performing ActiveStorage::AnalyzeJob (Job ID: d0b85ad0-009c-4d56-aeaf-a44c41f4345e) from Inline(default) with arguments: #<GlobalID:0x00007f9d2b21e498 @uri=#<URI::GID gid://dt-coffee/ActiveStorage::Blob/6>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0b85ad0-009c-4d56-aeaf-a44c41f4345e] [36m  S3 Storage (121.7ms) [0m[34mDownloaded file from key: uVAYFwcNAXhXy77m3j2g4cpa[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0b85ad0-009c-4d56-aeaf-a44c41f4345e] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0b85ad0-009c-4d56-aeaf-a44c41f4345e]   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0b85ad0-009c-4d56-aeaf-a44c41f4345e]   ↳ db/seeds.rb:37
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0b85ad0-009c-4d56-aeaf-a44c41f4345e]   [1m[36mActiveStorage::Blob Update (0.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 6]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0b85ad0-009c-4d56-aeaf-a44c41f4345e]   ↳ db/seeds.rb:37
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0b85ad0-009c-4d56-aeaf-a44c41f4345e]   [1m[35m (40.0ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0b85ad0-009c-4d56-aeaf-a44c41f4345e]   ↳ db/seeds.rb:37
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d0b85ad0-009c-4d56-aeaf-a44c41f4345e] Performed ActiveStorage::AnalyzeJob (Job ID: d0b85ad0-009c-4d56-aeaf-a44c41f4345e) from Inline(default) in 175.04ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: d0b85ad0-009c-4d56-aeaf-a44c41f4345e) to Inline(default) with arguments: #<GlobalID:0x00007f9d2f8bb540 @uri=#<URI::GID gid://dt-coffee/ActiveStorage::Blob/6>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:76
+  [1m[36mDtcoffee Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "dtcoffees" WHERE "dtcoffees"."name" = $1 LIMIT $2[0m  [["name", "Hair Bender"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:76
+  [1m[36mRoaster Load (0.5ms)[0m  [1m[34mSELECT  "roasters".* FROM "roasters" WHERE "roasters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:76
+  [1m[36mDtcoffee Create (2.0ms)[0m  [1m[32mINSERT INTO "dtcoffees" ("name", "description", "roast", "roaster_id", "weight", "price", "single_origin", "fair_trade", "created_at", "updated_at", "flavors") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["name", "Hair Bender"], ["description", "The one that started it all and still the most popular for Stumptown. \n            Sweet, complex, & balanced, this dynamic coffee is great no matter how your brew it."], ["roast", 4], ["roaster_id", 3], ["weight", 12], ["price", 17.65], ["single_origin", false], ["fair_trade", false], ["created_at", "2020-05-01 00:25:54.177705"], ["updated_at", "2020-05-01 00:25:54.177705"], ["flavors", "Comforting & Rich"]]
+  ↳ db/seeds.rb:76
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:76
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Dtcoffee"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:89
+[36m  S3 Storage (158.8ms) [0m[32mUploaded file to key: 8VGzh5xWioh7WwvmfdjGWrCT (checksum: wXJQXjqoC/prG+6vkyT0jg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "8VGzh5xWioh7WwvmfdjGWrCT"], ["filename", "stump_hair.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["byte_size", 107630], ["checksum", "wXJQXjqoC/prG+6vkyT0jg=="], ["created_at", "2020-05-01 00:25:54.534689"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:89
+  [1m[36mActiveStorage::Attachment Create (1.9ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Dtcoffee"], ["record_id", 1], ["blob_id", 7], ["created_at", "2020-05-01 00:25:54.540802"]]
+  ↳ db/seeds.rb:89
+  [1m[36mDtcoffee Update (0.7ms)[0m  [1m[33mUPDATE "dtcoffees" SET "updated_at" = $1 WHERE "dtcoffees"."id" = $2[0m  [["updated_at", "2020-05-01 00:25:54.544451"], ["id", 1]]
+  ↳ db/seeds.rb:89
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:89
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:89
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0c8b1767-934e-4fe0-b6f3-23567a2baf26] Performing ActiveStorage::AnalyzeJob (Job ID: 0c8b1767-934e-4fe0-b6f3-23567a2baf26) from Inline(default) with arguments: #<GlobalID:0x00007f9d2b1fdf90 @uri=#<URI::GID gid://dt-coffee/ActiveStorage::Blob/7>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0c8b1767-934e-4fe0-b6f3-23567a2baf26] [36m  S3 Storage (73.7ms) [0m[34mDownloaded file from key: 8VGzh5xWioh7WwvmfdjGWrCT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0c8b1767-934e-4fe0-b6f3-23567a2baf26] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0c8b1767-934e-4fe0-b6f3-23567a2baf26]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0c8b1767-934e-4fe0-b6f3-23567a2baf26]   ↳ db/seeds.rb:89
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0c8b1767-934e-4fe0-b6f3-23567a2baf26]   [1m[36mActiveStorage::Blob Update (0.9ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 7]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0c8b1767-934e-4fe0-b6f3-23567a2baf26]   ↳ db/seeds.rb:89
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0c8b1767-934e-4fe0-b6f3-23567a2baf26]   [1m[35m (40.1ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0c8b1767-934e-4fe0-b6f3-23567a2baf26]   ↳ db/seeds.rb:89
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0c8b1767-934e-4fe0-b6f3-23567a2baf26] Performed ActiveStorage::AnalyzeJob (Job ID: 0c8b1767-934e-4fe0-b6f3-23567a2baf26) from Inline(default) in 123.79ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 0c8b1767-934e-4fe0-b6f3-23567a2baf26) to Inline(default) with arguments: #<GlobalID:0x00007f9d2bdc6fc0 @uri=#<URI::GID gid://dt-coffee/ActiveStorage::Blob/7>>
+Started GET "/" for ::1 at 2020-04-30 17:31:15 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/peterkoe/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (62.8ms)
+Started GET "/" for ::1 at 2020-04-30 17:31:18 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (7.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 5471ms (Views: 5453.7ms | ActiveRecord: 14.6ms)
+
+
+Completed 200 OK in 2857ms (Views: 2833.0ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:32:11 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (53.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (69.5ms)
+Completed 200 OK in 888ms (Views: 821.5ms | ActiveRecord: 63.8ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:32:14 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 141ms (Views: 135.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:33:25 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (84.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (87.0ms)
+Completed 200 OK in 1699ms (Views: 1608.4ms | ActiveRecord: 84.8ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:33:58 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (9.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 895ms (Views: 882.9ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:34:11 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 340ms (Views: 319.1ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:34:16 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 854ms (Views: 847.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:34:19 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (48.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (56.6ms)
+Completed 200 OK in 314ms (Views: 260.1ms | ActiveRecord: 48.6ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:34:44 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 185ms (Views: 181.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:34:46 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 975ms (Views: 967.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:34:49 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 144ms (Views: 140.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:35:04 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (107.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (109.9ms)
+Completed 200 OK in 439ms (Views: 323.1ms | ActiveRecord: 107.7ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:35:07 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (8.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 806ms (Views: 793.8ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:35:38 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (187.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (190.0ms)
+Completed 200 OK in 372ms (Views: 167.7ms | ActiveRecord: 187.6ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:35:42 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (35.5ms)
+Completed 200 OK in 842ms (Views: 818.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/dtcoffee/1" for ::1 at 2020-04-30 17:35:43 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/dtcoffee/1"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-04-30 17:35:58 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (88.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (94.6ms)
+Completed 200 OK in 390ms (Views: 291.7ms | ActiveRecord: 88.4ms)
+
+
+Started GET "/api/dtcoffee/1" for ::1 at 2020-04-30 17:36:00 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/dtcoffee/1"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-04-30 17:37:09 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 1723ms (Views: 1697.3ms | ActiveRecord: 22.7ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:37:14 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 401ms (Views: 397.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:38:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (15.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 1466ms (Views: 1441.5ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:38:08 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 377ms (Views: 372.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:38:12 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 61ms (Views: 58.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/dtcoffees/1" for ::1 at 2020-04-30 17:38:15 -0700
+Processing by Api::DtcoffeesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mDtcoffee Load (1.5ms)[0m  [1m[34mSELECT  "dtcoffees".* FROM "dtcoffees" WHERE "dtcoffees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/dtcoffees_controller.rb:3
+  Rendering api/dtcoffees/show.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Dtcoffee"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/dtcoffees/show.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/api/dtcoffees/show.json.jbuilder:3
+  Rendered api/dtcoffees/show.json.jbuilder (162.2ms)
+Completed 200 OK in 222ms (Views: 151.1ms | ActiveRecord: 42.8ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:39:06 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 195ms (Views: 187.6ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/dtcoffees/1" for ::1 at 2020-04-30 17:40:31 -0700
+Processing by Api::DtcoffeesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mDtcoffee Load (8.1ms)[0m  [1m[34mSELECT  "dtcoffees".* FROM "dtcoffees" WHERE "dtcoffees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/dtcoffees_controller.rb:3
+  Rendering api/dtcoffees/show.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Dtcoffee"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/dtcoffees/show.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/api/dtcoffees/show.json.jbuilder:3
+  Rendered api/dtcoffees/show.json.jbuilder (7.1ms)
+Completed 200 OK in 27ms (Views: 15.2ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:42:14 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 874ms (Views: 867.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:42:17 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 80ms (Views: 74.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/dtcoffees/1" for ::1 at 2020-04-30 17:42:30 -0700
+Processing by Api::DtcoffeesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mDtcoffee Load (2.5ms)[0m  [1m[34mSELECT  "dtcoffees".* FROM "dtcoffees" WHERE "dtcoffees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/dtcoffees_controller.rb:3
+  Rendering api/dtcoffees/show.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Dtcoffee"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/dtcoffees/show.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/api/dtcoffees/show.json.jbuilder:3
+  Rendered api/dtcoffees/show.json.jbuilder (7.7ms)
+Completed 200 OK in 21ms (Views: 15.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--26b977d5880adbf48c91befcbb8d5baf77b96962/stump_hair.png" for ::1 at 2020-04-30 17:42:30 -0700
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--26b977d5880adbf48c91befcbb8d5baf77b96962", "filename"=>"stump_hair"}
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /Users/peterkoe/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (8.1ms) [0m[34mGenerated URL for file at key: 8VGzh5xWioh7WwvmfdjGWrCT (https://dtcoffee-dev.s3.us-west-1.amazonaws.com/8VGzh5xWioh7WwvmfdjGWrCT?response-content-disposition=inline%3B%20filename%3D%22stump_hair.png%22%3B%20filename%2A%3DUTF-8%27%27stump_hair.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIATNAAKJJ4THJLEWON%2F20200501%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200501T004230Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=1c05aa783e1f43bd50f8dc5b98019ed902ecb0e827dac4c04e4aea81603925b3)[0m
+Redirected to https://dtcoffee-dev.s3.us-west-1.amazonaws.com/8VGzh5xWioh7WwvmfdjGWrCT?response-content-disposition=inline%3B%20filename%3D%22stump_hair.png%22%3B%20filename%2A%3DUTF-8%27%27stump_hair.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIATNAAKJJ4THJLEWON%2F20200501%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200501T004230Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=1c05aa783e1f43bd50f8dc5b98019ed902ecb0e827dac4c04e4aea81603925b3
+Completed 302 Found in 17ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:44:37 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 275ms (Views: 270.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:44:42 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 637ms (Views: 632.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/1" for ::1 at 2020-04-30 17:44:48 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/1"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/1" for ::1 at 2020-04-30 17:44:58 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/1"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/coffees/1" for ::1 at 2020-04-30 17:45:22 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/coffees/1"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-04-30 17:45:30 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 875ms (Views: 868.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/dtcoffees/1" for ::1 at 2020-04-30 17:45:34 -0700
+Processing by Api::DtcoffeesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mDtcoffee Load (8.1ms)[0m  [1m[34mSELECT  "dtcoffees".* FROM "dtcoffees" WHERE "dtcoffees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/dtcoffees_controller.rb:3
+  Rendering api/dtcoffees/show.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Dtcoffee"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/dtcoffees/show.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/api/dtcoffees/show.json.jbuilder:3
+  Rendered api/dtcoffees/show.json.jbuilder (10.4ms)
+Completed 200 OK in 34ms (Views: 22.4ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/api/dtcoffees/1" for ::1 at 2020-04-30 17:59:15 -0700
+Processing by Api::DtcoffeesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mDtcoffee Load (5.4ms)[0m  [1m[34mSELECT  "dtcoffees".* FROM "dtcoffees" WHERE "dtcoffees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/dtcoffees_controller.rb:3
+  Rendering api/dtcoffees/show.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Dtcoffee"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/dtcoffees/show.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/api/dtcoffees/show.json.jbuilder:3
+  Rendered api/dtcoffees/show.json.jbuilder (20.4ms)
+Completed 200 OK in 45ms (Views: 30.0ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 17:59:17 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 124ms (Views: 120.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/dtcoffees/1" for ::1 at 2020-04-30 17:59:20 -0700
+Processing by Api::DtcoffeesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mDtcoffee Load (3.1ms)[0m  [1m[34mSELECT  "dtcoffees".* FROM "dtcoffees" WHERE "dtcoffees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/dtcoffees_controller.rb:3
+  Rendering api/dtcoffees/show.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Dtcoffee"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/dtcoffees/show.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/api/dtcoffees/show.json.jbuilder:3
+  Rendered api/dtcoffees/show.json.jbuilder (10.2ms)
+Completed 200 OK in 22ms (Views: 16.4ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--26b977d5880adbf48c91befcbb8d5baf77b96962/stump_hair.png" for ::1 at 2020-04-30 17:59:20 -0700
+Processing by ActiveStorage::BlobsController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--26b977d5880adbf48c91befcbb8d5baf77b96962", "filename"=>"stump_hair"}
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /Users/peterkoe/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (18.9ms) [0m[34mGenerated URL for file at key: 8VGzh5xWioh7WwvmfdjGWrCT (https://dtcoffee-dev.s3.us-west-1.amazonaws.com/8VGzh5xWioh7WwvmfdjGWrCT?response-content-disposition=inline%3B%20filename%3D%22stump_hair.png%22%3B%20filename%2A%3DUTF-8%27%27stump_hair.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIATNAAKJJ4THJLEWON%2F20200501%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200501T005920Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=87aec7de8bd554b015ba92995ae7673df653da25fbd2c2cd99196f627290a545)[0m
+Redirected to https://dtcoffee-dev.s3.us-west-1.amazonaws.com/8VGzh5xWioh7WwvmfdjGWrCT?response-content-disposition=inline%3B%20filename%3D%22stump_hair.png%22%3B%20filename%2A%3DUTF-8%27%27stump_hair.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIATNAAKJJ4THJLEWON%2F20200501%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20200501T005920Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=87aec7de8bd554b015ba92995ae7673df653da25fbd2c2cd99196f627290a545
+Completed 302 Found in 25ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 18:21:09 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (7.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "z6mP08FheE1apPYf07c70w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered static_pages/root.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 355ms (Views: 343.8ms | ActiveRecord: 8.7ms)
+
+
+Started POST "/api/session" for ::1 at 2020-04-30 18:21:11 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@coffee.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@coffee.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (1.3ms)
+Completed 200 OK in 499ms (Views: 14.2ms | ActiveRecord: 55.0ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-04-30 18:39:49 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Z4NTWKMIaRGx9tD6kapefg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:45
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@coffee.com"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[36mUser Update (2.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "WGXy0I5PDBqyArAS74pjzQ"], ["updated_at", "2020-05-01 01:39:50.264434"], ["id", 5]]
+  ↳ app/models/user.rb:45
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:45
+Completed 200 OK in 167ms (Views: 1.1ms | ActiveRecord: 58.9ms)
+
+
+Started POST "/api/session" for ::1 at 2020-04-30 18:40:13 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@coffee.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@coffee.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (1.2ms)
+Completed 200 OK in 393ms (Views: 13.3ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-04-30 18:40:16 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WGXy0I5PDBqyArAS74pjzQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:45
+  [1m[36mUser Exists (2.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@coffee.com"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "0SiWBgUmx073NjZxrTZBVw"], ["updated_at", "2020-05-01 01:40:16.248409"], ["id", 5]]
+  ↳ app/models/user.rb:45
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:45
+Completed 200 OK in 14ms (Views: 0.4ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/api/session" for ::1 at 2020-04-30 18:50:09 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@coffee.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@coffee.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (1.2ms)
+Completed 200 OK in 575ms (Views: 20.7ms | ActiveRecord: 23.5ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 19:58:28 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0SiWBgUmx073NjZxrTZBVw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered api/users/_user.json.jbuilder (1.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (232.8ms)
+Completed 200 OK in 429ms (Views: 341.5ms | ActiveRecord: 83.9ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 19:58:32 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0SiWBgUmx073NjZxrTZBVw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 98ms (Views: 94.0ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-04-30 19:58:50 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0SiWBgUmx073NjZxrTZBVw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:45
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@coffee.com"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[36mUser Update (9.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "2pPlQqeILNHDYBe4qgohuQ"], ["updated_at", "2020-05-01 02:58:50.793215"], ["id", 5]]
+  ↳ app/models/user.rb:45
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:45
+Completed 200 OK in 31ms (Views: 0.4ms | ActiveRecord: 20.4ms)
+
+
+Started POST "/api/session" for ::1 at 2020-04-30 19:58:52 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@coffee.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@coffee.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (1.0ms)
+Completed 200 OK in 713ms (Views: 38.0ms | ActiveRecord: 0.9ms)
+
+
