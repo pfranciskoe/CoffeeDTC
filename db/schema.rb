@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_01_001741) do
+ActiveRecord::Schema.define(version: 2020_05_01_181701) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,15 @@ ActiveRecord::Schema.define(version: 2020_05_01_001741) do
     t.string "flavors", null: false
     t.index ["name"], name: "index_dtcoffees_on_name", unique: true
     t.index ["roaster_id"], name: "index_dtcoffees_on_roaster_id"
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "coffee_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["coffee_id"], name: "index_matches_on_coffee_id"
+    t.index ["user_id"], name: "index_matches_on_user_id"
   end
 
   create_table "roasters", force: :cascade do |t|

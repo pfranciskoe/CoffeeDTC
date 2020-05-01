@@ -15,8 +15,9 @@ class OnboardingForm extends React.Component{
             // this.props.updateAnswer('user_id', this.props.currentId)
             const params = Object.assign(this.props.profile, { 'user_id': this.props.currentId, 
                                                             [this.props.formKey]: this.props.formAnswers[idx] })
-            this.props.updateTaste(params)  
-            this.props.history.push(`/`)
+            this.props.updateTaste(params).then(() => this.props.refreshUser(this.props.currentId))
+                .then(() => this.props.history.push("/matches"))
+            
         }
     };
     render(){

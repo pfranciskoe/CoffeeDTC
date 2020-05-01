@@ -4,5 +4,8 @@ class Api::DtcoffeesController < ApplicationController
         render :show
     end
 
-    Dtcoffee.where()
+    def index
+        @dtcoffees = Dtcoffee.all
+        render :index
+    end
 end

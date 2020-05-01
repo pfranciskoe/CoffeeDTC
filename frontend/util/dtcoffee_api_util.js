@@ -4,3 +4,10 @@ export const fetchCoffee = (dtcoffeeId) => (
         method: 'GET'
     })
 )
+
+export const fetchCoffees = () => (
+    $.ajax({
+        url: `/api/dtcoffees/`,
+        method: 'GET'
+    })
+)

@@ -1,0 +1,29 @@
+.matches-page{
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.match-list{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.match-list > :first-child{
+    width: 80%;
+    height: 300px;
+    background-color: yellow;
+    display: flex;
+    flex-wrap: wrap;
+}
+.matched-coffee-item{
+    width: 40%;
+    height: 180px;
+     background-color: rgb(255, 0, 225);
+    display: flex;
+    flex-wrap: wrap;
+}

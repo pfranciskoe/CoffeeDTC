@@ -11,14 +11,14 @@ import OnboardingContainer4 from './onboarding/onboarding_container_4';
 import OnboardingContainer3 from './onboarding/onboarding_container_3';
 import OnboardingContainer2 from './onboarding/onboarding_container_2';
 import OnboardingContainer1 from './onboarding/onboarding_container_1';
-import CoffeeShowContainer from "./coffees/coffee_show_container";
+import MatchesContainer from "./matches/matches_container";
 
 
 // import OnboardingContainer from './onboarding/onboarding_container'
 const App = () =>(
     <div className='app'>
         <NavBarContainer/>
-        <Route exact path="/coffees/1" component={CoffeeShowContainer} />
+        <Route exact path="/matches" component={MatchesContainer} />
         <Route exact path="/" component={Home}/>
         <Route exact path="/onboarding/1" component={OnboardingContainer1}/>
         <Route exact path="/onboarding/2" component={OnboardingContainer2} />

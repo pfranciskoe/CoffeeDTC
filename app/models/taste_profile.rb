@@ -29,6 +29,8 @@ class TasteProfile < ApplicationRecord
             roast = [2,4]
         elsif self.roast == 3
             roast = [4,5]
+        else
+            roast= [1,5]
         end
         if self.experience_level == 1
             price_range = [10,15]
@@ -39,13 +41,7 @@ class TasteProfile < ApplicationRecord
         elsif self.experience_level == 4
             price_range = [20,150]
         end
-
-        if self.adventure == 'High'
-            adventure 
-        
-        adventure = self.adventure
-        
-        return[roast,adventure,exp_level]
+        return[roast,price_range]
     end
     
 end

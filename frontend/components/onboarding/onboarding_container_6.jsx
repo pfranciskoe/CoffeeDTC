@@ -1,4 +1,5 @@
 import React from 'react';
+import { refreshUser} from '../../actions/session'
 import { updateAnswer } from '../../actions/onboarding_actions';
 import { defineTasteProfile, updateTaste } from '../../actions/taste_profile_actions'
 import OnboardingForm from './onboarding_form'
@@ -27,7 +28,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchtoProps = (dispatch) => ({
     updateAnswer: (key, answer) => dispatch(updateAnswer(key, answer)),
     defineTasteProfile: (tasteProfile) => dispatch(defineTasteProfile(tasteProfile)),
-    updateTaste: (tasteProfile) => dispatch(updateTaste(tasteProfile))
+    updateTaste: (tasteProfile) => dispatch(updateTaste(tasteProfile)),
+    refreshUser: (userId) => dispatch(refreshUser(userId))
 });
 
 export default connect(mapStateToProps, mapDispatchtoProps)(OnboardingForm);

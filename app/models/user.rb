@@ -19,7 +19,13 @@ class User < ApplicationRecord
     has_one :taste_profile,
         foreign_key: :user_id,
         class_name: :TasteProfile
-        
+    has_many :matches,
+    foreign_key: :user_id,
+    class_name: :Match
+
+    has_many :matched_coffees,
+    through: :matches,
+    source: :dtcoffee
 
     def self.find_by_credentials(email,password)
         user = User.find_by(email: email)

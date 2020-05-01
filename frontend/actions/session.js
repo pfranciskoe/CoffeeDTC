@@ -1,9 +1,9 @@
-import { logIn, logOut, signUp } from '../util/session_api_util';
+import { logIn, logOut, signUp, getUser } from '../util/session_api_util';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 
-const receiveCurrentUser = user =>({
+const receiveCurrentUser = (user,matches) =>({
     type: RECEIVE_CURRENT_USER,
     user
 })
@@ -18,10 +18,16 @@ const receiveErrors = errors => ({
 })
 
 export const login = formUser => dispatch => logIn(formUser)
-    .then(user => dispatch(receiveCurrentUser(user)), errors => dispatch(receiveErrors(errors.responseJSON)));
+    .then((user) => dispatch(receiveCurrentUser(user)), 
+        errors => dispatch(receiveErrors(errors.responseJSON)));
 
 export const createNewUser = formUser => dispatch => signUp(formUser)
-    .then(user => dispatch(receiveCurrentUser(user)), errors => dispatch(receiveErrors(errors.responseJSON)));
+    .then((user) => dispatch(receiveCurrentUser(user)), 
+        errors => dispatch(receiveErrors(errors.responseJSON)));
 
 export const logout = () => dispatch => logOut()
     .then( ()=> dispatch(logoutCurrentUser()), errors => dispatch(receiveErrors(errors.responseJSON)));
+
+export const refreshUser = (userId) => dispatch => getUser(userId)
+    .then((user) => dispatch(receiveCurrentUser(user)),
+        errors => dispatch(receiveErrors(errors.responseJSON)));
