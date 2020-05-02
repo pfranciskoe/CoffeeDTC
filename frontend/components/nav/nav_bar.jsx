@@ -8,13 +8,17 @@ class NavBar extends React.Component{
         return (
             <div className='navbar'>
                 <Link to='/' className='logo-link'><div className='logo-div'>DTCOFFEE</div></Link>
-                <div>{this.props.currentUser ? `Hi ${this.props.currentUser.email}` : null} </div>
                 {this.props.currentUser ?
-                    <button onClick={this.props.logout} className='nav-button'>Log Out</button> :
+                    <div>
+                    <button onClick={this.props.logout} className='nav-button'>Log Out</button>
+                        {this.props.currentUser.matches[0] ? 
+                            <Link to='/matches' ><button className='nav-button'>See Matches</button></Link> : 
+                            <Link to='/onboarding/1' ><button className='nav-button'>Take Quiz</button></Link>}
+                    </div> :
                     <div>
                     <button onClick = { this.props.openModal } className='nav-button'>Log In</button>
-                    <button onClick = {()=>this.props.processForm({email: 'demo@coffee.com',
-                        password: 'password'})}className='demo-button'>Demo Log In</button>
+                    <button onClick = {()=>this.props.processForm({email: 'demo@coffee.com', password: 'password'
+                    })} className='nav-button'>Demo Log In</button>
                     </div>
                     }
             </div>
