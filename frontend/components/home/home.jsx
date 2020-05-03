@@ -1,14 +1,24 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import HomeBody from './home_body.jsx'
 class Home extends React.Component{
     constructor(props){
         super(props)
+        this.para = () => {
+            let para1 = document.getElementsByClassName('para-element')[0];
+            let para2 = document.getElementsByClassName('homepage-header')[0];
+            let para3 = document.getElementsByClassName('para-element')[1]
+            para1.style.transform = `translateY(-${(window.pageYOffset * 1.5) / 3}px`
+            para2.style.transform = `translateY(-${(window.pageYOffset * 2.5) / 3}px`
+            para3.style.transform = `translateY(-${(window.pageYOffset * 3) / 3}px`
+        }
     }
+    
     componentDidMount(){
-        window.addEventListener('scroll', () => {
-            para1 = document.getElementsByClassName('para-element')[0]
-            
-        })
+        window.addEventListener('scroll', this.para)
+    }
+    componentWillUnmount(){
+        window.removeEventListener('scroll', this.para)
     }
     render(){
 
@@ -26,6 +36,7 @@ class Home extends React.Component{
                     <img className='home-img-bottom-left' src={window.home3} />
                     <img className='home-img-bottom-right' src={window.home4} />
                 </div>
+                <HomeBody/>
             </div>
         )
     }   

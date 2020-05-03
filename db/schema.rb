@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_01_181701) do
+ActiveRecord::Schema.define(version: 2020_05_03_180630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 2020_05_01_181701) do
   create_table "dtcoffees", force: :cascade do |t|
     t.string "name", null: false
     t.text "description", null: false
-    t.integer "roast", null: false
     t.integer "roaster_id", null: false
     t.integer "weight", null: false
     t.float "price", null: false
@@ -48,6 +47,7 @@ ActiveRecord::Schema.define(version: 2020_05_01_181701) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "flavors", null: false
+    t.integer "roast", null: false
     t.index ["name"], name: "index_dtcoffees_on_name", unique: true
     t.index ["roaster_id"], name: "index_dtcoffees_on_roaster_id"
   end

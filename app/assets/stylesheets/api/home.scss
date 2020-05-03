@@ -3,7 +3,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 500px;
+        height: 700px;
         width: 100%;
         font-size: 120px;
         text-align: center;
@@ -34,11 +34,15 @@
         background-color: white;
     }
     .homepage-header{
+        color: white;
+        position: fixed;
         font-size: 100px;
         width: 50%;
+        z-index: 1;
+        top: 90px;
     }
 
-    .para-element1{
+    .para-element{
         position: fixed;
         transform: translateY(0px);
         width: 100%;
@@ -48,7 +52,7 @@
         position: fixed;
         left: -3%;
         top: 20px;
-        width: 25%;
+        width: 25%; 
         height: auto;
     }
     .home-img-top-right{

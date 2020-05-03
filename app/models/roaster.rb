@@ -5,7 +5,6 @@
 #  id          :bigint           not null, primary key
 #  name        :string           not null
 #  location    :string           not null
-#  logo_url    :string           not null
 #  lat         :float
 #  lng         :float
 #  description :string           not null
