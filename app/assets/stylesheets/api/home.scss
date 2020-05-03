@@ -36,21 +36,40 @@
     .homepage-header{
         font-size: 100px;
         width: 50%;
-
     }
 
+    .para-element1{
+        position: fixed;
+        transform: translateY(0px);
+        width: 100%;
+        height: inherit;
+    }
     .home-img-top-left{
-        position: absolute;
+        position: fixed;
         left: -3%;
-        top: 50px;
-        width: 20%;
+        top: 20px;
+        width: 25%;
         height: auto;
     }
     .home-img-top-right{
-        position: absolute;
+        position: fixed;
         right: -3%;
-        top: 65px;
+        top: 45px;
+        width: 25%;
+        height: auto;
+    }
+    .home-img-bottom-left{
+        position: fixed;
+        left: 18%;
+        top: 400px;
         width: 20%;
+        height: auto;
+    }
+    .home-img-bottom-right{
+        position: fixed;
+        right: 12%;
+        top: 435px;
+        width: 35%;
         height: auto;
     }
     .quiz-link-button-link{
@@ -58,9 +77,4 @@
         display: block;
         z-index: 1;
         text-decoration: none;
-    }
-
-    .img-lolo{
-         width: 20%;
-        height: auto;
     }
