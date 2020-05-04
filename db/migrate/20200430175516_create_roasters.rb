@@ -3,7 +3,6 @@ class CreateRoasters < ActiveRecord::Migration[5.2]
     create_table :roasters do |t|
       t.string :name, null:false
       t.string :location, null:false
-      t.string :logo_url, null:false
       t.float :lat
       t.float :lng
       t.string :description, null:false

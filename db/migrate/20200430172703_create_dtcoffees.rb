@@ -9,7 +9,6 @@ class CreateDtcoffees < ActiveRecord::Migration[5.2]
       t.float :price, null:false
       t.boolean :single_origin, null:false
       t.boolean :fair_trade, null:false
-      t.string :image_link, null:false
       t.timestamps
     end
     add_index :dtcoffees, :name, unique:true
