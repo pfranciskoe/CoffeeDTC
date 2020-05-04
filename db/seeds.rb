@@ -68,7 +68,17 @@ roaster4 = Roaster.create(name: 'AKA',
         fun_fact: "Also known as family, AKA's roaster Rosie Laird grew up around 
         coffee as the daughter of co-founder and roastmaster John Laird.",
 )
-
+roaster5 = Roaster.create(name: 'Intelligentsia',       
+        location:'Oakland, California', 
+        description: "Founded in 1995 by Emily Mange and Doug Zell, this 
+        Chicago-based institution got its start roasting on vintage equipment 
+        within its first coffeebar. Today – with a focus on consistency, quality, 
+        and sustainability – Intelligentsia travels the world to source the 
+        finest specialty coffee for its roasting facilities and training labs 
+        across the nation.", 
+        fun_fact: "This Chicago roaster is the title sponsor of the 
+        Intelligentsia Cup, a 10-day road cycling race around the city.",
+)
 
 
 coffee1= Dtcoffee.create!(
@@ -279,6 +289,58 @@ coffee16= Dtcoffee.create(
         flavors: 'Sweet & Smooth'
 )
 
+coffee17= Dtcoffee.create(
+        name:"Intelligentsia House Blend",
+        description:"Designed to showcase the intrinsic sweetness and fruit 
+        flavors that characterize our favorite coffees. Milk chocolate, 
+        mandarin, and apple are tastes we love and are well represented here.",
+        roast: 2,
+        roaster_id: roaster5.id,
+        weight: 12,
+        price: 16.50,
+        single_origin: false,
+        fair_trade: false,
+        flavors: 'Balanced & Fruity'
+)
+coffee18= Dtcoffee.create(
+        name:"Black Cat Classic Espresso",
+        description:"This classic espresso has been part of Intelligentsia's 
+        lineup since the very begining. Intensive lot selection means supreme 
+        balance & syrupy sweetness.",
+        roast: 3,
+        roaster_id: roaster5.id,
+        weight: 12,
+        price: 17.65,
+        single_origin: false,
+        fair_trade: false,
+        flavors: 'Syrupy & Smooth'
+)
+coffee19= Dtcoffee.create(
+        name:"Illumination Blend",
+        description:"The Peruvian and Ethiopian pieces of this seasonal blend 
+        fit together wonderfully for a balanced, but fun, blend with zippy 
+        fruit flavors and a rich molasses finish.",
+        roast: 3,
+        roaster_id: roaster5.id,
+        weight: 12,
+        price: 20.00,
+        single_origin: false,
+        fair_trade: true,
+        flavors: 'Balanced & Fruity'
+)
+coffee20= Dtcoffee.create(
+        name:"El Gallo Organic Breakfast Blend",
+        description:"An organic counterpart to Intelligentsia's venerable 
+        House Blend, El Gallo has a round mouthfeel with a smooth, candied 
+        sweetness perfect for all day enjoyment.",
+        roast: 2,
+        roaster_id: roaster5.id,
+        weight: 12,
+        price: 15.00,
+        single_origin: false,
+        fair_trade: true,
+        flavors: 'Sweet & Smooth'
+)
 match1 = Match.create!(
         user_id: user1.id,
         coffee_id: coffee6.id
