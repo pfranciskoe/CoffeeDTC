@@ -348,3 +348,7 @@ match1 = Match.create!(
 match2 = Match.create!(
         user_id: user1.id,
         coffee_id: coffee10.id)
+
+match2 = Match.create!(
+        user_id: user1.id,
+        coffee_id: coffee17.id)
