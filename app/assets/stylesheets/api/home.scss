@@ -23,7 +23,7 @@
         width: 119px;
         text-align: center;
         text-transform: uppercase;
-        text-decoration: none;
+        
         cursor: pointer;
         transition-property: background, color, border-color;
         transition-duration: 250ms, 250ms;
@@ -53,14 +53,14 @@
     .home-img-top-left{
         position: fixed;
         left: -3%;
-        top: 20px;
+        top: -40px;
         width: 25%; 
         height: auto;
     }
     .home-img-top-right{
         position: fixed;
         right: -3%;
-        top: 45px;
+        top: -20px;
         width: 25%;
         height: auto;
     }
@@ -92,6 +92,7 @@
        height: 1400px;
        background-color: rgb(255, 255, 255);
        width: 100%;
+       z-index: 1;
     }
     .how-header{
         margin-top: 50px;
@@ -108,7 +109,8 @@
         border-radius: 6px;
         width: 55%;
         justify-content: space-evenly;
-        height: 300px;
+        align-items: center;
+        height: 600px;
         margin: 10px;
     }
     .how-part-head{
@@ -131,9 +133,18 @@
         align-items: center;
         justify-content: center;
     }
+    .head-arrow{
+        top:500px;
+    }
     .link-wrapper{
         display: flex;
         height: 38px;
         flex-direction: column;
         align-items: center;
+        text-decoration: none;
+    }
+    .how-part-button-group{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
     }

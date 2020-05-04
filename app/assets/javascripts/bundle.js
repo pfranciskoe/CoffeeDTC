@@ -480,7 +480,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _home_body_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./home_body.jsx */ "./frontend/components/home/home_body.jsx");
+/* harmony import */ var _home_body_container_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./home_body_container.jsx */ "./frontend/components/home/home_body_container.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -522,10 +522,12 @@ var Home = /*#__PURE__*/function (_React$Component) {
     _this.para = function () {
       var para1 = document.getElementsByClassName('para-element')[0];
       var para2 = document.getElementsByClassName('homepage-header')[0];
-      var para3 = document.getElementsByClassName('para-element')[1];
+      var para3 = document.getElementsByClassName('homepage-header')[1];
+      var para4 = document.getElementsByClassName('para-element')[1];
       para1.style.transform = "translateY(-".concat(window.pageYOffset * 1.5 / 3, "px");
       para2.style.transform = "translateY(-".concat(window.pageYOffset * 2.5 / 3, "px");
-      para3.style.transform = "translateY(-".concat(window.pageYOffset * 3 / 3, "px");
+      para3.style.transform = "translateY(".concat(window.pageYOffset * 0.5 / 8, "px");
+      para4.style.transform = "translateY(-".concat(window.pageYOffset * 3 / 3, "px");
     };
 
     return _this;
@@ -551,7 +553,9 @@ var Home = /*#__PURE__*/function (_React$Component) {
         className: "homepage-para-part"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "homepage-header"
-      }, "Coffee, Curated For You"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Coffee, Curated For You"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "homepage-header head-arrow"
+      }, "\u02C7"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "para-element"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "home-img-top-left",
@@ -569,7 +573,7 @@ var Home = /*#__PURE__*/function (_React$Component) {
         src: window.home4
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "home-title-backdrop"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_home_body_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_home_body_container_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null));
     }
   }]);
 
@@ -595,7 +599,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var HomeBody = function HomeBody() {
+var HomeBody = function HomeBody(_ref) {
+  var currentUser = _ref.currentUser,
+      logout = _ref.logout,
+      openModal = _ref.openModal,
+      processForm = _ref.processForm;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "home-body"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -608,43 +616,108 @@ var HomeBody = function HomeBody() {
     className: "how-part-sub"
   }, "Step 1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
     className: "how-part-head"
-  }, "Take our Quiz"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "link-wrapper",
-    to: "/onboarding/1"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "button-2"
-  }, "Take Quiz")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, "Log In"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "how-part-body"
-  }, "Let us know how you like your coffee.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "or use our demo login."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "how-part-button-group"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: openModal,
+    className: "button-2"
+  }, "Login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: function onClick() {
+      return processForm({
+        email: 'demo@coffee.com',
+        password: 'password'
+      });
+    },
+    className: "button-2"
+  }, "Demo"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "how-part"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
     className: "how-part-sub"
   }, "Step 2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
     className: "how-part-head"
-  }, "See Your Matches"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, "Take our Quiz"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "how-part-body"
+  }, "Let us know how you like your coffee."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "link-wrapper",
-    to: "/matches"
+    to: "/onboarding/1"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "button-2"
-  }, "See Matches")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "how-part-body"
-  }, "Explore the coffees our algorithm has paired you with.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Take Quiz"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "how-part"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
     className: "how-part-sub"
   }, "Step 3"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
     className: "how-part-head"
-  }, "Drink Coffee"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, "See Your Matches"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "how-part-body"
+  }, "Explore the coffees our algorithm has paired you with."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "link-wrapper",
+    to: "/matches"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "button-2"
+  }, "See Matches"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "how-part"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
+    className: "how-part-sub"
+  }, "Step 4"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+    className: "how-part-head"
+  }, "Drink Coffee"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "how-part-body"
+  }, "Order the coffees that sound most appealing to your taste."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "link-wrapper",
     to: "/cart"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "button-2"
-  }, "View Cart")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "how-part-body"
-  }, "Order the coffees that sound most appealing to your taste.")));
+  }, "View Cart"))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (HomeBody);
+
+/***/ }),
+
+/***/ "./frontend/components/home/home_body_container.jsx":
+/*!**********************************************************!*\
+  !*** ./frontend/components/home/home_body_container.jsx ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_session__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/session */ "./frontend/actions/session.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+/* harmony import */ var _home_body__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home_body */ "./frontend/components/home/home_body.jsx");
+
+
+
+
+
+var mapStateToProps = function mapStateToProps(_ref) {
+  var session = _ref.session,
+      users = _ref.entities.users;
+  return {
+    currentUser: users[session.id]
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    logout: function logout() {
+      return dispatch(Object(_actions_session__WEBPACK_IMPORTED_MODULE_1__["logout"])());
+    },
+    openModal: function openModal() {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["openModal"])());
+    },
+    processForm: function processForm(user) {
+      return dispatch(Object(_actions_session__WEBPACK_IMPORTED_MODULE_1__["login"])(user));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_home_body__WEBPACK_IMPORTED_MODULE_3__["default"]));
 
 /***/ }),
 

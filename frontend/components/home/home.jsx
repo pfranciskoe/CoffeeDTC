@@ -1,16 +1,18 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import HomeBody from './home_body.jsx'
+import HomeBodyContainer from './home_body_container.jsx'
 class Home extends React.Component{
     constructor(props){
         super(props)
         this.para = () => {
             let para1 = document.getElementsByClassName('para-element')[0];
             let para2 = document.getElementsByClassName('homepage-header')[0];
-            let para3 = document.getElementsByClassName('para-element')[1]
+            let para3 = document.getElementsByClassName('homepage-header')[1];
+            let para4 = document.getElementsByClassName('para-element')[1]
             para1.style.transform = `translateY(-${(window.pageYOffset * 1.5) / 3}px`
             para2.style.transform = `translateY(-${(window.pageYOffset * 2.5) / 3}px`
-            para3.style.transform = `translateY(-${(window.pageYOffset * 3) / 3}px`
+            para3.style.transform = `translateY(${(window.pageYOffset * 0.5) / 8}px`
+            para4.style.transform = `translateY(-${(window.pageYOffset * 3) / 3}px`
         }
     }
     
@@ -28,6 +30,7 @@ class Home extends React.Component{
             <div className='homepage'>
                 <div className='homepage-para-part'>
                 <h1 className='homepage-header'>Coffee, Curated For You</h1>
+                <h1 className='homepage-header head-arrow'>ˇ</h1>
                 {/* <Link className='quiz-link-button-link' to='/onboarding/1'>
                     <button className='quiz-link-button'>Get Started</button>
                 </Link> */}
@@ -41,7 +44,7 @@ class Home extends React.Component{
                 </div>
                 <div className='home-title-backdrop'></div>
                 </div>
-                <HomeBody/>
+                <HomeBodyContainer/>
             </div>
         )
     }   
