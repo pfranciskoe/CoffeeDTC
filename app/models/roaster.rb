@@ -19,5 +19,5 @@ class Roaster < ApplicationRecord
     foreign_key: :roaster_id,
     class_name: :Dtcoffee
 
-    has_one_attached :photo
+    # has_one_attached :photo
 end
