@@ -2,6 +2,8 @@ class Api::TasteProfilesController < ApplicationController
     def create
         @taste_profile = TasteProfile.new(profile_params)
         if @taste_profile.save
+            delete_old_matches(@taste_profile)
+            create_matches(@taste_profile)
             render :show
         else
             render json: @taste_profile.errors.full_messages, status: 401

@@ -7,7 +7,7 @@ export const defineTaste = (tasteProfile) => (
 )
 export const editTaste = (tasteProfile) => (
     $.ajax({
-        url: `/api/taste_profiles/${tasteProfile.userId}`,
+        url: `/api/taste_profiles/${tasteProfile.user_id}`,
         method: 'PATCH',
         data: { taste_profile: tasteProfile }
     })

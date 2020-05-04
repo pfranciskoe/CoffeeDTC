@@ -6,7 +6,6 @@ class AuthPage extends React.Component{
     
     constructor(props){
         super(props);
-        console.log(this)
         this.state={
             selectedTab: 1
         }

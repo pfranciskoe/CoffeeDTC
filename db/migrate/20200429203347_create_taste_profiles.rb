@@ -13,3 +13,4 @@ class CreateTasteProfiles < ActiveRecord::Migration[5.2]
     add_index :taste_profiles, :user_id, unique:true
   end
 end
+  

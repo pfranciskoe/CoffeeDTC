@@ -546,6 +546,8 @@ var Home = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "homepage"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "homepage-para-part"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "homepage-header"
       }, "Coffee, Curated For You"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -564,6 +566,8 @@ var Home = /*#__PURE__*/function (_React$Component) {
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "home-img-bottom-right",
         src: window.home4
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "home-title-backdrop"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_home_body_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null));
     }
   }]);
@@ -586,12 +590,38 @@ var Home = /*#__PURE__*/function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
 
 
 var HomeBody = function HomeBody() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "home-body"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "how-header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    className: "how-header-text"
+  }, "How It Works")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "how-part"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
+    className: "how-part-sub"
+  }, "Step 1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+    className: "how-part-head"
+  }, "Take our Quiz"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/onboarding/1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "button-2"
+  }, "Take Quiz")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "how-part-body"
+  }, "Let us know how you like your coffee.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "how-part"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
+    className: "how-part-sub"
+  }, "Step 2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+    className: "how-part-head"
+  }, "See Matches"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "how-part-body"
+  }, "Explore the coffees our algorithm has paired you with.")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (HomeBody);
@@ -625,7 +655,7 @@ var MatchItem = function MatchItem(_ref) {
     className: "matched-coffee-item-details"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "matched-coffee-item-detail"
-  }, " ", coffee.roast, " roast"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, coffee.roast === 1 ? 'Light ' : null, coffee.roast === 2 ? 'Medium Light ' : null, coffee.roast === 3 ? 'Medium ' : null, coffee.roast === 4 ? 'Medium Dark ' : null, coffee.roast === 5 ? 'Dark ' : null, "Roast"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "matched-coffee-item-detail"
   }, "$", coffee.price)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "matched-coffee-item-flavors"
@@ -1295,6 +1325,7 @@ var mapStateToProps = function mapStateToProps(state) {
   return {
     profile: state.entities.onboarding,
     currentId: state.session.id,
+    currentMatches: state.entities.users[state.session.id].matches,
     formQuestion: 'Do you buy ground coffee or whole bean coffee?',
     formKey: 'ground',
     formBodys: {
@@ -1400,11 +1431,20 @@ var OnboardingForm = /*#__PURE__*/function (_React$Component) {
         var params = Object.assign(this.props.profile, _defineProperty({
           'user_id': this.props.currentId
         }, this.props.formKey, this.props.formAnswers[idx]));
-        this.props.updateTaste(params).then(function () {
-          return _this2.props.refreshUser(_this2.props.currentId);
-        }).then(function () {
-          return _this2.props.history.push("/matches");
-        });
+
+        if (this.props.currentMatches.length >= 1) {
+          this.props.updateTaste(params).then(function () {
+            return _this2.props.refreshUser(_this2.props.currentId);
+          }).then(function () {
+            return _this2.props.history.push("/matches");
+          });
+        } else {
+          this.props.defineTasteProfile(params).then(function () {
+            return _this2.props.refreshUser(_this2.props.currentId);
+          }).then(function () {
+            return _this2.props.history.push("/matches");
+          });
+        }
       }
     }
   }, {
@@ -1520,7 +1560,6 @@ var AuthPage = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, AuthPage);
 
     _this = _super.call(this, props);
-    console.log(_assertThisInitialized(_this));
     _this.state = {
       selectedTab: 1
     };
@@ -2361,7 +2400,7 @@ var defineTaste = function defineTaste(tasteProfile) {
 };
 var editTaste = function editTaste(tasteProfile) {
   return $.ajax({
-    url: "/api/taste_profiles/".concat(tasteProfile.userId),
+    url: "/api/taste_profiles/".concat(tasteProfile.user_id),
     method: 'PATCH',
     data: {
       taste_profile: tasteProfile

@@ -20,7 +20,7 @@ TasteProfile.create!(
     experience_level: 1,
     brew_method: 'Moka Pot',
     additions: 'None',
-    roast: '3',
+    roast: 3,
     adventure: 'High',
     ground: false
 )

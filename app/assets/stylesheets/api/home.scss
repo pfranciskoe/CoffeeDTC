@@ -3,12 +3,14 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 700px;
+        height: 2100px;
         width: 100%;
         font-size: 120px;
         text-align: center;
     }
-
+    .home-title-backdrop{
+        height: 700px;
+    }
     .quiz-link-button{
         display: block;
         font-weight: 900;
@@ -81,4 +83,51 @@
         display: block;
         z-index: 1;
         text-decoration: none;
+    }
+
+    .home-body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       height: 1400px;
+       background-color: rgb(255, 255, 255);
+       width: 100%;
+    }
+    .how-header{
+        margin-top: 50px;
+    }
+    .how-header-text{
+        font-size: 72px;
+        color: rgb(46, 46, 46);
+    }
+
+    .how-part{
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(238, 238, 238);
+        border-radius: 6px;
+        width: 55%;
+        justify-content: space-evenly;
+        height: 300px;
+        margin: 10px;
+    }
+    .how-part-head{
+        font-size: 36px;
+        margin: 0px;
+    }
+    .how-part-sub{
+        font-size: 22px;
+        margin: 0px;
+    }
+    .how-part-body{
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0px;
+    }
+    .homepage-para-part{
+        height: 700px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }

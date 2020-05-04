@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 const mapStateToProps = (state) => ({
     profile: state.entities.onboarding,
     currentId: state.session.id,
+    currentMatches: state.entities.users[state.session.id].matches,
     formQuestion: 'Do you buy ground coffee or whole bean coffee?',
     formKey: 'ground',
     formBodys: {
