@@ -535,6 +535,7 @@ var Home = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       window.addEventListener('scroll', this.para);
+      window.scrollTo(0, 0);
     }
   }, {
     key: "componentWillUnmount",
@@ -608,6 +609,7 @@ var HomeBody = function HomeBody() {
   }, "Step 1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
     className: "how-part-head"
   }, "Take our Quiz"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "link-wrapper",
     to: "/onboarding/1"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "button-2"
@@ -619,9 +621,27 @@ var HomeBody = function HomeBody() {
     className: "how-part-sub"
   }, "Step 2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
     className: "how-part-head"
-  }, "See Matches"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, "See Your Matches"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "link-wrapper",
+    to: "/matches"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "button-2"
+  }, "See Matches")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "how-part-body"
-  }, "Explore the coffees our algorithm has paired you with.")));
+  }, "Explore the coffees our algorithm has paired you with.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "how-part"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
+    className: "how-part-sub"
+  }, "Step 3"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+    className: "how-part-head"
+  }, "Drink Coffee"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "link-wrapper",
+    to: "/cart"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "button-2"
+  }, "View Cart")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "how-part-body"
+  }, "Order the coffees that sound most appealing to your taste.")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (HomeBody);
@@ -714,29 +734,25 @@ var Matches = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, Matches);
 
     _this = _super.call(this, props);
-    _this.state = {
-      loaded: false
-    };
 
     _this.props.fetchDTCoffees();
 
     return _this;
-  } // componentDidMount(){
-  //     this.setState({ loaded: true })
-  // }
-
+  }
 
   _createClass(Matches, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      window.scrollTo(0, 0);
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "matches-page"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "match-header-img",
-        src: window.matches_head
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "match-header-box"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "match-header"
@@ -1418,6 +1434,11 @@ var OnboardingForm = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(OnboardingForm, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      window.scrollTo(0, 0);
+    }
+  }, {
     key: "handleSubmit",
     value: function handleSubmit(idx) {
       var _this2 = this;
@@ -1426,19 +1447,19 @@ var OnboardingForm = /*#__PURE__*/function (_React$Component) {
         this.props.updateAnswer(this.props.formKey, this.props.formAnswers[idx]);
         this.props.history.push("/onboarding/".concat(this.props.nextQuesitonNumber));
       } else {
-        // this.props.updateAnswer(this.props.formKey, this.props.formAnswers[idx])
-        // this.props.updateAnswer('user_id', this.props.currentId)
         var params = Object.assign(this.props.profile, _defineProperty({
           'user_id': this.props.currentId
         }, this.props.formKey, this.props.formAnswers[idx]));
 
         if (this.props.currentMatches.length >= 1) {
+          console.log('true');
           this.props.updateTaste(params).then(function () {
             return _this2.props.refreshUser(_this2.props.currentId);
           }).then(function () {
             return _this2.props.history.push("/matches");
           });
         } else {
+          console.log('false');
           this.props.defineTasteProfile(params).then(function () {
             return _this2.props.refreshUser(_this2.props.currentId);
           }).then(function () {
@@ -2394,7 +2415,7 @@ var defineTaste = function defineTaste(tasteProfile) {
     url: '/api/taste_profiles',
     method: 'POST',
     data: {
-      tasteProfile: tasteProfile
+      taste_profile: tasteProfile
     }
   });
 };

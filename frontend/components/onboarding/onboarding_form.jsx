@@ -4,21 +4,24 @@ class OnboardingForm extends React.Component{
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this)
     };
-
+    componentDidMount(){
+        window.scrollTo(0, 0)
+    }
     handleSubmit(idx){
         
         if (this.props.nextquesitonNumber !== null) {
             this.props.updateAnswer(this.props.formKey, this.props.formAnswers[idx])
             this.props.history.push(`/onboarding/${this.props.nextQuesitonNumber}`)
         } else {
-            // this.props.updateAnswer(this.props.formKey, this.props.formAnswers[idx])
-            // this.props.updateAnswer('user_id', this.props.currentId)
+            
             const params = Object.assign(this.props.profile, { 'user_id': this.props.currentId, 
                                                             [this.props.formKey]: this.props.formAnswers[idx] })
             if (this.props.currentMatches.length >= 1) {
+                console.log('true')
                 this.props.updateTaste(params).then(() => this.props.refreshUser(this.props.currentId))
                     .then(() => this.props.history.push("/matches"))
             } else {
+                console.log('false')
                 this.props.defineTasteProfile(params).then(() => this.props.refreshUser(this.props.currentId))
                     .then(() => this.props.history.push("/matches"))    
             }   

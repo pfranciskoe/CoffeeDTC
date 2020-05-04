@@ -2,7 +2,7 @@ export const defineTaste = (tasteProfile) => (
     $.ajax({
         url: '/api/taste_profiles',
         method: 'POST',
-        data: {tasteProfile}
+        data: { taste_profile: tasteProfile}
     })
 )
 export const editTaste = (tasteProfile) => (

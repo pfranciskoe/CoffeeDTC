@@ -16,6 +16,8 @@ class Home extends React.Component{
     
     componentDidMount(){
         window.addEventListener('scroll', this.para)
+        window.scrollTo(0, 0)
+       
     }
     componentWillUnmount(){
         window.removeEventListener('scroll', this.para)

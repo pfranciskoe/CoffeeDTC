@@ -8,13 +8,20 @@ const HomeBody = ()=>(
     <div className='how-part'>
         <h6 className='how-part-sub'>Step 1</h6>
         <h4 className='how-part-head'>Take our Quiz</h4>
-        <Link to='/onboarding/1' ><button className='button-2'>Take Quiz</button></Link>
+        <Link className='link-wrapper' to='/onboarding/1' ><button className='button-2'>Take Quiz</button></Link>
         <p className='how-part-body'>Let us know how you like your coffee.</p>
     </div>
     <div className='how-part'>
         <h6 className='how-part-sub'>Step 2</h6>
-        <h4 className='how-part-head'>See Matches</h4>
+        <h4 className='how-part-head'>See Your Matches</h4>
+        <Link className='link-wrapper' to='/matches' ><button className='button-2'>See Matches</button></Link>
         <p className='how-part-body'>Explore the coffees our algorithm has paired you with.</p>
+    </div>
+    <div className='how-part'>
+        <h6 className='how-part-sub'>Step 3</h6>
+        <h4 className='how-part-head'>Drink Coffee</h4>
+        <Link className='link-wrapper' to='/cart' ><button className='button-2'>View Cart</button></Link>
+        <p className='how-part-body'>Order the coffees that sound most appealing to your taste.</p>
     </div>
 </div>
 )

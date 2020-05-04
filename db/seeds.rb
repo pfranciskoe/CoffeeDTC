@@ -15,6 +15,7 @@ user1 = User.create!(
     password: 'password'
 )
 
+
 TasteProfile.create!(
     user_id: user1.id,
     experience_level: 1,
@@ -135,7 +136,7 @@ coffee5= Dtcoffee.create(
         fair_trade: false,
         flavors: 'Chocolaty & Sweet'
 )
-coffee6= Dtcoffee.create(
+coffee6 = Dtcoffee.create(
         name:"Eye Of The Tiger Espresso",
         description:"Juicy citrus acidity paired with incredible chocolaty 
         depth and fruity sweetness will have you running up and down 
@@ -277,3 +278,11 @@ coffee16= Dtcoffee.create(
         fair_trade: false,
         flavors: 'Sweet & Smooth'
 )
+
+match1 = Match.create!(
+        user_id: user1.id,
+        coffee_id: coffee6.id
+)
+match2 = Match.create!(
+        user_id: user1.id,
+        coffee_id: coffee10.id)

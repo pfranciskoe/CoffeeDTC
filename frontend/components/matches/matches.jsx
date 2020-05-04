@@ -3,20 +3,16 @@ import MatchItem from './match_item'
 class Matches extends React.Component{
     constructor(props){
         super(props);
-        this.state={
-            loaded: false
-        }
         this.props.fetchDTCoffees()
     }
-    // componentDidMount(){
-    //     this.setState({ loaded: true })
-    // }
+    
+    componentDidMount(){
+            window.scrollTo(0, 0)
+    }
+    
     render(){   
         return(
         <div className='matches-page'>
-    
-                    <img className='match-header-img' src={window.matches_head}/>
-
             <div className='match-header-box'>
                 <h2 className='match-header'>Your Matches</h2>
             </div>
