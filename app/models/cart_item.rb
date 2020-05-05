@@ -12,10 +12,10 @@
 class CartItem < ApplicationRecord
     belongs_to :cart,
     foreign_key: :cart_id,
-    class_name: :Cart,
-    dependent: :destroy
+    class_name: :Cart
+    
     belongs_to :dtcoffee,
     foreign_key: :coffee_id,
-    class_name: :Dtcoffee,
-    dependent: :destroy
+    class_name: :Dtcoffee
+    
 end

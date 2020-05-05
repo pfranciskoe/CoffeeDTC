@@ -735,15 +735,29 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, CartItem);
 
     _this = _super.call(this, props);
+    _this.state = {
+      deleted: false
+    };
     _this.coffee = _this.props.coffees[_this.props.cart_item.coffeeId];
     console.log(_this.props);
     return _this;
   }
 
   _createClass(CartItem, [{
+    key: "handleDelete",
+    value: function handleDelete(id) {
+      var _this2 = this;
+
+      this.props.removeItemToCart(id).then(function () {
+        return _this2.setState({
+          deleted: true
+        });
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-item"
@@ -764,7 +778,7 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
       }, this.coffee.roast === 1 ? 'Light' : null, this.coffee.roast === 2 ? 'Medium Light' : null, this.coffee.roast === 3 ? 'Medium' : null, this.coffee.roast === 4 ? 'Medium Dark' : null, this.coffee.roast === 5 ? 'Dark' : null, '  |  ', this.coffee.weight, 'oz.'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-remove-button",
         onClick: function onClick() {
-          return _this2.props.removeItemToCart(_this2.props.cart_item.id);
+          return _this3.handleDelete(_this3.props.cart_item.id);
         }
       }, "Remove")));
     }

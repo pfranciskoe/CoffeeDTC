@@ -3,12 +3,19 @@ import React from 'react'
 class CartItem extends React.Component{
     constructor(props){
         super(props);
+        this.state={deleted:false}
         this.coffee = this.props.coffees[this.props.cart_item.coffeeId]
         console.log(this.props)
     }
+
+    handleDelete(id){
+        this.props.removeItemToCart(id)
+            .then(() => this.setState({ deleted: true }))
+    }
     
     render(){
-        return(
+       
+        return (
         <div className='cart-item'>
             <div className='cart-item-image'>
 
@@ -31,12 +38,12 @@ class CartItem extends React.Component{
                         {this.coffee.roast === 4 ? 'Medium Dark' : null}
                         {this.coffee.roast === 5 ? 'Dark' : null}{'  |  '}{this.coffee.weight}{'oz.'}
                 </div>
-                <div className='cart-remove-button' onClick={() => this.props.removeItemToCart(this.props.cart_item.id)}>
+                <div className='cart-remove-button' onClick={() => this.handleDelete(this.props.cart_item.id)}>
                     Remove
                 </div>
             </div>
-        </div>
-        )
+        </div>)
+        
     }
 }
 

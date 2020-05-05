@@ -24,4 +24,9 @@ class Dtcoffee < ApplicationRecord
     foreign_key: :roaster_id,
     class_name: :Roaster,
     dependent: :destroy
+
+    has_many :cart_items,
+    foreign_key: :coffee_id,
+    class_name: :CartItem,
+    dependent: :destroy
 end

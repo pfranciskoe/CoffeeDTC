@@ -29,7 +29,9 @@ class User < ApplicationRecord
 
     has_one :cart,
     foreign_key: :user_id,
-    class_name: :Cart
+    class_name: :Cart,
+    dependent: :destroy
+
 
     has_many :carted_coffees,
     through: :carts,
