@@ -34,7 +34,7 @@ class User < ApplicationRecord
 
 
     has_many :carted_coffees,
-    through: :carts,
+    through: :cart,
     source: :cart_items
 
     def self.find_by_credentials(email,password)
