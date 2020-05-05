@@ -205,7 +205,6 @@
         line-height:  normal;
         width: 119px;
         text-align: center;
-        
         transition-property: background-color, color;
         transition-duration: 500ms, 500ms;
         transition-timing-function: ease, ease;
