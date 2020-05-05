@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :taste_profiles, only:[:create,:show,:update]
     resources :roasters, only:[:show]
     resources :dtcoffees, only:[:show,:index]
+    resources :carts, only:[:show,:destroy]
+    resources :cart_items, only:[:create,:update,:destroy]
   end
   root to: 'static_pages#root'
 end

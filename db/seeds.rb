@@ -352,3 +352,17 @@ match2 = Match.create!(
 match2 = Match.create!(
         user_id: user1.id,
         coffee_id: coffee17.id)
+        
+cart1 = Cart.create!(
+        user_id: user1.id
+)
+cart_item_1 = CartItem.create!(
+        coffee_id: coffee9.id,
+        cart_id: cart1.id,
+        quantity: 2
+)
+cart_item_2 = CartItem.create!(
+        coffee_id: coffee7.id,
+        cart_id: cart1.id,
+        quantity: 7
+)

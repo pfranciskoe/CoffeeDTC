@@ -1,0 +1,86 @@
+// Place all the styles related to the api/Carts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.cart-modal-wrapper{
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  left: 60%;
+  z-index: -1;
+  background-color:white;
+}
+.cart-auth-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  background-color:#4141414f;
+}
+.cart-head{
+    padding: 10px;
+    font-size: 32px;
+    color: black;
+}
+.close-cart{
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    padding: 10px;
+    font-size: 30px;
+    padding-right:23px;
+    cursor: default;
+}
+.cart-item{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    height: 120px;
+    margin-bottom: 10px;
+}
+.cart-item-image{
+    width: 30%;
+    background-color: lavender;
+}
+
+.cart-item-quantity{
+    font-weight: 700;
+}
+.cart-item-text{
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: left;
+    width: 70%;
+}
+.cart-item-title{
+    width: 70%;
+    font-weight: 500;
+}
+.cart-item-price{
+    width: 30%;
+    text-align: right;
+    font-weight: 500;
+}
+.cart-item-head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.cart-item-body{
+    font-size: 14px;
+    font-weight: 300;
+    color: rgb(145, 145, 145);
+}
+
+.cart-remove-button{
+    color: rgb(145, 145, 145);
+     font-size: 14px;
+}
+.cart-remove-button:hover{
+   
+    cursor: pointer;
+}

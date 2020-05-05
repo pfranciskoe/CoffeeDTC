@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Root from './components/Root';
 import configureStore from './store/store';
-
-
+import {fetchCart} from './actions/cart_actions'
+window.fetchCart = fetchCart
 
 document.addEventListener("DOMContentLoaded", () => {
     let store;

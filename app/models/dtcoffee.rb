@@ -13,7 +13,7 @@
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  flavors       :string           not null
-#  roast         :string           not null
+#  roast         :integer          not null
 #
 class Dtcoffee < ApplicationRecord
     validates :name, presence: true, uniqueness: true
