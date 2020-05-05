@@ -3,14 +3,11 @@ import React from 'react'
 class CartItem extends React.Component{
     constructor(props){
         super(props);
-        this.state={deleted:false}
         this.coffee = this.props.coffees[this.props.cart_item.coffeeId]
-        console.log(this.props)
     }
 
     handleDelete(id){
         this.props.removeItemToCart(id)
-            .then(() => this.setState({ deleted: true }))
     }
     
     render(){

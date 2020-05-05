@@ -33,7 +33,7 @@ const removeCartItem = (cartItem) => {
 }
 const receiveCartItem = (cartItem) => {
     return {
-        type: RECEIVE_CART,
+        type: RECEIVE_CART_ITEM,
         cartItem
     }
 }

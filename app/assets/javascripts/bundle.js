@@ -142,7 +142,7 @@ var removeCartItem = function removeCartItem(cartItem) {
 
 var receiveCartItem = function receiveCartItem(cartItem) {
   return {
-    type: RECEIVE_CART,
+    type: RECEIVE_CART_ITEM,
     cartItem: cartItem
   };
 };
@@ -597,10 +597,8 @@ var Cart = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this, props);
     _this.fetchCart = _this.props.fetchCart.bind(_assertThisInitialized(_this));
 
-    _this.props.fetchDTCoffees();
-
-    _this.fetchCart().then(function () {
-      return console.log(_this.props.cart);
+    _this.props.fetchDTCoffees().then(function () {
+      return _this.fetchCart();
     });
 
     return _this;
@@ -735,29 +733,19 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, CartItem);
 
     _this = _super.call(this, props);
-    _this.state = {
-      deleted: false
-    };
     _this.coffee = _this.props.coffees[_this.props.cart_item.coffeeId];
-    console.log(_this.props);
     return _this;
   }
 
   _createClass(CartItem, [{
     key: "handleDelete",
     value: function handleDelete(id) {
-      var _this2 = this;
-
-      this.props.removeItemToCart(id).then(function () {
-        return _this2.setState({
-          deleted: true
-        });
-      });
+      this.props.removeItemToCart(id);
     }
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this2 = this;
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-item"
@@ -778,7 +766,7 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
       }, this.coffee.roast === 1 ? 'Light' : null, this.coffee.roast === 2 ? 'Medium Light' : null, this.coffee.roast === 3 ? 'Medium' : null, this.coffee.roast === 4 ? 'Medium Dark' : null, this.coffee.roast === 5 ? 'Dark' : null, '  |  ', this.coffee.weight, 'oz.'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-remove-button",
         onClick: function onClick() {
-          return _this3.handleDelete(_this3.props.cart_item.id);
+          return _this2.handleDelete(_this2.props.cart_item.id);
         }
       }, "Remove")));
     }
@@ -1064,7 +1052,8 @@ var HomeBody = function HomeBody(_ref) {
   var currentUser = _ref.currentUser,
       logout = _ref.logout,
       openModal = _ref.openModal,
-      processForm = _ref.processForm;
+      processForm = _ref.processForm,
+      openCart = _ref.openCart;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "home-body"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1079,9 +1068,12 @@ var HomeBody = function HomeBody(_ref) {
     className: "how-part-head"
   }, "Log In"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "how-part-body"
-  }, "or use our demo login."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "or use our demo login."), !!currentUser ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: logout,
+    className: "button-2"
+  }, "Log Out") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "how-part-button-group"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: openModal,
     className: "button-2"
   }, "Login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -1092,7 +1084,7 @@ var HomeBody = function HomeBody(_ref) {
       });
     },
     className: "button-2"
-  }, "Demo"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Demo"), " ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "how-part"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
     className: "how-part-sub"
@@ -1126,12 +1118,10 @@ var HomeBody = function HomeBody(_ref) {
     className: "how-part-head"
   }, "Drink Coffee"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "how-part-body"
-  }, "Order the coffees that sound most appealing to your taste."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "link-wrapper",
-    to: "/cart"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "button-2"
-  }, "View Cart"))));
+  }, "Order the coffees that sound most appealing to your taste."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "button-2",
+    onClick: openCart
+  }, "View Cart")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (HomeBody);
@@ -1196,7 +1186,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var MatchItem = function MatchItem(_ref) {
-  var coffee = _ref.coffee;
+  var coffee = _ref.coffee,
+      addItemToCart = _ref.addItemToCart;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "matched-coffee-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1206,14 +1197,19 @@ var MatchItem = function MatchItem(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "matched-coffee-item-name"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, coffee.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "matched-coffee-item-flavors"
+  }, coffee.flavors), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "matched-coffee-item-details"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "matched-coffee-item-detail"
   }, coffee.roast === 1 ? 'Light ' : null, coffee.roast === 2 ? 'Medium Light ' : null, coffee.roast === 3 ? 'Medium ' : null, coffee.roast === 4 ? 'Medium Dark ' : null, coffee.roast === 5 ? 'Dark ' : null, "Roast"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "matched-coffee-item-detail"
   }, "$", coffee.price)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "matched-coffee-item-flavors"
-  }, coffee.flavors)));
+    onClick: function onClick() {
+      return addItemToCart(coffee.id, 1);
+    },
+    className: "add-to-cart-button"
+  }, "Add To Cart")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (MatchItem);
@@ -1295,6 +1291,7 @@ var Matches = /*#__PURE__*/function (_React$Component) {
       }, this.props.currentUser.matches.map(function (id) {
         return _this2.props.coffees[id] ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_match_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: "matched-coffee-".concat(id),
+          addItemToCart: _this2.props.addItemToCart,
           className: "matched-coffee-box",
           coffee: _this2.props.coffees[id]
         }) : null;
@@ -1320,7 +1317,9 @@ var Matches = /*#__PURE__*/function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_dtcoffee_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/dtcoffee_actions */ "./frontend/actions/dtcoffee_actions.js");
-/* harmony import */ var _matches__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./matches */ "./frontend/components/matches/matches.jsx");
+/* harmony import */ var _actions_cart_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/cart_actions */ "./frontend/actions/cart_actions.js");
+/* harmony import */ var _matches__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./matches */ "./frontend/components/matches/matches.jsx");
+
 
 
 
@@ -1340,11 +1339,14 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchDTCoffees: function fetchDTCoffees() {
       return dispatch(Object(_actions_dtcoffee_actions__WEBPACK_IMPORTED_MODULE_1__["fetchDTCoffees"])());
+    },
+    addItemToCart: function addItemToCart(coffee_id, quantity) {
+      return dispatch(Object(_actions_cart_actions__WEBPACK_IMPORTED_MODULE_2__["addItemToCart"])(coffee_id, quantity));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_matches__WEBPACK_IMPORTED_MODULE_2__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_matches__WEBPACK_IMPORTED_MODULE_3__["default"]));
 
 /***/ }),
 
@@ -2487,7 +2489,8 @@ var cartReducer = function cartReducer() {
 
     case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_CART_ITEM"]:
       var nextState = Object.assign({}, state);
-      nextState["delete"](action.id);
+      delete nextState[Object.keys(action.cartItem)[0]];
+      console.log(nextState);
       return nextState;
 
     case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CART_ITEM"]:
@@ -2910,8 +2913,10 @@ var addCoffeeToCart = function addCoffeeToCart(coffeeId, quantity) {
     url: '/api/cart_items',
     method: 'POST',
     data: {
-      coffee_id: coffeeId,
-      quantity: quantity
+      cart_item: {
+        coffee_id: coffeeId,
+        quantity: quantity
+      }
     }
   });
 };

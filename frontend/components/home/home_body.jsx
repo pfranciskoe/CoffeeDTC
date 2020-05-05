@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-const HomeBody = ({currentUser, logout, openModal, processForm,})=>(
+const HomeBody = ({currentUser, logout, openModal, processForm, openCart})=>(
 <div className='home-body'>
     <div className='how-header'>
             <h3 className='how-header-text'>How It Works</h3>
@@ -9,13 +9,14 @@ const HomeBody = ({currentUser, logout, openModal, processForm,})=>(
         <h6 className='how-part-sub'>Step 1</h6>
         <h4 className='how-part-head'>Log In</h4>
             <p className='how-part-body'>or use our demo login.</p>
-        <div className='how-part-button-group'>
-            <button onClick={openModal} className='button-2'>Login</button>
+        
+            {!!currentUser ? 
+            <button onClick={logout} className='button-2'>Log Out</button>
+                : <div className='how-part-button-group'> <button onClick={openModal} className='button-2'>Login</button>
             <button onClick={() => processForm({
                 email: 'demo@coffee.com', password: 'password'
-            })
-            } className='button-2'>Demo</button>
-        </div>
+            })} className='button-2'>Demo</button> </div>}
+        
     </div>
     <div className='how-part'>
         <h6 className='how-part-sub'>Step 2</h6>
@@ -33,7 +34,7 @@ const HomeBody = ({currentUser, logout, openModal, processForm,})=>(
         <h6 className='how-part-sub'>Step 4</h6>
         <h4 className='how-part-head'>Drink Coffee</h4>
         <p className='how-part-body'>Order the coffees that sound most appealing to your taste.</p>
-        <Link className='link-wrapper' to='/cart' ><button className='button-2'>View Cart</button></Link>
+        <button className='button-2' onClick={openCart}>View Cart</button>
     </div>
 </div>
 )

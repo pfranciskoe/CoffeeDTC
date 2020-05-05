@@ -3,8 +3,12 @@ class Api::CartsController < ApplicationController
     @cart_items = Cart.find_by(user_id:current_user.id).cart_items
   end
   def destroy
-        @cart = CartItem.find_by(user_id:current_user.id)
-        @cart.destroy
-        render json: ["Your coffee is on it's way!"], status: 200
+        @cart = Cart.find_by(user_id:current_user.id)
+        if @cart.destroy
+          @cart= Cart.create!(user_id:current_user.id)
+          @cart_items = []
+        render :show
+        end
+
   end
 end

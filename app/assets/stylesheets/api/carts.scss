@@ -2,12 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .cart-modal-wrapper{
-  position: absolute;
+position: fixed;
+
+overflow-y: scroll;
   width: 40%;
   height: 100%;
   left: 60%;
   z-index: -1;
-  background-color:white;
+  background-color:white;   
+}
+.cart-modal-wrapper::-webkit-scrollbar {
+  display: none;
 }
 .cart-auth-background {
   position: fixed;
@@ -17,6 +22,7 @@
   left: 0;
   z-index: 10;
   background-color:#4141414f;
+  
 }
 .cart-head{
     padding: 10px;

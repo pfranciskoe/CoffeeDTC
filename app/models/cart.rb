@@ -10,10 +10,10 @@
 class Cart < ApplicationRecord
     belongs_to :user,
     foreign_key: :user_id,
-    class_name: :User,
-    dependent: :destroy
-    
+    class_name: :User
+
     has_many :cart_items,
     foreign_key: :cart_id,
-    class_name: :CartItem
+    class_name: :CartItem,
+    dependent: :destroy
 end

@@ -6,8 +6,7 @@ class Cart extends React.Component{
     constructor(props){
         super(props)
         this.fetchCart=this.props.fetchCart.bind(this)
-        this.props.fetchDTCoffees()
-        this.fetchCart().then(() => console.log(this.props.cart))
+        this.props.fetchDTCoffees().then(() => this.fetchCart())
     }
 
     render(){ 

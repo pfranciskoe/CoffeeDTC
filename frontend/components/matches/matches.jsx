@@ -21,6 +21,7 @@ class Matches extends React.Component{
                 {this.props.currentUser.matches.map(id => (
                     this.props.coffees[id] ?
                     <MatchItem key={`matched-coffee-${id}`}
+                    addItemToCart={this.props.addItemToCart}
                     className='matched-coffee-box'
                         coffee={this.props.coffees[id]}/> :
                         null

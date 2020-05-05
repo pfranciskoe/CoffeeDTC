@@ -2,7 +2,7 @@ export const addCoffeeToCart = (coffeeId, quantity) => (
     $.ajax({
         url: '/api/cart_items',
         method: 'POST',
-        data: { coffee_id: coffeeId, quantity: quantity}
+        data: { cart_item: {coffee_id: coffeeId, quantity: quantity}}
     })
 )
 export const removeCoffeeFromCart = (itemId) => (

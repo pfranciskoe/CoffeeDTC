@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchDTCoffees } from '../../actions/dtcoffee_actions';
+import { addItemToCart } from '../../actions/cart_actions'
 import Matches from './matches';
 
 const mapStateToProps = ({ session, entities: { users, coffees  } }) => {
@@ -10,7 +11,8 @@ const mapStateToProps = ({ session, entities: { users, coffees  } }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-    fetchDTCoffees:() => dispatch(fetchDTCoffees())
+    fetchDTCoffees:() => dispatch(fetchDTCoffees()),
+    addItemToCart: (coffee_id, quantity) => dispatch(addItemToCart(coffee_id, quantity))
 });
 
 
