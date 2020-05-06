@@ -7,6 +7,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .match-header-box{
     width: 80%;
     display: flex;
@@ -42,7 +43,11 @@
 }
 
 .match-list > :first-child .matched-coffee-item-flavors{
-    font-size: 36px;
+    font-size: 48px;
+}
+
+.match-list > :first-child .matched-coffee-item-detail{
+    font-size: 24px;
 }
 .matched-coffee-item{
     margin-bottom: 4px;
@@ -83,7 +88,10 @@
 .matched-coffee-item-flavors{
     font-size: 24px;
     font-weight: 900;
-    color:rgb(198, 198, 198);
+    color:rgb(173, 189, 210);
+}
+.matched-coffee-item-detail{
+    color:rgb(173, 189, 210);
 }
 .add-to-cart-button{
     font-size: 12px;
@@ -105,7 +113,7 @@
     border-bottom: none;
     font-size: 12px;
     height: 100%;
-    width: 90%;
+    width: 80%;
 }
 .button-clicked{
     font-size: 24px;
@@ -117,7 +125,7 @@
     border: none;
     border-bottom: none;
     background-color: white;
-    width: 10%;
+    width: 20%;
     height: 95%;
     border-radius:  4px;
     color:black;

@@ -352,4 +352,6 @@ match2 = Match.create!(
 match2 = Match.create!(
         user_id: user1.id,
         coffee_id: coffee17.id)
-        
+cart1 = Cart.create!(
+        user_id:user1.id
+)   
