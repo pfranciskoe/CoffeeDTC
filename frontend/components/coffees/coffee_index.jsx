@@ -90,7 +90,7 @@ class CoffeeIndex extends React.Component{
             return(
             <div className='index-page'>
                 <div className='search-bar-container'>
-                    <input type="text" onChange={this.handleSearch}/>
+                        <input type="text" onChange={this.handleSearch} placeholder='Search' />
                 </div>
                 <div className='index-container'>
                     {/* <div className='index-filters-container' onClick={this.handleClear}>
