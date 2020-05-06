@@ -14,7 +14,9 @@ import OnboardingContainer1 from './onboarding/onboarding_container_1';
 import MatchesContainer from "./matches/matches_container";
 import CartModalContainer from './cart/cart_modal_container';
 import CoffeeShowContainer from './coffees/coffee_show_container'
+import CoffeeIndexContainer from './coffees/coffee_index_container'
 import { AuthRoute, ProtectedRoute } from '../util/route_util'
+import CoffeeIndex from "./coffees/coffee_index";
 
 
 // import OnboardingContainer from './onboarding/onboarding_container'
@@ -31,6 +33,7 @@ const App = () =>(
         <ProtectedRoute exact path="/onboarding/6" component={OnboardingContainer6} />
         <ModalContainer className='modal-cont'/>
         <ProtectedRoute exact path="/coffees/:id" component={CoffeeShowContainer} />
+        <ProtectedRoute exact patch='/store' component={CoffeeIndexContainer}/>
         <CartModalContainer/>
         <Footer/>
     </div>
