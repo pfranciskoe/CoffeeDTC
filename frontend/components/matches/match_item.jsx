@@ -33,7 +33,7 @@ class MatchItem extends React.Component{
                         {this.props.coffee.roast === 4 ? 'Medium Dark ' : null}
                         {this.props.coffee.roast === 5 ? 'Dark ' : null}
                     Roast</div>
-                    <div className='matched-coffee-item-detail'>${this.props.coffee.price}</div>
+                    <div className='matched-coffee-item-detail'>${this.props.coffee.price.toFixed(2)}</div>
                 </div>
                     <AddToCartButton state={this.state} 
                     handleSubmit={this.handleSubmit}

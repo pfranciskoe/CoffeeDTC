@@ -780,7 +780,7 @@ var CartItem = /*#__PURE__*/function (_React$Component) {
         className: "cart-item-quantity"
       }, this.props.cart_item.quantity, ' x '), " ", this.coffee.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-item-price"
-      }, "$", this.coffee.price * this.props.cart_item.quantity)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "$", (this.coffee.price * this.props.cart_item.quantity).toFixed(2))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-item-body"
       }, this.coffee.roast === 1 ? 'Light' : null, this.coffee.roast === 2 ? 'Medium Light' : null, this.coffee.roast === 3 ? 'Medium' : null, this.coffee.roast === 4 ? 'Medium Dark' : null, this.coffee.roast === 5 ? 'Dark' : null, '  |  ', this.coffee.weight, 'oz.'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cart-remove-button",
@@ -1360,7 +1360,7 @@ var MatchItem = /*#__PURE__*/function (_React$Component) {
         className: "matched-coffee-item-detail"
       }, this.props.coffee.roast === 1 ? 'Light ' : null, this.props.coffee.roast === 2 ? 'Medium Light ' : null, this.props.coffee.roast === 3 ? 'Medium ' : null, this.props.coffee.roast === 4 ? 'Medium Dark ' : null, this.props.coffee.roast === 5 ? 'Dark ' : null, "Roast"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "matched-coffee-item-detail"
-      }, "$", this.props.coffee.price)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_add_to_cart_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, "$", this.props.coffee.price.toFixed(2))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_add_to_cart_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
         state: this.state,
         handleSubmit: this.handleSubmit,
         handleQChange: this.handleQChange

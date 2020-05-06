@@ -25,7 +25,7 @@ class CartItem extends React.Component{
                         </span> {this.coffee.name}
                     </div>
                     <div className='cart-item-price'>
-                        ${this.coffee.price * this.props.cart_item.quantity}
+                        ${(this.coffee.price * this.props.cart_item.quantity).toFixed(2)}
                     </div>
                 </div>
                 <div className='cart-item-body'>
