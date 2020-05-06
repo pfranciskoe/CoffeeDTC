@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {Link} from 'react-router-dom';
 class CartItem extends React.Component{
     constructor(props){
         super(props);
@@ -17,12 +18,16 @@ class CartItem extends React.Component{
 
             </div>
             <div className='cart-item-text'>
-                <div className='cart-item-head'>
-                    <div className='cart-item-title'>
-                        <span className='cart-item-quantity'>
-                            {this.props.cart_item.quantity}{' x '}
-                        </span> {this.coffee.name}
-                    </div>
+                    <div className='cart-item-head'>
+                    <Link className='cart-item-head-link' 
+                    onClick={this.props.closeCart} 
+                    to={`/coffees/${this.coffee.id}`}>
+                        <div className='cart-item-title'>
+                            <span className='cart-item-quantity'>
+                                {this.props.cart_item.quantity}{' x '}
+                            </span> {this.coffee.name}
+                        </div>
+                    </Link>
                     <div className='cart-item-price'>
                         ${(this.coffee.price * this.props.cart_item.quantity).toFixed(2)}
                     </div>
