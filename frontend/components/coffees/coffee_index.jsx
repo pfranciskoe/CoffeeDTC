@@ -9,10 +9,11 @@ class CoffeeIndex extends React.Component{
             loading: true,
             name:'',
             coffees: {},
+            roasters:{},
             roast: { 1: true, 2: true, 3: true, 4: true, 5: true},
             roastFiltered: false,
             flavorFiltered: false,
-            price:[15,18,22,200],
+            price:[0,200],
             flavors: {'Sweet & Smooth': true, 'Chocolaty & Sweet': true, 'Comforting & Rich': true,
                 'Balanced & Fruity': true, 'Syrupy & Smooth': true, 'Subtle & Delicate': true, 
                 'Funky & Fruity': true, 'Sweet & Tart': true, 'Roasty & Smoky': true},
@@ -23,12 +24,16 @@ class CoffeeIndex extends React.Component{
         this.handleChangeR=this.handleChangeR.bind(this)
         this.handleChangeF=this.handleChangeF.bind(this)
         this.handleSearch=this.handleSearch.bind(this)
+        this.handleChangeP=this.handleChangeP.bind(this)
         // this.handleClear=this.handleClear.bind(this)
     }
     componentDidMount(){
         this.props.fetchDTCoffees()
-            .then(()=>this.setState({loading:false}))
-            .then(()=>this.setState({coffees:this.props.coffees}))
+            .then(() => this.setState({coffees:this.props.coffees}))
+            .then(() => this.props.fetchAllRoasters())
+            .then(() => this.setState({roasters: this.props.roasters }))
+            .then(() => this.setState({ loading: false }))
+            
     }
 
     handleChangeR(){
@@ -46,6 +51,9 @@ class CoffeeIndex extends React.Component{
         }
     }
     handleChangeF() {
+            this.setState({ [event.target.name]: newState })
+    }
+    handleChangeP() {
         if (!this.state.flavorFiltered) {
             this.setState({ flavorFiltered: true })
             let newVal = { [event.target.value]: event.target.checked }
@@ -83,6 +91,7 @@ class CoffeeIndex extends React.Component{
     //         blend: true})
     // }
     render(){
+        console.log(this.state)
         if (this.state.loading){
             return(
                 <div></div>
@@ -110,6 +119,29 @@ class CoffeeIndex extends React.Component{
                             ))}
                         </div>
                         <div className='index-filters-cat'>
+                            Price
+                        </div>
+                        <div className='index-filters-items'>
+                            <form onChange={this.handleChangeP}>
+                                <label>
+                                    Under $15
+                                    <input type="radio" value={[0,15]}/>
+                                </label>
+                                 <label>
+                                    $15 - $18
+                                    <input type="radio" value={[15,18]}/>
+                                </label>
+                                 <label>
+                                    $18 - $22
+                                    <input type="radio" value={[18,22]}/>
+                                </label>
+                                <label>
+                                    Above $22
+                                    <input type="radio" value={[22,200]}/>
+                                </label>
+                            </form>
+                        </div>
+                        <div className='index-filters-cat'>
                             Flavor Profile
                         </div>
                         <div className='index-filters-items'>
@@ -126,9 +158,12 @@ class CoffeeIndex extends React.Component{
                         {Object.values(this.state.coffees).map((coffee,idx)=>(
                             (this.state.roast[coffee.roast] && 
                                 this.state.flavors[coffee.flavors] &&
+                                this.state.price[0] <= coffee.price &&
+                                this.state.price[1] >= coffee.price &&
                                 (coffee.name.toLowerCase().includes(this.state.name.toLowerCase()) || this.state.name === "")
                                 ) ? 
                                 <IndexItem coffee={coffee}
+                                roaster={this.state.roasters[coffee.roasterId]}
                                 key={`coffee-index-item-${idx}`}/> 
                             : null
                         ))}

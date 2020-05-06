@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-const IndexItem = ({coffee})=>{
+const IndexItem = ({coffee,roaster})=>{
     return(
         < Link to = {`/coffees/${coffee.id}`} className='coffee-index-item'>
                 <div className='coffee-index-img'>
@@ -12,7 +12,7 @@ const IndexItem = ({coffee})=>{
                     </div>
                     <div className='coffee-index-roaster'>
                         
-                        {coffee.roasterId}
+                        {roaster.name}
                         
                     </div>
                     <div className='coffee-index-name'>

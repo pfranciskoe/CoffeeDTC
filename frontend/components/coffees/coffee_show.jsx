@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 class CoffeeShow extends React.Component{
     constructor(props){
         super(props);
-        this.state={loading:true,quantity:1}
+        this.state = { loading: true, quantity: 1, itemAdded: false}
         this.handleSubmit=this.handleSubmit.bind(this)
     }
     componentDidMount(){
@@ -16,6 +16,9 @@ class CoffeeShow extends React.Component{
     }
     handleSubmit(){
         this.props.addItemToCart(this.props.coffee.id,this.state.quantity)
+            .then(this.setState({ itemAdded: true })).then(setTimeout(
+                () => this.setState({ itemAdded: false, quantity: 1 }), 1000
+            ))
     }
     render(){
         if (!this.state.loading) {
@@ -49,28 +52,44 @@ class CoffeeShow extends React.Component{
                                 <div onClick={() => this.handleChange(3)} className='quantity-div'><div>3</div></div>
                             }
                         </div>
+                        {this.state.itemAdded ?
+                         <button onClick={this.handleSubmit}className='button-clicked-show'>
+                                ✓
+                        </button>
+                        :
                         <button onClick={this.handleSubmit}className='coffee-show-add-button'>
                             Add To Cart
-                        </button>
+                        </button>}
                         </div>
                     </div>
-                    <div className='roaster-desc'>
-                        <div>
-                            {this.props.roasters[this.props.coffee.roasterId].name}
+                    <div className='roaster-cont'>
+                        <div className='roaster-map'>
+                            MAP...
                         </div>
-                        <div>
-                            {this.props.roasters[this.props.coffee.roasterId].description}
-                        </div>
-                        <div>
-                            {this.props.roasters[this.props.coffee.roasterId].funFact}
-                        </div>
-                        <div>
-                            {this.props.roasters[this.props.coffee.roasterId].location}
+                        <div className='roaster-bio'>
+                            <div className='roaster-bio-header'>
+                                About the Roaster   
+                            </div>
+                            <div className='roaster-bio-name'>
+                                {this.props.roasters[this.props.coffee.roasterId].name}
+                            </div>
+                                <div className='bio-header'>Background</div>
+                            <div>
+                                {this.props.roasters[this.props.coffee.roasterId].description}
+                            </div>
+                                <div className='bio-header'>Fun Fact</div>
+                            <div>
+                                {this.props.roasters[this.props.coffee.roasterId].funFact}
+                            </div>
+                                <div className='bio-header'>Location</div>
+                            <div>
+                                {this.props.roasters[this.props.coffee.roasterId].location}
+                            </div>
                         </div>
                     </div>
                 </div>
         )} else {
-        return(<div></div> )}
+        return(<div>LOADING</div>)}
         
     }
 

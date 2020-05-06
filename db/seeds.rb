@@ -34,9 +34,6 @@ roaster1 = Roaster.create!(name: 'Stumptown',
         roasting, and (of course) cold brew with skill and a little luck from its talisman horseshoe.', 
         fun_fact: "This roaster takes the coffee house music scene seriously and releases employee-based *Worker's Comp* vinyls.",
 )
-# logo1 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/logos/Stumptownl_logo.png')
-# roaster1.photo.attach(io: logo1, filename: 'Stumptownl_logo.png')
-# attach to user
 
 roaster2 = Roaster.create(name: 'Equator',       
         location:'San Rafael, California',   
@@ -93,8 +90,6 @@ coffee1= Dtcoffee.create!(
         fair_trade: false,
         flavors: 'Comforting & Rich'
 )
-# coffeebag1 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/stump_hair.png')
-# coffee1.photo.attach(io: coffeebag1, filename: 'stump_hair.png')
 coffee2= Dtcoffee.create(
         name:"Founder's Blend",
         description:"Everything you love about a classic, nostalgic cup of 
@@ -354,4 +349,7 @@ match2 = Match.create!(
         coffee_id: coffee17.id)
 cart1 = Cart.create!(
         user_id:user1.id
-)   
+) 
+
+# coffeebag1 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/stump_hair.png')
+# coffee1.photo.attach(io: coffeebag1, filename: 'stump_hair.png')
