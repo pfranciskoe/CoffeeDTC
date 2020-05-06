@@ -22,6 +22,8 @@ class CoffeeIndex extends React.Component{
         }
         this.handleChangeR=this.handleChangeR.bind(this)
         this.handleChangeF=this.handleChangeF.bind(this)
+        this.handleSearch=this.handleSearch.bind(this)
+        // this.handleClear=this.handleClear.bind(this)
     }
     componentDidMount(){
         this.props.fetchDTCoffees()
@@ -61,7 +63,25 @@ class CoffeeIndex extends React.Component{
             this.setState({ [event.target.name]: newState })
         }
     }
-
+    handleSearch(){
+        console.log(event.target.value)
+        this.setState({name:event.target.value})
+    }
+    // handleClear(){
+    //     this.setState({
+    //         roast: { 1: true, 2: true, 3: true, 4: true, 5: true },
+    //         roastFiltered: false,
+    //         flavorFiltered: false,
+    //         price: [15, 18, 22, 200],
+    //         flavors: {
+    //             'Sweet & Smooth': true, 'Chocolaty & Sweet': true, 'Comforting & Rich': true,
+    //             'Balanced & Fruity': true, 'Syrupy & Smooth': true, 'Subtle & Delicate': true,
+    //             'Funky & Fruity': true, 'Sweet & Tart': true, 'Roasty & Smoky': true
+    //         },
+    //         weight: { 8: true, 10: true, 12: true },
+    //         singleOrigin: true,
+    //         blend: true})
+    // }
     render(){
         if (this.state.loading){
             return(
@@ -70,18 +90,22 @@ class CoffeeIndex extends React.Component{
             return(
             <div className='index-page'>
                 <div className='search-bar-container'>
-                    
+                    <input type="text" onChange={this.handleSearch}/>
                 </div>
                 <div className='index-container'>
+                    {/* <div className='index-filters-container' onClick={this.handleClear}>
+                        Clear Filters
+                    </div> */}
                     <div className='index-filters-container'>
                         <div className='index-filters-cat'>
                             Roast
                         </div>
                         <div className='index-filters-items'>
-                            {Object.keys(this.state.roast).map((roast)=>(
+                                {Object.keys(this.state.roast).map((roast, idx)=>(
                                 <IndexFilterItem handleChange={this.handleChangeR}
                                 filterName='roast' filterValue={roast} 
                                 filterDisplay={roastValues[roast]}
+                                key={`roast-${idx}`}
                                 />
                             ))}
                         </div>
@@ -89,17 +113,21 @@ class CoffeeIndex extends React.Component{
                             Flavor Profile
                         </div>
                         <div className='index-filters-items'>
-                            {Object.keys(this.state.flavors).map((flavor)=>(
+                            {Object.keys(this.state.flavors).map((flavor,idx)=>(
                                 <IndexFilterItem handleChange={this.handleChangeF}
                                 filterName='flavors' filterValue={flavor} 
                                 filterDisplay={flavor}
+                                key={`flavor-${idx}`}
                                 />
                             ))}
                         </div>
                     </div>
                     <div className='index-body-container'>
                         {Object.values(this.state.coffees).map((coffee,idx)=>(
-                            (this.state.roast[coffee.roast] && this.state.flavors[coffee.flavors]) ? 
+                            (this.state.roast[coffee.roast] && 
+                                this.state.flavors[coffee.flavors] &&
+                                (coffee.name.toLowerCase().includes(this.state.name.toLowerCase()) || this.state.name === "")
+                                ) ? 
                                 <IndexItem coffee={coffee}
                                 key={`coffee-index-item-${idx}`}/> 
                             : null

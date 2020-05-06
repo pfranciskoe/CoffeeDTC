@@ -14,6 +14,7 @@ class NavBar extends React.Component{
                         {this.props.currentUser.matches[0] ? 
                             <Link to='/matches' ><button className='nav-button'>See Matches</button></Link> : 
                             <Link to='/onboarding/1' ><button className='nav-button'>Take Quiz</button></Link>}
+                        <Link to='/store' ><button className='nav-button'>Store</button></Link>
                         <button className='nav-button' onClick={this.props.openCart}>CART</button>
                     </div> :
                     <div>

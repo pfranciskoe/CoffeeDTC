@@ -1,5 +1,5 @@
 .index-page{
-    height: auto;
+    height: fit-content;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -10,7 +10,7 @@
 }
 
 .index-container{
-    height: 1950px;
+    height: fit-content;
     display: flex;
     flex-direction: row;
 }
@@ -26,6 +26,7 @@
     flex-direction: column;
 }
 .index-filters-cat{
+    margin-top: 15px;
     margin-bottom: 5px;
 }
 .index-filters-items label{
@@ -45,10 +46,10 @@
 
 
 .index-body-container{
-    
     width: 78%;
     display: flex;
     flex-wrap: wrap;
+    height: auto;
 }
 .coffee-index-item{
     border: 1px solid lightgray;
