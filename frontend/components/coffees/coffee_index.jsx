@@ -7,7 +7,8 @@ class CoffeeIndex extends React.Component{
             loading: true,
             name:'',
             coffees: {},
-            roast: { 1: true, 2: true, 3: true, 4: true,5: true},
+            roast: { 1: true, 2: true, 3: true, 4: true, 5: true},
+            roastFiltered: false,
             price:[15,18,22,200],
             flavors: {'Sweet & Smooth': true, 'Chocolaty & Sweet': true, 'Comforting & Rich': true,
                 'Balanced & Fruity': true, 'Syrupy & Smooth': true, 'Subtle & Delicate': true, 
@@ -16,7 +17,7 @@ class CoffeeIndex extends React.Component{
             singleOrigin: true,
             blend: true
         }
-        this.handleChange=this.handleChange.bind(this)
+        this.handleChangeR=this.handleChangeR.bind(this)
     }
     componentDidMount(){
         this.props.fetchDTCoffees()
@@ -24,13 +25,22 @@ class CoffeeIndex extends React.Component{
             .then(()=>this.setState({coffees:this.props.coffees}))
     }
 
-    handleChange(){
-        console.log(this.state)
-        let newVal = { [event.target.value]: event.target.checked}
+    handleChangeR(){
+        console.log(this.state.roast)
+        console.log(this.state.roastFiltered)
+        if (!this.state.roastFiltered) {
+            this.setState({roastFiltered:true})
+            this.setState({roast:{ 1: false, 2: false, 3: false, 4: false, 5: false }})
+            let newVal = { [event.target.value]: event.target.checked }
+            let oldVal = { 1: false, 2: false, 3: false, 4: false, 5: false }
+            let newState = { ...oldVal, ...newVal }
+            this.setState({ [event.target.name]: newState })
+        }else{
+        let newVal = { [event.target.value]: event.target.checked }
         let oldVal = this.state[event.target.name]
-        let newState = {...oldVal, ...newVal}
-        this.setState({[event.target.name]:newState})
-        console.log(this.state)
+        let newState = { ...oldVal, ...newVal }
+        this.setState({ [event.target.name]: newState })
+        }
     }
 
     render(){
@@ -49,19 +59,19 @@ class CoffeeIndex extends React.Component{
                             Roast
                         </div>
                             <div className='index-filters-items'>
-                                <label><input onChange={this.handleChange} 
+                                <label><input onChange={this.handleChangeR} 
                                     type="checkbox" name='roast' value={1} 
                                     />Light</label>
-                                <label><input onChange={this.handleChange} 
+                                <label><input onChange={this.handleChangeR} 
                                     type="checkbox" name='roast' value={2} 
                                     />Medium Light</label>
-                                <label><input onChange={this.handleChange} 
+                                <label><input onChange={this.handleChangeR} 
                                     type="checkbox" name='roast' value={3} 
                                     />Medium</label>
-                                <label><input onChange={this.handleChange} 
+                                <label><input onChange={this.handleChangeR} 
                                     type="checkbox" name='roast' value={4} 
                                     />Medium Dark</label>
-                                <label><input onChange={this.handleChange} 
+                                <label><input onChange={this.handleChangeR} 
                                     type="checkbox" name='roast' value={5} 
                                     />Dark</label>
                             </div>
