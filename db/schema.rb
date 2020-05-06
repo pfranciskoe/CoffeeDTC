@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_04_222649) do
+ActiveRecord::Schema.define(version: 2020_05_06_014113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,19 +38,20 @@ ActiveRecord::Schema.define(version: 2020_05_04_222649) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer "cart_id", null: false
-    t.integer "coffee_id", null: false
     t.integer "quantity", null: false
+    t.integer "coffee_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cart_id"], name: "index_cart_items_on_cart_id"
     t.index ["coffee_id"], name: "index_cart_items_on_coffee_id"
+    t.index ["quantity"], name: "index_cart_items_on_quantity"
   end
 
   create_table "carts", force: :cascade do |t|
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_carts_on_user_id"
+    t.index ["user_id"], name: "index_carts_on_user_id", unique: true
   end
 
   create_table "dtcoffees", force: :cascade do |t|
