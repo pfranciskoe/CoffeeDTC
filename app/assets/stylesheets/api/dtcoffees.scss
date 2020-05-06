@@ -1,3 +1,124 @@
 // Place all the styles related to the api/dtcoffees controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.coffee-item{
+    box-sizing: border-box;
+    align-self: center;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 6px;
+    height: 800px;
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin:5%;
+    
+}
+
+.coffee-item-photo-box{
+    width:60%;
+    height: 100%;
+    background-color: #f53c32;
+    opacity: 50%;
+    border-radius: 6px  0px 0px 6px ;
+}
+.coffee-item-info-box{
+    width:40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+    padding: 3%;
+}
+.coffee-item-name{
+    font-size: 58px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.coffee-item-link{
+    margin-top:10%;
+    text-decoration: none;
+    color: black;
+}
+.coffee-item-flavors{
+    font-size: 48px;
+    font-weight: 900;
+    color:rgb(173, 189, 210);
+}
+.coffee-item-detail{
+margin-top: 5%;
+margin-bottom: 5%;
+
+}
+.coffee-item-desc{
+    height: auto;
+    font-weight: 300;
+    margin-bottom: 5%;
+    padding-right: 10%;
+}
+.quantity-divs{
+    align-self: center;
+    width: 100%;
+    margin-right:10%;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: row;
+    height: 20%;
+    background-color: rgb(242, 242, 242);
+}
+.quantity-div{
+    height: 100%;
+    width: 33.33%;
+    width: calc(100% / 3);
+    border-radius: 6px;
+    background-color:transparent ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+.selected-quantity-div{
+    height: 100%;
+    width: 33.33%;
+    width: calc(100% / 3);
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+.quantity-divs-label{
+    font-weight: 300;
+    margin-bottom:1%;
+}
+
+.coffee-show-add-button{
+    margin-top: 10%;
+    height: 10%;
+    width: 100%;
+    border-radius: 6px;
+    color: black;
+    border: 1px solid black;
+    background-color:transparent ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    transition-property: background, color;
+    transition-duration: 500ms, 500ms;
+    transition-timing-function: ease, ease;
+    transition-delay: 0s, 0s;
+}
+.coffee-show-add-button:hover{
+ 
+    border: 1px solid #1e8ced;
+    background-color: #1e8ced;
+    color: white;
+}

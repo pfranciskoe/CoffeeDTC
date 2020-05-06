@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
+import {Link} from 'react-router-dom'
 import AddToCartButton from './add_to_cart_button';
 class MatchItem extends React.Component{
     constructor(props){
@@ -7,7 +8,7 @@ class MatchItem extends React.Component{
         this.handleSubmit=this.handleSubmit.bind(this)
         this.state = { itemAdded: false, quantity:1}
         this.handleQChange = this.handleQChange.bind(this)
-    }
+    } 
     handleSubmit(e){
         e.preventDefault()
         this.props.addItemToCart(this.props.coffee.id, this.state.quantity)
@@ -23,7 +24,12 @@ class MatchItem extends React.Component{
         <div className='matched-coffee-item'>
             <div className='matched-coffee-item-photo-box'></div>
             <div className='matched-coffee-item-info-box'>
-                <div className='matched-coffee-item-name'><div>{this.props.coffee.name}</div></div>
+                    <div className='matched-coffee-item-name'>
+                            <Link to={`/coffees/${this.props.coffee.id}`} 
+                            className='matched-coffee-item-link'>
+                            {this.props.coffee.name}
+                            </Link>
+                    </div>
                 <div className='matched-coffee-item-flavors'>{this.props.coffee.flavors}</div>
                 <div className='matched-coffee-item-details'>
                     <div className='matched-coffee-item-detail'> 
