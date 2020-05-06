@@ -1152,10 +1152,10 @@ var HomeBody = function HomeBody(_ref) {
     className: "how-part-head"
   }, "Drink Coffee"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "how-part-body"
-  }, "Order the coffees that sound most appealing to your taste."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }, "Order the coffees that sound most appealing to your taste."), !!currentUser ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "button-2",
     onClick: openCart
-  }, "View Cart")));
+  }, "View Cart") : null));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (HomeBody);

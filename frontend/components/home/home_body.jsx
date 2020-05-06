@@ -34,7 +34,7 @@ const HomeBody = ({currentUser, logout, openModal, processForm, openCart})=>(
         <h6 className='how-part-sub'>Step 4</h6>
         <h4 className='how-part-head'>Drink Coffee</h4>
         <p className='how-part-body'>Order the coffees that sound most appealing to your taste.</p>
-        <button className='button-2' onClick={openCart}>View Cart</button>
+        {!!currentUser ? <button className='button-2' onClick={openCart}>View Cart</button> : null }
     </div>
 </div>
 )
