@@ -58,24 +58,23 @@ class CoffeeIndex extends React.Component{
                         <div className='index-filters-cat'>
                             Roast
                         </div>
-                            <div className='index-filters-items'>
-                                <label><input onChange={this.handleChangeR} 
-                                    type="checkbox" name='roast' value={1} 
-                                    />Light</label>
-                                <label><input onChange={this.handleChangeR} 
-                                    type="checkbox" name='roast' value={2} 
-                                    />Medium Light</label>
-                                <label><input onChange={this.handleChangeR} 
-                                    type="checkbox" name='roast' value={3} 
-                                    />Medium</label>
-                                <label><input onChange={this.handleChangeR} 
-                                    type="checkbox" name='roast' value={4} 
-                                    />Medium Dark</label>
-                                <label><input onChange={this.handleChangeR} 
-                                    type="checkbox" name='roast' value={5} 
-                                    />Dark</label>
-                            </div>
-                        
+                        <div className='index-filters-items'>
+                            <label><input onChange={this.handleChangeR} 
+                                type="checkbox" name='roast' value={1} 
+                                />Light</label>
+                            <label><input onChange={this.handleChangeR} 
+                                type="checkbox" name='roast' value={2} 
+                                />Medium Light</label>
+                            <label><input onChange={this.handleChangeR} 
+                                type="checkbox" name='roast' value={3} 
+                                />Medium</label>
+                            <label><input onChange={this.handleChangeR} 
+                                type="checkbox" name='roast' value={4} 
+                                />Medium Dark</label>
+                            <label><input onChange={this.handleChangeR} 
+                                type="checkbox" name='roast' value={5} 
+                                />Dark</label>
+                        </div>
                     </div>
                     <div className='index-body-container'>
                         {Object.values(this.state.coffees).map((coffee,idx)=>(

@@ -33,7 +33,7 @@ const App = () =>(
         <ProtectedRoute exact path="/onboarding/6" component={OnboardingContainer6} />
         <ModalContainer className='modal-cont'/>
         <ProtectedRoute exact path="/coffees/:id" component={CoffeeShowContainer} />
-        <ProtectedRoute exact patch='/store' component={CoffeeIndexContainer}/>
+        <ProtectedRoute exact path="/store" component={CoffeeIndexContainer} />
         <CartModalContainer/>
         <Footer/>
     </div>

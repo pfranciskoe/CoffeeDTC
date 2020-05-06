@@ -51,7 +51,7 @@
 }
 .matched-coffee-item{
     margin-bottom: 4px;
-    width: 50%;
+    width: 49%;
     height: 300px;
     background-color: white;
     border-radius: 6px;
@@ -62,10 +62,11 @@
 .matched-coffee-item{
     display:flex;
     flex-direction: row;
+    margin: 0.5%;
 }
 .matched-coffee-item-photo-box{
     width:35%;
-    background-color: #f53c32;
+    // background-color: #f53c32;
     opacity: 50%;
     border-radius: 6px   0px 0px 6px ;
 }
@@ -74,8 +75,10 @@
     display: flex;
     flex-direction: column;
     padding-left: 5%;
-   padding: 3%;
+   margin-top: 3%;
+   margin-bottom: 3%;
    justify-content: space-around;
+   border-left: 1px solid lightgray;
 }
 .matched-coffee-item-name{
     height: 20%;
