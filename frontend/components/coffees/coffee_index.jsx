@@ -6,8 +6,8 @@ class CoffeeIndex extends React.Component{
         this.state={
             loading: true,
             name:'',
-            coffees: this.props.coffees,
-            roast: { 'Light': true, 'Medium Light': true, 'Meduium': true, 'Medium Dark': true, 'Dark': true},
+            coffees: {},
+            roast: { 1: true, 2: true, 3: true, 4: true,5: true},
             price:[15,18,22,200],
             flavors: {'Sweet & Smooth': true, 'Chocolaty & Sweet': true, 'Comforting & Rich': true,
                 'Balanced & Fruity': true, 'Syrupy & Smooth': true, 'Subtle & Delicate': true, 
@@ -19,12 +19,18 @@ class CoffeeIndex extends React.Component{
         this.handleChange=this.handleChange.bind(this)
     }
     componentDidMount(){
-        this.props.fetchCoffees()
+        this.props.fetchDTCoffees()
             .then(()=>this.setState({loading:false}))
+            .then(()=>this.setState({coffees:this.props.coffees}))
     }
 
     handleChange(){
-        this.setState({[event.target.name]:{[event.target.value]:event.target.checked}})
+        console.log(this.state)
+        let newVal = { [event.target.value]: event.target.checked}
+        let oldVal = this.state[event.target.name]
+        let newState = {...oldVal, ...newVal}
+        this.setState({[event.target.name]:newState})
+        console.log(this.state)
     }
 
     render(){
@@ -43,16 +49,31 @@ class CoffeeIndex extends React.Component{
                             Roast
                         </div>
                             <div className='index-filters-items'>
-                                <label><input type="checkbox"/>Light</label>
-                                <label><input type="checkbox"/>Medium Light</label>
-                                <label><input type="checkbox"/>Medium</label>
-                                <label><input type="checkbox"/>Medium Dark</label>
-                                <label><input type="checkbox"/>Dark</label>
+                                <label><input onChange={this.handleChange} 
+                                    type="checkbox" name='roast' value={1} 
+                                    />Light</label>
+                                <label><input onChange={this.handleChange} 
+                                    type="checkbox" name='roast' value={2} 
+                                    />Medium Light</label>
+                                <label><input onChange={this.handleChange} 
+                                    type="checkbox" name='roast' value={3} 
+                                    />Medium</label>
+                                <label><input onChange={this.handleChange} 
+                                    type="checkbox" name='roast' value={4} 
+                                    />Medium Dark</label>
+                                <label><input onChange={this.handleChange} 
+                                    type="checkbox" name='roast' value={5} 
+                                    />Dark</label>
                             </div>
                         
                     </div>
                     <div className='index-body-container'>
-                        <IndexItem/>
+                        {Object.values(this.state.coffees).map((coffee,idx)=>(
+                            this.state.roast[coffee.roast] ? 
+                                <IndexItem coffee={coffee}
+                                key={`coffee-index-item-${idx}`}/> 
+                            : null
+                        ))}
                     </div>
                 </div>
             </div>

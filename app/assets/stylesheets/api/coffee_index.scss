@@ -1,0 +1,31 @@
+.index-page{
+    height: 2000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.search-bar-container{
+    height: 50px;
+    background-color: lavender;
+}
+
+.index-container{
+    height:1950px;
+    display: flex;
+    flex-direction: row;
+}
+.index-filters-container{
+    width: 22%;
+    display: flex;
+    flex-direction: column;
+}
+.index-body-container{
+    width: 78%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.coffee-index-item{
+    width: 33.33%;
+    width: calc(100% / 3);
+    height: 200px;
+}
