@@ -1,15 +1,19 @@
-import React from 'react'
-import { render } from 'react-dom'
+import React from 'react';
+import { render } from 'react-dom';
+import AddToCartButton from './add_to_cart_button';
 class MatchItem extends React.Component{
     constructor(props){
         super(props);
         this.handleSubmit=this.handleSubmit.bind(this)
-        this.state = {itemAdded: false}
+        this.state = { itemAdded: false, quantity:1}
+        this.handleQChange = this.handleQChange.bind(this)
     }
-    handleSubmit(){
-        this.props.addItemToCart(this.props.coffee.id, 1)
+    handleSubmit(quantity,e){
+        e.preventDefault()
+        this.props.addItemToCart(this.props.coffee.id, quantity)
             .then(this.setState({ itemAdded: true }))
     }
+    handleQChange
     render(){
         return (
         <div className='matched-coffee-item'>
@@ -27,11 +31,9 @@ class MatchItem extends React.Component{
                     Roast</div>
                     <div className='matched-coffee-item-detail'>${this.props.coffee.price}</div>
                 </div>
-                {!this.state.itemAdded ?
-                <button onClick={this.handleSubmit} className='add-to-cart-button'
-                >Add To Cart</button> : 
-                <button className='add-to-cart-button button-clicked'
-                        >✓</button>}
+                    <AddToCartButton state={this.state} 
+                    handleSubmit={this.handleSubmit}
+                    handleQChange={this.handleQChange}/>
             </div>
         </div>
         )

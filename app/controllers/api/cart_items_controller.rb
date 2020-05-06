@@ -1,11 +1,19 @@
 class Api::CartItemsController < ApplicationController
     def create
-        @item = CartItem.new(cart_item_params)
-        @item.cart_id = current_user.cart.id
-        if @item.save
+        @item = CartItem.find_by(id:duplicate_cart_coffee?(cart_item_params))
+        if @item
+            @item.update_attributes(
+                quantity:(cart_item_params[:quantity].to_i + @item.quantity)
+                )
             render :show
         else
-             render json: @item.errors.full_messages, status: 401
+            @item = CartItem.new(cart_item_params)
+            @item.cart_id = current_user.cart.id
+            if @item.save
+                render :show
+            else
+                render json: @item.errors.full_messages, status: 401
+            end
         end
     end
 
@@ -26,6 +34,14 @@ class Api::CartItemsController < ApplicationController
     end
 
     private
+    def duplicate_cart_coffee?(cart_item_params)
+        cart_item = current_user.carted_coffees.where('coffee_id=?',cart_item_params[:coffee_id])
+        if cart_item.length >= 1
+            return cart_item.as_json[0]['id']
+        else
+            return false
+        end
+    end
 
     def cart_item_params
         params.require(:cart_item).permit(:coffee_id,:quantity)
