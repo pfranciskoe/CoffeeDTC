@@ -8,12 +8,16 @@ class MatchItem extends React.Component{
         this.state = { itemAdded: false, quantity:1}
         this.handleQChange = this.handleQChange.bind(this)
     }
-    handleSubmit(quantity,e){
+    handleSubmit(e){
         e.preventDefault()
-        this.props.addItemToCart(this.props.coffee.id, quantity)
-            .then(this.setState({ itemAdded: true }))
+        this.props.addItemToCart(this.props.coffee.id, this.state.quantity)
+            .then(this.setState({ itemAdded: true })).then(setTimeout(
+                ()=>this.setState({ itemAdded: false, quantity:1 }),1000
+            ))
     }
-    handleQChange
+    handleQChange(event){
+        this.setState({ quantity: event.target.value})
+    }
     render(){
         return (
         <div className='matched-coffee-item'>

@@ -1211,14 +1211,167 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/components/matches/add_to_cart_button.jsx":
+/*!************************************************************!*\
+  !*** ./frontend/components/matches/add_to_cart_button.jsx ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var AddToCartButton = function AddToCartButton(_ref) {
+  var state = _ref.state,
+      handleSubmit = _ref.handleSubmit,
+      handleQChange = _ref.handleQChange;
+
+  if (!state.itemAdded) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      className: "add-to-cart-button",
+      onSubmit: handleSubmit
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+      className: "add-to-cart-select",
+      onChange: handleQChange,
+      value: state.quantity
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      value: "1"
+    }, "1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      value: "2"
+    }, "2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      value: "3"
+    }, "3"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      value: "4"
+    }, "4")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      type: "submit"
+    }, "Add To Cart"));
+  } else {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: "add-to-cart-button button-clicked"
+    }, "\u2713");
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (AddToCartButton);
+
+/***/ }),
+
 /***/ "./frontend/components/matches/match_item.jsx":
 /*!****************************************************!*\
   !*** ./frontend/components/matches/match_item.jsx ***!
   \****************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/peterkoe/Desktop/CoffeeDTC/frontend/components/matches/match_item.jsx: Support for the experimental syntax 'classProperties' isn't currently enabled (17:5):\n\n\u001b[0m \u001b[90m 15 | \u001b[39m    }\u001b[0m\n\u001b[0m \u001b[90m 16 | \u001b[39m    handleQChange\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 | \u001b[39m    render(){\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 18 | \u001b[39m        \u001b[36mreturn\u001b[39m (\u001b[0m\n\u001b[0m \u001b[90m 19 | \u001b[39m        \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m'matched-coffee-item'\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 20 | \u001b[39m            \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m'matched-coffee-item-photo-box'\u001b[39m\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\nAdd @babel/plugin-proposal-class-properties (https://git.io/vb4SL) to the 'plugins' section of your Babel config to enable transformation.\n    at Object._raise (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:742:17)\n    at Object.raiseWithData (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:735:17)\n    at Object.expectPlugin (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:8762:18)\n    at Object.parseClassProperty (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:12110:12)\n    at Object.pushClassProperty (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:12070:30)\n    at Object.parseClassMemberWithIsStatic (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:12044:14)\n    at Object.parseClassMember (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:11940:10)\n    at withTopicForbiddingContext (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:11885:14)\n    at Object.withTopicForbiddingContext (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:10956:14)\n    at Object.parseClassBody (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:11862:10)\n    at Object.parseClass (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:11836:22)\n    at Object.parseStatementContent (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:11123:21)\n    at Object.parseStatement (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:11081:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:11656:25)\n    at Object.parseBlockBody (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:11642:10)\n    at Object.parseTopLevel (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:11012:10)\n    at Object.parse (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:12637:10)\n    at parse (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/parser/lib/index.js:12688:38)\n    at parser (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/core/lib/parser/index.js:54:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/core/lib/transformation/normalize-file.js:93:38)\n    at normalizeFile.next (<anonymous>)\n    at run (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/core/lib/transformation/index.js:31:50)\n    at run.next (<anonymous>)\n    at Function.transform (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/@babel/core/lib/transform.js:27:41)\n    at transform.next (<anonymous>)\n    at step (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/gensync/index.js:254:32)\n    at gen.next (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/gensync/index.js:266:13)\n    at async.call.value (/Users/peterkoe/Desktop/CoffeeDTC/node_modules/gensync/index.js:216:11)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _add_to_cart_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./add_to_cart_button */ "./frontend/components/matches/add_to_cart_button.jsx");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+
+var MatchItem = /*#__PURE__*/function (_React$Component) {
+  _inherits(MatchItem, _React$Component);
+
+  var _super = _createSuper(MatchItem);
+
+  function MatchItem(props) {
+    var _this;
+
+    _classCallCheck(this, MatchItem);
+
+    _this = _super.call(this, props);
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.state = {
+      itemAdded: false,
+      quantity: 1
+    };
+    _this.handleQChange = _this.handleQChange.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(MatchItem, [{
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      var _this2 = this;
+
+      e.preventDefault();
+      this.props.addItemToCart(this.props.coffee.id, this.state.quantity).then(this.setState({
+        itemAdded: true
+      })).then(setTimeout(function () {
+        return _this2.setState({
+          itemAdded: false,
+          quantity: 1
+        });
+      }, 1000));
+    }
+  }, {
+    key: "handleQChange",
+    value: function handleQChange(event) {
+      this.setState({
+        quantity: event.target.value
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "matched-coffee-item"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "matched-coffee-item-photo-box"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "matched-coffee-item-info-box"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "matched-coffee-item-name"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.coffee.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "matched-coffee-item-flavors"
+      }, this.props.coffee.flavors), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "matched-coffee-item-details"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "matched-coffee-item-detail"
+      }, this.props.coffee.roast === 1 ? 'Light ' : null, this.props.coffee.roast === 2 ? 'Medium Light ' : null, this.props.coffee.roast === 3 ? 'Medium ' : null, this.props.coffee.roast === 4 ? 'Medium Dark ' : null, this.props.coffee.roast === 5 ? 'Dark ' : null, "Roast"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "matched-coffee-item-detail"
+      }, "$", this.props.coffee.price)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_add_to_cart_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        state: this.state,
+        handleSubmit: this.handleSubmit,
+        handleQChange: this.handleQChange
+      })));
+    }
+  }]);
+
+  return MatchItem;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (MatchItem);
 
 /***/ }),
 
