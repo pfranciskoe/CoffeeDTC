@@ -17,11 +17,9 @@ class OnboardingForm extends React.Component{
             const params = Object.assign(this.props.profile, { 'user_id': this.props.currentId, 
                                                             [this.props.formKey]: this.props.formAnswers[idx] })
             if (this.props.currentMatches.length >= 1) {
-                console.log('true')
                 this.props.updateTaste(params).then(() => this.props.refreshUser(this.props.currentId))
                     .then(() => this.props.history.push("/matches"))
             } else {
-                console.log('false')
                 this.props.defineTasteProfile(params).then(() => this.props.refreshUser(this.props.currentId))
                     .then(() => this.props.history.push("/matches"))    
             }   

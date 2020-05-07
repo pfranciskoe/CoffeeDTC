@@ -50,7 +50,6 @@ class CoffeeIndex extends React.Component{
         let newVal = { [event.target.value]: event.target.checked }
         let oldVal = this.state[event.target.name]
         let newState = { ...oldVal, ...newVal }
-        console.log(newState)
             if (JSON.stringify(newState) != JSON.stringify({ 1: false, 2: false, 3: false, 4: false, 5: false })) {
                 this.setState({ [event.target.name]: newState })
             } else {
@@ -70,7 +69,6 @@ class CoffeeIndex extends React.Component{
             let newVal = { [event.target.value]: event.target.checked }
             let oldVal = this.state[event.target.name]
             let newState = { ...oldVal, ...newVal }
-            console.log(newState)
             if (JSON.stringify(newState) != JSON.stringify({ 8: false, 10: false, 12: false })) {
                 this.setState({ [event.target.name]: newState })
             } else {
