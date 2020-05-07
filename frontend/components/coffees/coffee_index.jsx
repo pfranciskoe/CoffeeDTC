@@ -13,7 +13,7 @@ class CoffeeIndex extends React.Component{
             roast: { 1: true, 2: true, 3: true, 4: true, 5: true},
             roastFiltered: false,
             flavorFiltered: false,
-            price:[0,200],
+            price:{low:0,high:200},
             flavors: {'Sweet & Smooth': true, 'Chocolaty & Sweet': true, 'Comforting & Rich': true,
                 'Balanced & Fruity': true, 'Syrupy & Smooth': true, 'Subtle & Delicate': true, 
                 'Funky & Fruity': true, 'Sweet & Tart': true, 'Roasty & Smoky': true},
@@ -50,10 +50,10 @@ class CoffeeIndex extends React.Component{
         this.setState({ [event.target.name]: newState })
         }
     }
-    handleChangeF() {
-            this.setState({ [event.target.name]: newState })
-    }
     handleChangeP() {
+            this.setState({ [event.target.name]: event.target.value })
+    }
+    handleChangeF() {
         if (!this.state.flavorFiltered) {
             this.setState({ flavorFiltered: true })
             let newVal = { [event.target.value]: event.target.checked }
@@ -123,22 +123,14 @@ class CoffeeIndex extends React.Component{
                         </div>
                         <div className='index-filters-items'>
                             <form onChange={this.handleChangeP}>
-                                <label>
-                                    Under $15
-                                    <input type="radio" value={[0,15]}/>
-                                </label>
-                                 <label>
-                                    $15 - $18
-                                    <input type="radio" value={[15,18]}/>
-                                </label>
-                                 <label>
-                                    $18 - $22
-                                    <input type="radio" value={[18,22]}/>
-                                </label>
-                                <label>
-                                    Above $22
-                                    <input type="radio" value={[22,200]}/>
-                                </label>
+                                <label>Under $15</label>
+                                    <input name='price' id='rad-1' type="radio" value={{low:0,high:15}}/>
+                                 <label>$15 - $18</label>
+                                    <input name='price' id='rad-2' type="radio" value={{ low: 15, high: 18 }}/>
+                                 <label>$18 - $22</label>
+                                    <input name='price' id='rad-3' type="radio" value={{ low: 18, high: 22 }}/>
+                                <label>Above $22</label>
+                                    <input name='price' id='rad-4' type="radio" value={{ low: 22, high: 200 }}/>
                             </form>
                         </div>
                         <div className='index-filters-cat'>
