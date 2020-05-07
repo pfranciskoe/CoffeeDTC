@@ -4,6 +4,7 @@ import HomeBodyContainer from './home_body_container.jsx'
 class Home extends React.Component{
     constructor(props){
         super(props)
+        this.handleDown= this.handleDown.bind(this)
         this.para = () => {
             let para1 = document.getElementsByClassName('para-element')[0];
             let para2 = document.getElementsByClassName('homepage-header')[0];
@@ -24,13 +25,16 @@ class Home extends React.Component{
     componentWillUnmount(){
         window.removeEventListener('scroll', this.para)
     }
+    handleDown(){
+        window.scrollTo(0, 860)
+    }
     render(){
 
         return(
             <div className='homepage'>
                 <div className='homepage-para-part'>
                 <h1 className='homepage-header'>Coffee, Curated For You</h1>
-                <h1 className='homepage-header head-arrow'>ˇ</h1>
+                <h1 onClick={this.handleDown}className='homepage-header head-arrow'>ˇ</h1>
                 {/* <Link className='quiz-link-button-link' to='/onboarding/1'>
                     <button className='quiz-link-button'>Get Started</button>
                 </Link> */}

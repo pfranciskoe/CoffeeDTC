@@ -14,7 +14,7 @@ class MatchItem extends React.Component{
         this.props.addItemToCart(this.props.coffee.id, this.state.quantity)
             .then(this.setState({ itemAdded: true })).then(setTimeout(
                 ()=>this.setState({ itemAdded: false, quantity:1 }),1000
-            ))
+            )).then(setTimeout((()=>this.props.openCart()),1000))
     }
     handleQChange(event){
         this.setState({ quantity: event.target.value})

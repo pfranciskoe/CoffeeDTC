@@ -27,7 +27,7 @@
         window.b3 = '<%=  image_url('download2.svg') %>'
         window.b1 = '<%=  image_url('download.svg') %>'
     </script>
-      <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyDz0MDnrNGhHE0he8iNADF0xyHpAWmTw9k"%>
+      <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.credentials.google[:api_key]}"%>
 
   </head>
 

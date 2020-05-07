@@ -17,9 +17,9 @@ class CoffeeShow extends React.Component{
     }
     handleSubmit(){
         this.props.addItemToCart(this.props.coffee.id,this.state.quantity)
-            .then(this.setState({ itemAdded: true })).then(setTimeout(
-                () => this.setState({ itemAdded: false, quantity: 1 }), 1000
-            ))
+            .then(this.setState({ itemAdded: true }))
+                .then(setTimeout(() => this.setState({ itemAdded: false, quantity: 1 }), 1000))
+                    .then(setTimeout(() => this.props.openCart(),1000))    
     }
     render(){
         if (!this.state.loading) {

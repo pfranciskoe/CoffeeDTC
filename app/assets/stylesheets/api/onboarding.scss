@@ -1,8 +1,9 @@
 .quiz-button{
     display: flex;
     flex-direction: column;
-   
+    justify-content: center;
     height: 132px;
+    min-width: 375px;
     width: 49%;
     background-color: transparent;
     border-radius: 4px;
@@ -11,8 +12,6 @@
     padding: 20px;
 }
 .quiz-button:hover{
-    height: 132px;
-    width: 49%;
     background-color: transparent;
     border-radius: 4px;
     border: solid 1px black;
@@ -22,6 +21,8 @@
     display: flex;
     width: 100%;    
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     margin-bottom:2.5%;
 }
 .question-form{
@@ -29,6 +30,7 @@
     display: flex;
     flex-wrap: wrap;
     align-content: center;
+    justify-content: center;
     background-color: white;
 }
 
@@ -53,7 +55,7 @@
     font-size: 13px;
 }
 .quiz-header{
-    font-size: 62px;
+    font-size: 400%;
     max-width: 55%;
     margin-top: 0;
     letter-spacing: 0px;
@@ -61,7 +63,7 @@
 .quiz-head{
     font-size: 20px;
     text-align: left;
-    font-weight: 900;
+    font-weight: 700;
     vertical-align: middle;
     margin-left: 10px;
     margin-top: 10px;

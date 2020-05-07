@@ -23,6 +23,7 @@ class Matches extends React.Component{
                     <MatchItem key={`matched-coffee-${id}`}
                     addItemToCart={this.props.addItemToCart}
                     className='matched-coffee-box'
+                    openCart={this.props.openCart}
                         coffee={this.props.coffees[id]}/> :
                         null
                 ))}

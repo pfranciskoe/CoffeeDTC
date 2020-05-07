@@ -42,7 +42,7 @@
         position: fixed;
         font-size: 100px;
         width: 50%;
-        z-index: 1;
+        z-index: 0;
         top: 90px;
     }
 
@@ -99,13 +99,15 @@
         background-color: rgb(255, 255, 255);
         width: 100%;
     }
-    // .how-header{
-    // }
+  
     .how-header-text{
         font-size: 72px;
         color: rgb(46, 46, 46);
+        z-index: 1;
     }
-
+    .how-header{
+        z-index: 5;
+    }
     .how-part{
         display: flex;
         flex-direction: column;
@@ -139,7 +141,23 @@
         justify-content: center;
     }
     .head-arrow{
-        top:500px;
+        color: white;
+        top: 600px;
+        font-size: 200px;
+        transition-property:transform;
+        transition-duration: 250ms, 250ms;
+        transition-timing-function: ease, ease;
+        transition-delay: 0s, 0s;
+        cursor: pointer;
+        z-index: 1;
+        height: 75px;
+        width: 100px;
+        margin: 0;
+        padding: 0;
+    }
+    .head-arrow:hover{
+        transform: translateY(10px);
+        cursor: pointer;
     }
     .link-wrapper{
         display: flex;
