@@ -29,6 +29,7 @@
 .index-filters-container{
     padding-top: 0%;
     padding-left: 2%;
+    padding-bottom: 2%;
     width: 22%;
     display: flex;
     flex-direction: column;
@@ -43,9 +44,15 @@
 }
 .index-filters-items label{
     padding:3px;
-    padding-left: 10px;
     font-weight: 300;
 }
+.index-filters-items form{
+    display: flex;
+    flex-direction: column;
+    padding:3px;
+    font-weight: 300;
+}
+
 // .custom-checkbox{
 //     position: absolute;
 //     margin-right: 10px;

@@ -13,7 +13,7 @@ class CoffeeIndex extends React.Component{
             roast: { 1: true, 2: true, 3: true, 4: true, 5: true},
             roastFiltered: false,
             flavorFiltered: false,
-            price:{low:0,high:200},
+            price:[0,200],
             flavors: {'Sweet & Smooth': true, 'Chocolaty & Sweet': true, 'Comforting & Rich': true,
                 'Balanced & Fruity': true, 'Syrupy & Smooth': true, 'Subtle & Delicate': true, 
                 'Funky & Fruity': true, 'Sweet & Tart': true, 'Roasty & Smoky': true},
@@ -51,7 +51,8 @@ class CoffeeIndex extends React.Component{
         }
     }
     handleChangeP() {
-            this.setState({ [event.target.name]: event.target.value })
+        
+        this.setState({ [event.target.name]: event.target.value.split(',').map(num=>Number(num)) })
     }
     handleChangeF() {
         if (!this.state.flavorFiltered) {
@@ -107,6 +108,29 @@ class CoffeeIndex extends React.Component{
                     </div> */}
                     <div className='index-filters-container'>
                         <div className='index-filters-cat'>
+                            Price
+                        </div>
+                        <div className='index-filters-items'>
+                            <form onChange={this.handleChangeP}>
+                                <label>
+                                    <input name='price' id='rad-1' type="radio" value={'0,15'} />
+                                    Under $15
+                                </label>
+                                 <label>
+                                     <input name='price' id='rad-2' type="radio" value={'15,18'}/>
+                                     $15 - $18</label>
+                                 <label>
+                                     <input name='price' id='rad-3' type="radio" value={'18,22'}/>
+                                     $18 - $22</label>
+                                <label>
+                                    <input name='price' id='rad-4' type="radio" value={'22,200'}/>
+                                    Above $22</label>
+                                <label>
+                                    <input name='price' id='rad-5' type="radio" value={'0,200'} />
+                                    All</label>
+                            </form>
+                        </div>
+                        <div className='index-filters-cat'>
                             Roast
                         </div>
                         <div className='index-filters-items'>
@@ -117,21 +141,6 @@ class CoffeeIndex extends React.Component{
                                 key={`roast-${idx}`}
                                 />
                             ))}
-                        </div>
-                        <div className='index-filters-cat'>
-                            Price
-                        </div>
-                        <div className='index-filters-items'>
-                            <form onChange={this.handleChangeP}>
-                                <label>Under $15</label>
-                                    <input name='price' id='rad-1' type="radio" value={{low:0,high:15}}/>
-                                 <label>$15 - $18</label>
-                                    <input name='price' id='rad-2' type="radio" value={{ low: 15, high: 18 }}/>
-                                 <label>$18 - $22</label>
-                                    <input name='price' id='rad-3' type="radio" value={{ low: 18, high: 22 }}/>
-                                <label>Above $22</label>
-                                    <input name='price' id='rad-4' type="radio" value={{ low: 22, high: 200 }}/>
-                            </form>
                         </div>
                         <div className='index-filters-cat'>
                             Flavor Profile
@@ -152,7 +161,10 @@ class CoffeeIndex extends React.Component{
                                 this.state.flavors[coffee.flavors] &&
                                 this.state.price[0] <= coffee.price &&
                                 this.state.price[1] >= coffee.price &&
-                                (coffee.name.toLowerCase().includes(this.state.name.toLowerCase()) || this.state.name === "")
+                                (
+                                    coffee.name.toLowerCase().includes(this.state.name.toLowerCase()) ||
+                                    this.state.roasters[coffee.roasterId].name.toLowerCase().includes(this.state.name.toLowerCase()) || 
+                                    this.state.name === "")
                                 ) ? 
                                 <IndexItem coffee={coffee}
                                 roaster={this.state.roasters[coffee.roasterId]}
