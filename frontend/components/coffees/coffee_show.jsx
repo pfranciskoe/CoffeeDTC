@@ -24,7 +24,9 @@ class CoffeeShow extends React.Component{
         if (!this.state.loading) {
             return (<div className='coffee-item-container'>
                     <div className='coffee-item'>
-                        <div className='coffee-item-photo-box'></div>
+                        <div className='coffee-item-photo-box'>
+                                <img src={this.props.coffee.photoUrl}/>
+                        </div>
                         <div className='coffee-item-info-box'>
                             <div className='coffee-item-name'>
                                 <Link to={`/coffees/${this.props.coffee.id}`}

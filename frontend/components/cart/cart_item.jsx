@@ -15,7 +15,7 @@ class CartItem extends React.Component{
         return (
         <div className='cart-item'>
             <div className='cart-item-image'>
-
+                <img src={this.coffee.photoUrl} />
             </div>
             <div className='cart-item-text'>
                     <div className='cart-item-head'>

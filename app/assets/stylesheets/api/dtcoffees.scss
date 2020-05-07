@@ -19,11 +19,22 @@
 }
 
 .coffee-item-photo-box{
+   
     width:60%;
     height: 100%;
     background-color:white;
-    opacity: 50%;
     border-radius: 6px  0px 0px 6px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.coffee-item-photo-box img{
+    width: 120%;
+    max-width: 700px;
+    height: auto;
+    margin-bottom: 100px;
 }
 .coffee-item-info-box{
     margin:3%;

@@ -4,7 +4,7 @@ const IndexItem = ({coffee,roaster})=>{
     return(
         < Link to = {`/coffees/${coffee.id}`} className='coffee-index-item'>
                 <div className='coffee-index-img'>
-
+                    <img src={coffee.photoUrl} />
                 </div>
                 <div className='coffee-index-text'>
                     <div className='coffee-index-flavors'>

@@ -76,7 +76,15 @@ roaster5 = Roaster.create(name: 'Intelligentsia',
         fun_fact: "This Chicago roaster is the title sponsor of the 
         Intelligentsia Cup, a 10-day road cycling race around the city.",
 )
-
+roaster6 = Roaster.create(name: 'Parlor',       
+        location:'Brooklyn, New York', 
+        description: "Founded in the back of a Brooklyn barbershop in 2012, 
+        this former pop-up sticks to its small-batch roots to ensure quality 
+        remains unchanged from those single small espresso machine days. Dillon
+         Edwards’s roaster still operates much like the stylists Parlor began 
+         beside, bringing out the beauty in each coffee.", 
+        fun_fact: "Parlor’s Williamsburg shop made a cameo in Netflix’s show “Master of None” in 2015.",
+)
 
 coffee1= Dtcoffee.create!(
         name:'Hair Bender',
@@ -336,6 +344,57 @@ coffee20= Dtcoffee.create(
         fair_trade: true,
         flavors: 'Sweet & Smooth'
 )
+coffee21= Dtcoffee.create(
+        name:"Decaf Colombia Frontera de Acevedo",
+        description:"Notes of chocolate and molasses highlight this particularly
+         creamy decaf, with a little pop of tart cherry acidity to keep things lively.",
+        roast: 3,
+        roaster_id: roaster6.id,
+        weight: 8,
+        price: 14.00,
+        single_origin: false,
+        fair_trade: true,
+        flavors: 'Chocolaty & Sweet'
+)
+
+coffee22= Dtcoffee.create(
+        name:"Wallabout",
+        description:"Wallabout throws its weight around but you won't mind 
+        once your cup is filled with pure full-bodied comfort. Great for your 
+        french press & ready for milk.",
+        roast: 1,
+        roaster_id: roaster6.id,
+        weight: 8,
+        price: 14.00,
+        single_origin: false,
+        fair_trade: true,
+        flavors: 'Balanced & Fruity'
+)
+coffee23= Dtcoffee.create(
+        name:"Ethiopia Worka Sakaro",
+        description:"This Ethiopian is a gentle-bodied coffee with delicate 
+        flavors to match. If you're into gentle citrus and a tea-like cup, 
+        it's right up your alley.",
+        roast: 2,
+        roaster_id: roaster6.id,
+        weight: 8,
+        price: 14.25,
+        single_origin: false,
+        fair_trade: true,
+        flavors: 'Subtle & Delicate'
+)
+coffee24= Dtcoffee.create(
+        name:"Prospect",
+        description:"Parlor's signature blend is a 50/50 of Colombian & Ethiopian coffees, 
+        resulting in a tantalizing mash-up of sweet, rich, classic flavors & hints of the exotic.",
+        roast: 1,
+        roaster_id: roaster6.id,
+        weight: 8,
+        price: 14.50,
+        single_origin: false,
+        fair_trade: true,
+        flavors: 'Balanced & Fruity'
+)
 match1 = Match.create!(
         user_id: user1.id,
         coffee_id: coffee6.id
@@ -344,7 +403,7 @@ match2 = Match.create!(
         user_id: user1.id,
         coffee_id: coffee10.id)
 
-match2 = Match.create!(
+match3 = Match.create!(
         user_id: user1.id,
         coffee_id: coffee17.id)
 cart1 = Cart.create!(
@@ -353,3 +412,84 @@ cart1 = Cart.create!(
 
 # coffeebag1 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/stump_hair.png')
 # coffee1.photo.attach(io: coffeebag1, filename: 'stump_hair.png')
+
+# coffeebag2 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/stump_founders.png')
+# coffee2.photo.attach(io: coffeebag2, filename: 'stump_founders.png')
+
+# coffeebag3 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/stump_french_roast.png')
+# coffee3.photo.attach(io: coffeebag3, filename: 'stump_french_roast.png')
+
+# coffeebag4 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/stump_holler.png')
+# coffee4.photo.attach(io: coffeebag4, filename: 'stump_holler.png')
+
+
+
+
+# coffeebag5 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/equator_el_salvador_los_pirineos_pacamara.png')
+# coffee5.photo.attach(io: coffeebag5, filename: 'equator_el_salvador_los_pirineos_pacamara.png')
+
+# coffeebag6 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/equator_eye_of_the_tiger.png')
+# coffee6.photo.attach(io: coffeebag6, filename: 'equator_eye_of_the_tiger.png')
+
+# coffeebag7 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/equator_rawanda_nyampinga.png')
+# coffee7.photo.attach(io: coffeebag7, filename: 'equator_rawanda_nyampinga.png')
+
+# coffeebag8 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/equator_ethiopia_sidama_ardi.png')
+# coffee8.photo.attach(io: coffeebag8, filename: 'equator_ethiopia_sidama_ardi.png')
+
+
+
+# coffeebag9 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/passenger_hacienda.png')
+# coffee9.photo.attach(io: coffeebag9, filename: 'passenger_hacienda.png')
+
+# coffeebag10 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/passenger_la_tortuga.png')
+# coffee10.photo.attach(io: coffeebag10, filename: 'passenger_la_tortuga.png')
+
+# coffeebag11 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/passenger_kanzu.png')
+# coffee11.photo.attach(io: coffeebag11, filename: 'passenger_kanzu.png')
+
+# coffeebag12 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/passenger_german_cordoba.png')
+# coffee12.photo.attach(io: coffeebag12, filename: 'passenger_german_cordoba.png')
+
+
+
+# coffeebag13 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/AKA_OMG.png')
+# coffee13.photo.attach(io: coffeebag13, filename: 'AKA_OMG.png')
+
+# coffeebag14 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/aka_kindred.png')
+# coffee14.photo.attach(io: coffeebag14, filename: 'aka_kindred.png')
+
+# coffeebag15 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/aka_ftw.png')
+# coffee15.photo.attach(io: coffeebag15, filename: 'aka_ftw.png')
+
+# coffeebag16 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/aka_decaf.png')
+# coffee16.photo.attach(io: coffeebag16, filename: 'aka_decaf.png')
+
+
+
+
+# coffeebag17 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/mdswg2ep9tpdwkfbsy1n.png')
+# coffee17.photo.attach(io: coffeebag17, filename: 'mdswg2ep9tpdwkfbsy1n.png')
+
+# coffeebag18 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/cn8suy4ozoqlmbpodhpd.png')
+# coffee18.photo.attach(io: coffeebag18, filename: 'cn8suy4ozoqlmbpodhpd.png')
+
+# coffeebag19 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/hciwlfviqfau3euvef85.png')
+# coffee19.photo.attach(io: coffeebag19, filename: 'hciwlfviqfau3euvef85.png')
+
+# coffeebag20 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/buihl04nyhyyigrbq3xz.png')
+# coffee20.photo.attach(io: coffeebag20, filename: 'buihl04nyhyyigrbq3xz.png')
+
+
+
+# coffeebag21 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/f36x7h1qviyp4yhqlt6r.png')
+# coffee21.photo.attach(io: coffeebag21, filename: 'f36x7h1qviyp4yhqlt6r.png')
+
+# coffeebag22 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/PAR_Wallabout_TRD00005.png')
+# coffee22.photo.attach(io: coffeebag22, filename: 'PAR_Wallabout_TRD00005.png')
+
+# coffeebag23 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/ugdn0pvbxesdwzgjthg5.png')
+# coffee23.photo.attach(io: coffeebag23, filename: 'ugdn0pvbxesdwzgjthg5.png')
+
+# coffeebag24 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/PAR_Prospect_TRD00005.png')
+# coffee24.photo.attach(io: coffeebag24, filename: 'PAR_Prospect_TRD00005.png')

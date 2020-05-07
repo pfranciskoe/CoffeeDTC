@@ -45,9 +45,21 @@ overflow-y: scroll;
     height: 120px;
     margin-bottom: 10px;
 }
+
 .cart-item-image{
+    height:100%;
     width: 30%;
-    background-color: lavender;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cart-item-image img{
+    width: auto;
+    height: 140px;
+    margin-bottom: 10px;
+    margin-left: -1%;
 }
 
 .cart-item-quantity{

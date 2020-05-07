@@ -1,5 +1,5 @@
 .matches-page{
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(247, 247, 247);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -16,14 +16,15 @@
 }
 .match-header{
     width: auto;
-    font-size: 60px;
+    font-size: 80px;
+    font-weight: 500;
     // border-bottom:solid 2px #000;
 }
 .match-list{
     width: 80%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     background-color: 238, 238, 238;
     // border: solid 1px #000;
     border-radius: 6px ;
@@ -64,12 +65,26 @@
     flex-direction: row;
     margin: 0.5%;
 }
+
 .matched-coffee-item-photo-box{
+   
     width:35%;
-    // background-color: #f53c32;
-    opacity: 50%;
-    border-radius: 6px   0px 0px 6px ;
+    height: 100%;
+    background-color:white;
+    border-radius: 6px  0px 0px 6px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+.matched-coffee-item-photo-box img{
+    width: 120%;
+    max-width: 700px;
+    height: auto;
+    margin-bottom: 10%;
+}
+
 .matched-coffee-item-info-box{
     width:65%;
     display: flex;

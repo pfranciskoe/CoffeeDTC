@@ -22,7 +22,9 @@ class MatchItem extends React.Component{
     render(){
         return (
         <div className='matched-coffee-item'>
-            <div className='matched-coffee-item-photo-box'></div>
+            <div className='matched-coffee-item-photo-box'>
+                    <img src={this.props.coffee.photoUrl} />
+            </div>
             <div className='matched-coffee-item-info-box'>
                     <div className='matched-coffee-item-name'>
                             <Link to={`/coffees/${this.props.coffee.id}`} 

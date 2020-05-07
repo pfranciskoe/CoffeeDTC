@@ -3,7 +3,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 2100px;
+        height: auto;
         width: 100%;
         font-size: 120px;
         text-align: center;
@@ -58,6 +58,7 @@
         top: -5px;
         width: 25%; 
         height: auto;
+        z-index: 2;
     }
     .home-img-top-right{
         position: fixed;
@@ -65,6 +66,7 @@
         top: 0px;
         width: 25%;
         height: auto;
+        z-index: 2;
     }
     .home-img-bottom-left{
         position: fixed;
@@ -72,6 +74,7 @@
         top: 400px;
         width: 20%;
         height: auto;
+        z-index: 2;
     }
     .home-img-bottom-right{
         position: fixed;
@@ -79,6 +82,7 @@
         top: 435px;
         width: 35%;
         height: auto;
+        z-index: 2;
     }
     .quiz-link-button-link{
         height: 50px;
@@ -91,14 +95,12 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-       height: 1400px;
-       background-color: rgb(255, 255, 255);
-       width: 100%;
-       z-index: 1;
+        height: auto;
+        background-color: rgb(255, 255, 255);
+        width: 100%;
     }
-    .how-header{
-        margin-top: 50px;
-    }
+    // .how-header{
+    // }
     .how-header-text{
         font-size: 72px;
         color: rgb(46, 46, 46);
@@ -112,8 +114,9 @@
         width: 55%;
         justify-content: space-evenly;
         align-items: center;
-        height: 600px;
+        height: 300px;
         margin: 10px;
+        z-index: 2;
     }
     .how-part-head{
         font-size: 36px;
@@ -129,7 +132,7 @@
         margin: 0px;
     }
     .homepage-para-part{
-        height: 700px;
+        height: 800px;
         display: flex;
         flex-direction: column;
         align-items: center;

@@ -26,9 +26,13 @@ const HomeBody = ({currentUser, logout, openModal, processForm, openCart})=>(
     </div>
     <div className='how-part'>
         <h6 className='how-part-sub'>Step 3</h6>
-        <h4 className='how-part-head'>See Your Matches</h4>
-        <p className='how-part-body'>Explore the coffees our algorithm has paired you with.</p>
-        <Link className='link-wrapper' to='/matches' ><button className='button-2'>See Matches</button></Link>
+        <h4 className='how-part-head'>Explore Coffees</h4>
+        <p className='how-part-body'>See the coffees our algorithm has picked for you.</p>
+        <p className='how-part-body'>Or browse our store.</p>
+        <div className='how-part-button-group'>
+            <Link className='link-wrapper' to='/matches' ><button className='button-2'>See Matches</button></Link>
+            <Link className='link-wrapper' to='/store' ><button className='button-2'>Visit Store</button></Link>
+        </div>
     </div>
     <div className='how-part'>
         <h6 className='how-part-sub'>Step 4</h6>

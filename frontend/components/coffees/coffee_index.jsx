@@ -13,6 +13,7 @@ class CoffeeIndex extends React.Component{
             roast: { 1: true, 2: true, 3: true, 4: true, 5: true},
             roastFiltered: false,
             flavorFiltered: false,
+            weightFiltered: false,
             price:[0,200],
             flavors: {'Sweet & Smooth': true, 'Chocolaty & Sweet': true, 'Comforting & Rich': true,
                 'Balanced & Fruity': true, 'Syrupy & Smooth': true, 'Subtle & Delicate': true, 
@@ -25,6 +26,7 @@ class CoffeeIndex extends React.Component{
         this.handleChangeF=this.handleChangeF.bind(this)
         this.handleSearch=this.handleSearch.bind(this)
         this.handleChangeP=this.handleChangeP.bind(this)
+        this.handleChangeW = this.handleChangeW.bind(this)
         // this.handleClear=this.handleClear.bind(this)
     }
     componentDidMount(){
@@ -42,12 +44,38 @@ class CoffeeIndex extends React.Component{
             let newVal = { [event.target.value]: event.target.checked }
             let oldVal = { 1: false, 2: false, 3: false, 4: false, 5: false }
             let newState = { ...oldVal, ...newVal }
-            this.setState({ [event.target.name]: newState })
+            this.setState({ [event.target.name]: newState})
         }else{
         let newVal = { [event.target.value]: event.target.checked }
         let oldVal = this.state[event.target.name]
         let newState = { ...oldVal, ...newVal }
-        this.setState({ [event.target.name]: newState })
+        console.log(newState)
+            if (JSON.stringify(newState) != JSON.stringify({ 1: false, 2: false, 3: false, 4: false, 5: false })) {
+                this.setState({ [event.target.name]: newState })
+            } else {
+                this.setState({ [event.target.name]: { 1: true, 2: true, 3: true, 4: true, 5: true } })
+                this.setState({ roastFiltered: false })
+            }
+        }
+    }
+    handleChangeW(){
+        if (!this.state.weightFiltered) {
+            this.setState({ weightFiltered: true })
+            let newVal = { [event.target.value]: event.target.checked }
+            let oldVal = { 8: false, 10: false, 12: false }
+            let newState = { ...oldVal, ...newVal }
+            this.setState({ [event.target.name]: newState })
+        } else {
+            let newVal = { [event.target.value]: event.target.checked }
+            let oldVal = this.state[event.target.name]
+            let newState = { ...oldVal, ...newVal }
+            console.log(newState)
+            if (JSON.stringify(newState) != JSON.stringify({ 8: false, 10: false, 12: false })) {
+                this.setState({ [event.target.name]: newState })
+            } else {
+                this.setState({ [event.target.name]: { 8: true, 10: true, 12: true } })
+                this.setState({ weightFiltered: false })
+            }
         }
     }
     handleChangeP() {
@@ -69,11 +97,24 @@ class CoffeeIndex extends React.Component{
             let newVal = { [event.target.value]: event.target.checked }
             let oldVal = this.state[event.target.name]
             let newState = { ...oldVal, ...newVal }
-            this.setState({ [event.target.name]: newState })
+            if (JSON.stringify(newState) != JSON.stringify({
+                'Sweet & Smooth': false, 'Chocolaty & Sweet': false, 'Comforting & Rich': false,
+                'Balanced & Fruity': false, 'Syrupy & Smooth': false, 'Subtle & Delicate': false,
+                'Funky & Fruity': false, 'Sweet & Tart': false, 'Roasty & Smoky': false
+            })) {
+                this.setState({ [event.target.name]: newState })
+            } else {
+                this.setState({
+                    [event.target.name]: {
+                        'Sweet & Smooth': true, 'Chocolaty & Sweet': true, 'Comforting & Rich': true,
+                        'Balanced & Fruity': true, 'Syrupy & Smooth': true, 'Subtle & Delicate': true,
+                        'Funky & Fruity': true, 'Sweet & Tart': true, 'Roasty & Smoky': true
+                    } })
+                this.setState({ flavorFiltered: false })
+            }
         }
     }
     handleSearch(){
-        console.log(event.target.value)
         this.setState({name:event.target.value})
     }
     // handleClear(){
@@ -92,7 +133,6 @@ class CoffeeIndex extends React.Component{
     //         blend: true})
     // }
     render(){
-        console.log(this.state)
         if (this.state.loading){
             return(
                 <div></div>
@@ -154,6 +194,18 @@ class CoffeeIndex extends React.Component{
                                 />
                             ))}
                         </div>
+                        <div className='index-filters-cat'>
+                            Weight(oz.)
+                        </div>
+                        <div className='index-filters-items'>
+                            {Object.keys(this.state.weight).map((weight,idx)=>(
+                                <IndexFilterItem handleChange={this.handleChangeW}
+                                filterName='weight' filterValue={weight} 
+                                filterDisplay={weight}
+                                key={`weight-${idx}`}
+                                />
+                            ))}
+                        </div>
                     </div>
                     <div className='index-body-container'>
                         {Object.values(this.state.coffees).map((coffee,idx)=>(
@@ -161,6 +213,7 @@ class CoffeeIndex extends React.Component{
                                 this.state.flavors[coffee.flavors] &&
                                 this.state.price[0] <= coffee.price &&
                                 this.state.price[1] >= coffee.price &&
+                                this.state.weight[coffee.weight] &&
                                 (
                                     coffee.name.toLowerCase().includes(this.state.name.toLowerCase()) ||
                                     this.state.roasters[coffee.roasterId].name.toLowerCase().includes(this.state.name.toLowerCase()) || 
