@@ -410,86 +410,86 @@ cart1 = Cart.create!(
         user_id:user1.id
 ) 
 
-# coffeebag1 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/stump_hair.png')
-# coffee1.photo.attach(io: coffeebag1, filename: 'stump_hair.png')
+coffeebag1 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/stump_hair.png')
+coffee1.photo.attach(io: coffeebag1, filename: 'stump_hair.png')
 
-# coffeebag2 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/stump_founders.png')
-# coffee2.photo.attach(io: coffeebag2, filename: 'stump_founders.png')
+coffeebag2 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/stump_founders.png')
+coffee2.photo.attach(io: coffeebag2, filename: 'stump_founders.png')
 
-# coffeebag3 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/stump_french_roast.png')
-# coffee3.photo.attach(io: coffeebag3, filename: 'stump_french_roast.png')
+coffeebag3 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/stump_french_roast.png')
+coffee3.photo.attach(io: coffeebag3, filename: 'stump_french_roast.png')
 
-# coffeebag4 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/stump_holler.png')
-# coffee4.photo.attach(io: coffeebag4, filename: 'stump_holler.png')
-
-
-
-
-# coffeebag5 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/equator_el_salvador_los_pirineos_pacamara.png')
-# coffee5.photo.attach(io: coffeebag5, filename: 'equator_el_salvador_los_pirineos_pacamara.png')
-
-# coffeebag6 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/equator_eye_of_the_tiger.png')
-# coffee6.photo.attach(io: coffeebag6, filename: 'equator_eye_of_the_tiger.png')
-
-# coffeebag7 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/equator_rawanda_nyampinga.png')
-# coffee7.photo.attach(io: coffeebag7, filename: 'equator_rawanda_nyampinga.png')
-
-# coffeebag8 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/equator_ethiopia_sidama_ardi.png')
-# coffee8.photo.attach(io: coffeebag8, filename: 'equator_ethiopia_sidama_ardi.png')
-
-
-
-# coffeebag9 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/passenger_hacienda.png')
-# coffee9.photo.attach(io: coffeebag9, filename: 'passenger_hacienda.png')
-
-# coffeebag10 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/passenger_la_tortuga.png')
-# coffee10.photo.attach(io: coffeebag10, filename: 'passenger_la_tortuga.png')
-
-# coffeebag11 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/passenger_kanzu.png')
-# coffee11.photo.attach(io: coffeebag11, filename: 'passenger_kanzu.png')
-
-# coffeebag12 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/passenger_german_cordoba.png')
-# coffee12.photo.attach(io: coffeebag12, filename: 'passenger_german_cordoba.png')
-
-
-
-# coffeebag13 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/AKA_OMG.png')
-# coffee13.photo.attach(io: coffeebag13, filename: 'AKA_OMG.png')
-
-# coffeebag14 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/aka_kindred.png')
-# coffee14.photo.attach(io: coffeebag14, filename: 'aka_kindred.png')
-
-# coffeebag15 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/aka_ftw.png')
-# coffee15.photo.attach(io: coffeebag15, filename: 'aka_ftw.png')
-
-# coffeebag16 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/aka_decaf.png')
-# coffee16.photo.attach(io: coffeebag16, filename: 'aka_decaf.png')
+coffeebag4 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/stump_holler.png')
+coffee4.photo.attach(io: coffeebag4, filename: 'stump_holler.png')
 
 
 
 
-# coffeebag17 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/mdswg2ep9tpdwkfbsy1n.png')
-# coffee17.photo.attach(io: coffeebag17, filename: 'mdswg2ep9tpdwkfbsy1n.png')
+coffeebag5 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/equator_el_salvador_los_pirineos_pacamara.png')
+coffee5.photo.attach(io: coffeebag5, filename: 'equator_el_salvador_los_pirineos_pacamara.png')
 
-# coffeebag18 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/cn8suy4ozoqlmbpodhpd.png')
-# coffee18.photo.attach(io: coffeebag18, filename: 'cn8suy4ozoqlmbpodhpd.png')
+coffeebag6 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/equator_eye_of_the_tiger.png')
+coffee6.photo.attach(io: coffeebag6, filename: 'equator_eye_of_the_tiger.png')
 
-# coffeebag19 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/hciwlfviqfau3euvef85.png')
-# coffee19.photo.attach(io: coffeebag19, filename: 'hciwlfviqfau3euvef85.png')
+coffeebag7 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/equator_rawanda_nyampinga.png')
+coffee7.photo.attach(io: coffeebag7, filename: 'equator_rawanda_nyampinga.png')
 
-# coffeebag20 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/buihl04nyhyyigrbq3xz.png')
-# coffee20.photo.attach(io: coffeebag20, filename: 'buihl04nyhyyigrbq3xz.png')
+coffeebag8 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/equator_ethiopia_sidama_ardi.png')
+coffee8.photo.attach(io: coffeebag8, filename: 'equator_ethiopia_sidama_ardi.png')
 
 
 
-# coffeebag21 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/f36x7h1qviyp4yhqlt6r.png')
-# coffee21.photo.attach(io: coffeebag21, filename: 'f36x7h1qviyp4yhqlt6r.png')
+coffeebag9 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/passenger_hacienda.png')
+coffee9.photo.attach(io: coffeebag9, filename: 'passenger_hacienda.png')
 
-# coffeebag22 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/PAR_Wallabout_TRD00005.png')
-# coffee22.photo.attach(io: coffeebag22, filename: 'PAR_Wallabout_TRD00005.png')
+coffeebag10 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/passenger_la_tortuga.png')
+coffee10.photo.attach(io: coffeebag10, filename: 'passenger_la_tortuga.png')
 
-# coffeebag23 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/ugdn0pvbxesdwzgjthg5.png')
-# coffee23.photo.attach(io: coffeebag23, filename: 'ugdn0pvbxesdwzgjthg5.png')
+coffeebag11 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/passenger_kanzu.png')
+coffee11.photo.attach(io: coffeebag11, filename: 'passenger_kanzu.png')
 
-# coffeebag24 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/PAR_Prospect_TRD00005.png')
-# coffee24.photo.attach(io: coffeebag24, filename: 'PAR_Prospect_TRD00005.png')
+coffeebag12 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/passenger_german_cordoba.png')
+coffee12.photo.attach(io: coffeebag12, filename: 'passenger_german_cordoba.png')
+
+
+
+coffeebag13 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/AKA_OMG.png')
+coffee13.photo.attach(io: coffeebag13, filename: 'AKA_OMG.png')
+
+coffeebag14 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/aka_kindred.png')
+coffee14.photo.attach(io: coffeebag14, filename: 'aka_kindred.png')
+
+coffeebag15 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/aka_ftw.png')
+coffee15.photo.attach(io: coffeebag15, filename: 'aka_ftw.png')
+
+coffeebag16 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/aka_decaf.png')
+coffee16.photo.attach(io: coffeebag16, filename: 'aka_decaf.png')
+
+
+
+
+coffeebag17 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/mdswg2ep9tpdwkfbsy1n.png')
+coffee17.photo.attach(io: coffeebag17, filename: 'mdswg2ep9tpdwkfbsy1n.png')
+
+coffeebag18 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/cn8suy4ozoqlmbpodhpd.png')
+coffee18.photo.attach(io: coffeebag18, filename: 'cn8suy4ozoqlmbpodhpd.png')
+
+coffeebag19 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/hciwlfviqfau3euvef85.png')
+coffee19.photo.attach(io: coffeebag19, filename: 'hciwlfviqfau3euvef85.png')
+
+coffeebag20 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/buihl04nyhyyigrbq3xz.png')
+coffee20.photo.attach(io: coffeebag20, filename: 'buihl04nyhyyigrbq3xz.png')
+
+
+
+coffeebag21 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/f36x7h1qviyp4yhqlt6r.png')
+coffee21.photo.attach(io: coffeebag21, filename: 'f36x7h1qviyp4yhqlt6r.png')
+
+coffeebag22 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/PAR_Wallabout_TRD00005.png')
+coffee22.photo.attach(io: coffeebag22, filename: 'PAR_Wallabout_TRD00005.png')
+
+coffeebag23 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/ugdn0pvbxesdwzgjthg5.png')
+coffee23.photo.attach(io: coffeebag23, filename: 'ugdn0pvbxesdwzgjthg5.png')
+
+coffeebag24 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/PAR_Prospect_TRD00005.png')
+coffee24.photo.attach(io: coffeebag24, filename: 'PAR_Prospect_TRD00005.png')
