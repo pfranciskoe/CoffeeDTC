@@ -27,6 +27,9 @@ TasteProfile.create!(
 )
 
 roaster1 = Roaster.create!(name: 'Stumptown',       
+
+        lat: 45.516327,
+        lng: -122.629697,
         location:'Portland, Oregon',    
         description: 'This titan roaster had its modest beginnings in a closed-down 
         Portland beauty salon named Hair Bender (hence Stumptown’s popular blend). Duane Sorenson’s 
@@ -35,7 +38,9 @@ roaster1 = Roaster.create!(name: 'Stumptown',
         fun_fact: "This roaster takes the coffee house music scene seriously and releases employee-based *Worker's Comp* vinyls.",
 )
 
-roaster2 = Roaster.create(name: 'Equator',       
+roaster2 = Roaster.create(name: 'Equator',
+        lat: 37.965467,
+        lng:-122.523069,
         location:'San Rafael, California',   
         description: "In 1995, when partners Brooke McDonnell, Maureen McHugh, and Helen Russell 
         began roasting coffee from a garage, they set out to build a high-impact company focused 
@@ -44,7 +49,9 @@ roaster2 = Roaster.create(name: 'Equator',
         founding of Panama’s Finca Sophia farm and partnering with World Bicycle Relief.", 
         fun_fact: "Equator's chain of well-being philosophy ensures everyone with a hand in making its coffee benefits from it.",
 )
-roaster3 = Roaster.create(name: 'Passenger',       
+roaster3 = Roaster.create(name: 'Passenger',
+        lat:40.041323,
+        lng:-76.297257,
         location:'Lancaster, Pennsylvania', 
         description: "Passenger loves coffee and wants to take its drinkers 
         along for the ride. Once operating from a retrofitted 1955 Airstream 
@@ -55,7 +62,9 @@ roaster3 = Roaster.create(name: 'Passenger',
           diverse offering at peak freshness year round.", 
         fun_fact: "This roaster first opened to the public through the window of its vintage Airstream mobile cafe.",
 )
-roaster4 = Roaster.create(name: 'AKA',       
+roaster4 = Roaster.create(name: 'AKA',
+        lat:37.862510,
+        lng:-122.297391,     
         location:'Oakland, California', 
         description: "Co-founders Brian W. Jones, Björg Brend Laird, and 
         John Laird's AKA Coffee won't let anything stand between them and 
@@ -65,8 +74,10 @@ roaster4 = Roaster.create(name: 'AKA',
         fun_fact: "Also known as family, AKA's roaster Rosie Laird grew up around 
         coffee as the daughter of co-founder and roastmaster John Laird.",
 )
-roaster5 = Roaster.create(name: 'Intelligentsia',       
-        location:'Oakland, California', 
+roaster5 = Roaster.create(name: 'Intelligentsia',
+        lat:41.887033,
+        lng:-87.674005,
+        location:'Chicago, Illinois', 
         description: "Founded in 1995 by Emily Mange and Doug Zell, this 
         Chicago-based institution got its start roasting on vintage equipment 
         within its first coffeebar. Today – with a focus on consistency, quality, 
@@ -76,7 +87,9 @@ roaster5 = Roaster.create(name: 'Intelligentsia',
         fun_fact: "This Chicago roaster is the title sponsor of the 
         Intelligentsia Cup, a 10-day road cycling race around the city.",
 )
-roaster6 = Roaster.create(name: 'Parlor',       
+roaster6 = Roaster.create(name: 'Parlor',
+        lat:40.697542,
+        lng:-73.970547,
         location:'Brooklyn, New York', 
         description: "Founded in the back of a Brooklyn barbershop in 2012, 
         this former pop-up sticks to its small-batch roots to ensure quality 

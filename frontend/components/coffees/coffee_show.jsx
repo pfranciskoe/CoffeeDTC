@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import RoasterMap from './roaster_map'
 class CoffeeShow extends React.Component{
     constructor(props){
         super(props);
@@ -42,16 +43,16 @@ class CoffeeShow extends React.Component{
                         <div className='quantity-divs-label'>Quantity:</div>
                         <div className='quantity-divs'>
                             {(this.state.quantity === 1) ? 
-                                <div onClick={() => this.handleChange(1)} className='selected-quantity-div'><div>1</div></div> :
-                            <div onClick={() => this.handleChange(1)} className='quantity-div'><div>1</div></div>
+                                <div onClick={() => this.handleChange(1)} className='selected-quantity-div'><div>1</div><img src={window.b1} /></div> :
+                                <div onClick={() => this.handleChange(1)} className='quantity-div'><div>1</div><img src={window.b1} /></div>
                             }
                             {(this.state.quantity === 2) ?
-                                <div onClick={() => this.handleChange(2)} className='selected-quantity-div'><div>2</div></div> :
-                                <div onClick={() => this.handleChange(2)} className='quantity-div'><div>2</div></div>
+                                <div onClick={() => this.handleChange(2)} className='selected-quantity-div'><div>2</div><img src={window.b2} /></div> :
+                                <div onClick={() => this.handleChange(2)} className='quantity-div'><div>2</div><img src={window.b2} /></div>
                             }
                             {(this.state.quantity === 3) ?
-                                <div onClick={() => this.handleChange(3)} className='selected-quantity-div'><div>3</div></div> :
-                                <div onClick={() => this.handleChange(3)} className='quantity-div'><div>3</div></div>
+                                <div onClick={() => this.handleChange(3)} className='selected-quantity-div'><div>3</div><img src={window.b3} /></div> :
+                                <div onClick={() => this.handleChange(3)} className='quantity-div'><div>3</div><img src={window.b3} /></div>
                             }
                         </div>
                         {this.state.itemAdded ?
@@ -65,8 +66,8 @@ class CoffeeShow extends React.Component{
                         </div>
                     </div>
                     <div className='roaster-cont'>
-                        <div className='roaster-map'>
-                            MAP...
+                        <div className='roaster-map' ref='map'>
+                        <RoasterMap roaster={this.props.roasters[this.props.coffee.roasterId]}/>
                         </div>
                         <div className='roaster-bio'>
                             <div className='roaster-bio-header'>

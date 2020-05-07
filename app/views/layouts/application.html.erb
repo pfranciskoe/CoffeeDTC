@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700;900&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    
     <script type="text/javascript">
         window.question1 = "<%=  image_url('question-1.png') %>";
         window.question2 = "<%=  image_url('question-2.png') %>";
@@ -22,8 +23,11 @@
         window.linkedin = "<%=  image_url('trans_linkedin.png') %>"
         window.gitlogo = "<%=  image_url('github_logo_trans.png') %>"
         window.emaillogo = "<%=  image_url('email-icon-white-transparent-11.png') %>"
+        window.b2 = '<%=  image_url('download1.svg') %>'
+        window.b3 = '<%=  image_url('download2.svg') %>'
+        window.b1 = '<%=  image_url('download.svg') %>'
     </script>
-    
+      <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyDz0MDnrNGhHE0he8iNADF0xyHpAWmTw9k"%>
 
   </head>
 
