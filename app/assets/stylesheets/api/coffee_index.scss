@@ -4,6 +4,21 @@
     display: flex;
     flex-direction: column;
 }
+.store-header{
+    text-align: center;
+    height: fit-content;
+    min-height: 300px;
+    width: 100%;
+    font-size: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+.store-sub-header{
+    font-size: 20px;
+    font-weight: 300;
+}
 .search-bar-container{
     height: 70px;
     background-color: white;

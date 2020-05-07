@@ -16,15 +16,15 @@ user1 = User.create!(
 )
 
 
-TasteProfile.create!(
-    user_id: user1.id,
-    experience_level: 1,
-    brew_method: 'Moka Pot',
-    additions: 'None',
-    roast: 3,
-    adventure: 'High',
-    ground: false
-)
+# TasteProfile.create!(
+#     user_id: user1.id,
+#     experience_level: 1,
+#     brew_method: 'Moka Pot',
+#     additions: 'None',
+#     roast: 3,
+#     adventure: 'High',
+#     ground: false
+# )
 
 roaster1 = Roaster.create!(name: 'Stumptown',       
 
@@ -98,6 +98,45 @@ roaster6 = Roaster.create(name: 'Parlor',
          beside, bringing out the beauty in each coffee.", 
         fun_fact: "Parlor’s Williamsburg shop made a cameo in Netflix’s show “Master of None” in 2015.",
 )
+
+roaster7 = Roaster.create(name: 'Passion House',
+        lat:41.887251,
+        lng:-87.704157,
+        location:'Chicago, Illinois', 
+        description: "There’s no question what Passion House stands for. 
+        Joshua Millman’s small-batch roaster has pursued the ultimate coffee since 2011, 
+        sharing that enthusiasm with Chicago and beyond.
+         And that love goes into everything Passion House does, 
+         from its thoughtful blends to experimental micro lot single origins.", 
+        fun_fact: "Passion House founder Joshua Millman received his first 
+        coffee order on the same day his daughter was born.",
+)
+
+roaster8 = Roaster.create(name: 'Blueprint',
+        lat:38.655704,
+        lng:-90.300546,
+        location:'St. Louis, Missouri', 
+        description: "Fiercely focused and admittedly obsessed, Blueprint 
+        puts each of its coffees through a rigorous quality-control process. 
+        Founded in 2013 with the co-op mentality of collaboration, this roaster’s commitment is 
+        all in the name of ensuring every coffee meets its high standards and 
+        nothing leaves St. Louis unless it aces the test!", 
+        fun_fact: "This roaster has six founders, hence its hexagonal logo.",
+)
+
+roaster9 = Roaster.create(name: 'Revelator',
+        lat:33.506711,
+        lng:-86.822363,
+        location:'Birmingham, Alabama', 
+        description: "Founded in 2013, this Southern roaster is nostalgically 
+        named for the way the word rhythmically rolls off the tongue. That 
+        reverence comes through in a friendly and 
+        refined yet gritty spirit that extends to neighborhood-driven cafés, 
+        a farm-to-table philosophy, and traditional hospitality.", 
+        fun_fact: "Revelator created a program for baristas entering the
+         competition circuit that sponsored five new talents in its first year.",
+)
+
 
 coffee1= Dtcoffee.create!(
         name:'Hair Bender',
@@ -408,6 +447,167 @@ coffee24= Dtcoffee.create(
         fair_trade: true,
         flavors: 'Balanced & Fruity'
 )
+coffee25= Dtcoffee.create(
+        name:"LSD Blend",
+        description:"When caffeine is your mind-altering chemical of choice, 
+        turn to this LSD blend for the perfect morning trip. Creamy bodied, 
+        with juicy orange acidity and warming spices. Consider our minds blown. 
+        (Formerly known as PH Blend.)",
+        roast: 3,
+        roaster_id: roaster7.id,
+        weight: 12,
+        price: 18.00,
+        single_origin: false,
+        fair_trade: true,
+        flavors: 'Syrupy & Smooth'
+)
+coffee26= Dtcoffee.create(
+        name:"Milly Grace",
+        description:"At Passion House we are constantly on the hunt for 
+        beautiful coffees, stopping at nothing to get our hands on the best 
+        beans we can find. We decided to name this Peruvian coffee Millie Grace 
+        after a character in one of our favorite Phish songs, “Fee”. Millie is 
+        an adventurous soul, traversing the world to find a serendipitous 
+        balance between exciting and comforting.",
+        roast: 1,
+        roaster_id: roaster7.id,
+        weight: 12,
+        price: 18.00,
+        single_origin: true,
+        fair_trade: true,
+        flavors: 'Balanced & Fruity'
+)
+coffee27= Dtcoffee.create(
+        name:"Bassline Espresso Blend",
+        description:"Prepare to find your groove: This rich espresso riffs on 
+        it roasty, toasty chocolatey-smooth base with notes of vibrant,
+         citrus acidity.",
+        roast: 4,
+        roaster_id: roaster7.id,
+        weight: 12,
+        price: 18.00,
+        single_origin: false,
+        fair_trade: true,
+        flavors: 'Syrupy & Smooth'
+)
+coffee28= Dtcoffee.create(
+        name:"Night Moves Dark Roast",
+        description:"Make a move on a dark roast that’s more sweet than bitter. 
+        Old school in style with a bold, rich feel, this is one smooth operator.",
+        roast: 5,
+        roaster_id: roaster7.id,
+        weight: 12,
+        price: 18.00,
+        single_origin: false,
+        fair_trade: true,
+        flavors: 'Comforting & Rich'
+)
+
+coffee29= Dtcoffee.create(
+        name:"Finca Tamana",
+        description:"Pecan pie sweetness balances a citrusy
+         lemon acidity in this extremely pleasant Colombian cup.",
+        roast: 2,
+        roaster_id: roaster8.id,
+        weight: 12,
+        price: 18.00,
+        single_origin: true,
+        fair_trade: true,
+        flavors: 'Sweet & Inviting'
+)
+
+coffee30= Dtcoffee.create(
+        name:"Primary Series: Blue",
+        description:"Loud cocoa and caramel notes make this blend perfect for 
+        cold brew, though all that sweetness would be welcome in a hot cup.",
+        roast: 4,
+        roaster_id: roaster8.id,
+        weight: 12,
+        price: 18.00,
+        single_origin: false,
+        fair_trade: true,
+        flavors: 'Sweet & Smooth'
+)
+
+coffee31= Dtcoffee.create(
+        name:"Tekton",
+        description:"Blueprint's trademark blend is constantly evolving, 
+        but you can always expect deep sweetness, well-balanced acidity, and overall deliciousness.",
+        roast: 2,
+        roaster_id: roaster8.id,
+        weight: 12,
+        price: 19.00,
+        single_origin: false,
+        fair_trade: true,
+        flavors: 'Balanced & Fruity'
+)
+
+coffee32= Dtcoffee.create(
+        name:"Penrose",
+        description:"With its nutty sweetness and gentle body, this iteration of
+         Blueprint's ever-changing espresso blend would be perfect in any espresso drink.",
+        roast: 3,
+        roaster_id: roaster8.id,
+        weight: 12,
+        price: 18.25,
+        single_origin: false,
+        fair_trade: true,
+        flavors: 'Syrupy & Smooth'
+)
+
+coffee33= Dtcoffee.create(
+        name:"9 to 5",
+        description:"With background notes of black cherry and caramel, this 
+        roasty buddy is the perfect companion to get you through your 9 to 5.",
+        roast: 5,
+        roaster_id: roaster9.id,
+        weight: 12,
+        price: 14.00,
+        single_origin: false,
+        fair_trade: true,
+        flavors: 'Roasty & Smoky'
+)
+coffee34= Dtcoffee.create(
+        name:"Petunias",
+        description:"With notes of cherry and chocolate, this coffee is
+         harmony in a cup. We have yet to find anyone who questions its sweet,
+          velvety deliciousness",
+        roast: 2,
+        roaster_id: roaster9.id,
+        weight: 12,
+        price: 14.00,
+        single_origin: false,
+        fair_trade: false,
+        flavors: 'Sweet & Smooth'
+)
+
+coffee35= Dtcoffee.create(
+        name:"Pale Rider",
+        description:"With well-balanced chocolate and red apple sweetness, 
+        this decaf is ready to ride at any time of day (or night).",
+        roast: 5,
+        roaster_id: roaster9.id,
+        weight: 12,
+        price: 22.00,
+        single_origin: false,
+        fair_trade: false,
+        flavors: 'Sweet & Smooth'
+)
+
+coffee36= Dtcoffee.create(
+        name:"Misfit",
+        description:"This coffee stands out from the pack, but no worries: 
+        It will fit right into your brewing rotation. Full-bodied and richly 
+        warm with a memorable toastiness.",
+        roast: 4,
+        roaster_id: roaster9.id,
+        weight: 12,
+        price: 15.00,
+        single_origin: false,
+        fair_trade: false,
+        flavors: 'Sweet & Smooth'
+)
+
 match1 = Match.create!(
         user_id: user1.id,
         coffee_id: coffee6.id
@@ -506,3 +706,46 @@ coffee23.photo.attach(io: coffeebag23, filename: 'ugdn0pvbxesdwzgjthg5.png')
 
 coffeebag24 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/PAR_Prospect_TRD00005.png')
 coffee24.photo.attach(io: coffeebag24, filename: 'PAR_Prospect_TRD00005.png')
+
+
+
+coffeebag25 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/new_coffees/passion_lsd.png')
+coffee25.photo.attach(io: coffeebag25, filename: 'passion_lsd.png')
+
+coffeebag26 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/new_coffees/passion_milly.png')
+coffee26.photo.attach(io: coffeebag26, filename: 'passion_milly.png')
+
+coffeebag27 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/new_coffees/passion_bass.png')
+coffee27.photo.attach(io: coffeebag27, filename: 'passion_bass.png')
+
+coffeebag28 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/new_coffees/passio_night.png')
+coffee28.photo.attach(io: coffeebag28, filename: 'passio_night.png')
+
+
+
+coffeebag29 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/new_coffees/blueprint_finca.png')
+coffee29.photo.attach(io: coffeebag29, filename: 'blueprint_finca.png')
+
+coffeebag30 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/new_coffees/blueprint_blue.png')
+coffee30.photo.attach(io: coffeebag30, filename: 'blueprint_blue.png')
+
+coffeebag31 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/new_coffees/blueprint_tek.png')
+coffee31.photo.attach(io: coffeebag31, filename: 'blueprint_tek.png')
+
+coffeebag32 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/new_coffees/blueprint_penrose.png')
+coffee32.photo.attach(io: coffeebag32, filename: 'blueprint_penrose.png')
+
+
+
+
+coffeebag33 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/new_coffees/rev_9to5.png')
+coffee33.photo.attach(io: coffeebag33, filename: 'rev_9to5.png')
+
+coffeebag34 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/new_coffees/rev_petunas.png')
+coffee34.photo.attach(io: coffeebag34, filename: 'rev_petunas.png')
+
+coffeebag35 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/new_coffees/rev_pale.png')
+coffee35.photo.attach(io: coffeebag35, filename: 'rev_pale.png')
+
+coffeebag36 = open('https://dtcoffee-seeds.s3-us-west-1.amazonaws.com/coffees/new_coffees/rev_misfit.png')
+coffee36.photo.attach(io: coffeebag36, filename: 'rev_misfit.png')

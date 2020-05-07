@@ -139,6 +139,14 @@ class CoffeeIndex extends React.Component{
             )}{
             return(
             <div className='index-page'>
+                    <div className='store-header'>
+                <div >
+                    ALL THE COFFEES.
+                </div>
+                    <div className='store-sub-header'>
+                    . . . or at least the ones we drink.
+                    </div>
+                </div>
                 <div className='search-bar-container'>
                         <input type="text" onChange={this.handleSearch} placeholder='Search' />
                 </div>

@@ -42,7 +42,7 @@ class Api::TasteProfilesController < ApplicationController
         price_range = taste_profile.get_match_params[1]
         matched_coffees = Dtcoffee.where("price >= ? AND price <= ? AND
                             roast >= ? AND roast <= ?",price_range[0],
-                            price_range[1],roast_range[0],roast_range[1])
+                            price_range[1],roast_range[0],roast_range[1]).limit(5)
         matched_coffees.each do |matched|
             Match.create!(coffee_id: matched.id, user_id: taste_profile.user_id)
         end
