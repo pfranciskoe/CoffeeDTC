@@ -15,17 +15,6 @@ user1 = User.create!(
     password: 'password'
 )
 
-
-# TasteProfile.create!(
-#     user_id: user1.id,
-#     experience_level: 1,
-#     brew_method: 'Moka Pot',
-#     additions: 'None',
-#     roast: 3,
-#     adventure: 'High',
-#     ground: false
-# )
-
 roaster1 = Roaster.create!(name: 'Stumptown',       
 
         lat: 45.516327,
@@ -608,17 +597,6 @@ coffee36= Dtcoffee.create(
         flavors: 'Sweet & Smooth'
 )
 
-match1 = Match.create!(
-        user_id: user1.id,
-        coffee_id: coffee6.id
-)
-match2 = Match.create!(
-        user_id: user1.id,
-        coffee_id: coffee10.id)
-
-match3 = Match.create!(
-        user_id: user1.id,
-        coffee_id: coffee17.id)
 cart1 = Cart.create!(
         user_id:user1.id
 ) 
