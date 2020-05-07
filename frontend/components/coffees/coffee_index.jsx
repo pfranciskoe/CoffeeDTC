@@ -15,7 +15,8 @@ class CoffeeIndex extends React.Component{
             flavorFiltered: false,
             weightFiltered: false,
             price:[0,200],
-            flavors: {'Sweet & Smooth': true, 'Chocolaty & Sweet': true, 'Comforting & Rich': true,
+            flavors: {
+                'Sweet & Smooth': true, 'Chocolaty & Sweet': true, 'Comforting & Rich': true, 'Sweet & Inviting': true,
                 'Balanced & Fruity': true, 'Syrupy & Smooth': true, 'Subtle & Delicate': true, 
                 'Funky & Fruity': true, 'Sweet & Tart': true, 'Roasty & Smoky': true},
             weight: {8: true, 10: true, 12: true},
@@ -87,7 +88,7 @@ class CoffeeIndex extends React.Component{
             this.setState({ flavorFiltered: true })
             let newVal = { [event.target.value]: event.target.checked }
             let oldVal = {
-                'Sweet & Smooth': false, 'Chocolaty & Sweet': false, 'Comforting & Rich': false,
+                'Sweet & Smooth': false, 'Chocolaty & Sweet': false, 'Comforting & Rich': false, 'Sweet & Inviting': false,
                 'Balanced & Fruity': false, 'Syrupy & Smooth': false, 'Subtle & Delicate': false,
                 'Funky & Fruity': false, 'Sweet & Tart': false, 'Roasty & Smoky': false
             }
@@ -98,7 +99,7 @@ class CoffeeIndex extends React.Component{
             let oldVal = this.state[event.target.name]
             let newState = { ...oldVal, ...newVal }
             if (JSON.stringify(newState) != JSON.stringify({
-                'Sweet & Smooth': false, 'Chocolaty & Sweet': false, 'Comforting & Rich': false,
+                'Sweet & Smooth': false, 'Chocolaty & Sweet': false, 'Comforting & Rich': false, 'Sweet & Inviting': false,
                 'Balanced & Fruity': false, 'Syrupy & Smooth': false, 'Subtle & Delicate': false,
                 'Funky & Fruity': false, 'Sweet & Tart': false, 'Roasty & Smoky': false
             })) {
@@ -106,7 +107,7 @@ class CoffeeIndex extends React.Component{
             } else {
                 this.setState({
                     [event.target.name]: {
-                        'Sweet & Smooth': true, 'Chocolaty & Sweet': true, 'Comforting & Rich': true,
+                        'Sweet & Smooth': true, 'Chocolaty & Sweet': true, 'Comforting & Rich': true, 'Sweet & Inviting': true,
                         'Balanced & Fruity': true, 'Syrupy & Smooth': true, 'Subtle & Delicate': true,
                         'Funky & Fruity': true, 'Sweet & Tart': true, 'Roasty & Smoky': true
                     } })

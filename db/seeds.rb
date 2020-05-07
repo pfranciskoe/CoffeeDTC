@@ -114,8 +114,8 @@ roaster8 = Roaster.create(name: 'Blueprint',
 )
 
 roaster9 = Roaster.create(name: 'Revelator',
-        lat:33.506711,
-        lng:-86.822363,
+        lat:33.515549,
+        lng:-86.808608,
         location:'Birmingham, Alabama', 
         description: "Founded in 2013, this Southern roaster is nostalgically 
         named for the way the word rhythmically rolls off the tongue. That 
