@@ -15,8 +15,17 @@ class Home extends React.Component{
             para3.style.transform = `translateY(${(window.pageYOffset * 0.5) / 8}px`
             para4.style.transform = `translateY(-${(window.pageYOffset * 3) / 3}px`
         }
+        this.randomString=this.randomString.bind(this)
     }
-    
+    randomString() {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        const charLength = characters.length;
+        let arr = [];
+        for (let i = 0; i < 8; i++) {
+            arr.push(characters.charAt(Math.floor(Math.random() * charLength)))
+        };
+        return (arr.join(''));
+    }
     componentDidMount(){
         window.addEventListener('scroll', this.para)
         window.scrollTo(0, 0)
@@ -35,9 +44,6 @@ class Home extends React.Component{
                 <div className='homepage-para-part'>
                 <h1 className='homepage-header'>Coffee Curated, For You</h1>
                 <h1 onClick={this.handleDown}className='homepage-header head-arrow'>ˇ</h1>
-                {/* <Link className='quiz-link-button-link' to='/onboarding/1'>
-                    <button className='quiz-link-button'>Get Started</button>
-                </Link> */}
                 <div className='para-element'>
                     <img className='home-img-top-left' src={window.home1} />
                     <img className='home-img-top-right' src={window.home2} />
@@ -48,7 +54,7 @@ class Home extends React.Component{
                 </div>
                 <div className='home-title-backdrop'></div>
                 </div>
-                <HomeBodyContainer/>
+                <HomeBodyContainer randomString={this.randomString}/>
             </div>
         )
     }   

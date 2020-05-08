@@ -4,6 +4,15 @@ class NavBar extends React.Component{
     constructor(props){
         super(props);
     }
+    randomString() {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        const charLength = characters.length;
+        let arr = [];
+        for (let i = 0; i < 9; i++) {
+            arr.push(characters.charAt(Math.floor(Math.random() * charLength)))
+        };
+        return (arr.join(''));
+    }
     render(){
         return (
             <div className='navbar'>
@@ -19,7 +28,7 @@ class NavBar extends React.Component{
                     </div> :
                     <div>
                     <button onClick = { this.props.openModal } className='nav-button'>Log In</button>
-                    <button onClick = {()=>this.props.processForm({email: 'demo@coffee.com', password: 'password'
+                    <button onClick = {()=>this.props.processForm({email: `${this.randomString()}@coffee.com`, password: 'password'
                     })} className='nav-button'>Demo Log In</button>
                     </div>
                     }

@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-const HomeBody = ({currentUser, logout, openModal, processForm, openCart})=>(
+const HomeBody = ({currentUser, logout, openModal, processForm, openCart, randomString})=>(
 <div className='home-body'>
     <div className='how-header'>
             <h3 className='how-header-text'>How It Works</h3>
@@ -14,7 +14,7 @@ const HomeBody = ({currentUser, logout, openModal, processForm, openCart})=>(
             <button onClick={logout} className='button-2'>Log Out</button>
                 : <div className='how-part-button-group'> <button onClick={openModal} className='button-2'>Login</button>
             <button onClick={() => processForm({
-                email: 'demo@coffee.com', password: 'password'
+                email: `${randomString()}@coffee.com`, password: 'password'
             })} className='button-2'>Demo</button> </div>}
         
     </div>

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { logout, login } from '../../actions/session';
+import { logout, createNewUser } from '../../actions/session';
 import { openModal } from '../../actions/modal_actions'
 import { openCart } from '../../actions/cart_actions'
 import HomeBody from './home_body'
@@ -13,7 +13,7 @@ const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logout()),
     openModal: () => dispatch(openModal()),
     openCart: () => dispatch(openCart()),
-    processForm: (user) => dispatch(login(user))
+    processForm: (user) => dispatch(createNewUser(user))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeBody);
