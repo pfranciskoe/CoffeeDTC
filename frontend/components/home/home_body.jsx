@@ -7,7 +7,7 @@ const HomeBody = ({currentUser, logout, openModal, processForm, openCart, random
     </div>
     <div className='how-part'>
         <h6 className='how-part-sub'>Step 1</h6>
-        <h4 className='how-part-head'>Log In</h4>
+        <h4 className='how-part-head'>Log In / Sign Up</h4>
             <p className='how-part-body'>or use our demo login.</p>
         
             {!!currentUser ? 
@@ -20,7 +20,7 @@ const HomeBody = ({currentUser, logout, openModal, processForm, openCart, random
     </div>
     <div className='how-part'>
         <h6 className='how-part-sub'>Step 2</h6>
-        <h4 className='how-part-head'>Take our Quiz</h4>
+        <h4 className='how-part-head'>Get Paired</h4>
         <p className='how-part-body'>Let us know how you like your coffee.</p>
         <Link className='link-wrapper' to='/onboarding/1' ><button className='button-2'>Take Quiz</button></Link>
     </div>
