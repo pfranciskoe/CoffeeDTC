@@ -10,7 +10,9 @@ Visitors to DTCoffee are greeted by a friendly welcome page that will guide them
 * Take a quiz and view a curated list of coffees that have been picked specifically for them.
 
 Once they are satisfied with the coffees in their cart they are ready to checkout!
-
+<a align="center">
+<img href="app/assets/images/home_pageDTC.png">
+</a>
 ## Core Features:
     
 ### `User Authentication`
@@ -37,3 +39,4 @@ Once they are satisfied with the coffees in their cart they are ready to checkou
 * CSS / SCSS
 * Webpack
 * Google Maps Javascript API
+* AWS S3
