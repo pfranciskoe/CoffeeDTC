@@ -4,3 +4,4 @@ bundle.js.map
 .DS_Store
 /public/assets.DS_Store
 /config/master.key
+/config/master.key
