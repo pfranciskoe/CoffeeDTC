@@ -148,7 +148,7 @@
     .auth-error{
         color: tomato;
         font-size: 12px;
-        font-weight: 100;
+        font-weight: 500;
        
         margin: 5px; 
         text-transform: uppercase;
