@@ -4,7 +4,7 @@
 <a href='https://dtcoffee.herokuapp.com/#/'>Live Site</a> | <a href='https://github.com/pfranciskoe/CoffeeDTC/wiki'>Wiki</a>
 </h5>
 
-![splash-page](https://github.com/pfranciskoe/CoffeeDTC/tree/master/app/assets/images/giphy.gif)
+![splash-page](https://github.com/pfranciskoe/CoffeeDTC/blob/master/app/assets/images/giphy.gif)
 
 ## User Journey
 Visitors to DTCoffee are greeted by a friendly welcome page that will guide them through their coffee journey. After logging in they are given the opportunity to: 
